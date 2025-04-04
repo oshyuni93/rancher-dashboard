@@ -1,0 +1,4 @@
+[ZoneTransfer]
+ZoneId=3
+ReferrerUrl=https://github.com/rancher/dashboard/tree/v2.10.2
+HostUrl=https://codeload.github.com/rancher/dashboard/zip/refs/tags/v2.10.2
