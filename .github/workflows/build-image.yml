@@ -44,7 +44,7 @@ jobs:
           password: ${{ secrets.GITHUB_TOKEN }} # A token generated during the workflow
 
       - name: Build and push Dashboard image
-        uses: docker/build-push-action@v2        
+        uses: docker/build-push-action@v6        
         with:
           context: . # Context for docker to find the Dockerfile in the submodule
           file: ./Dockerfile.example # Dockerfile you created
