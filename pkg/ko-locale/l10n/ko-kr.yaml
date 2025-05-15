@@ -26,6 +26,7 @@ generic:
   back: 뒤로
   cancel: 취소
   confirm: 확인
+  colorPicker: Color picker
   clear: 지우기
   clearAll: 전체 지우기
   close: 닫기
@@ -255,6 +256,7 @@ nav:
     placeholder: 클러스터 검색
     noResults: 일치하는 클러스터가 없습니다
     clusters: 클러스터
+    ariaLabel: Filter clusters on main menu
   resourceSearch:
     label: 리소스 검색
     toolTip: 리소스 검색 {key}
@@ -1827,32 +1829,32 @@ suffix:
   ago: ago  
   revisions: |-
     {count, plural,
-      =1 { Revision }
-      other { Revisions }
+      =1 { 개정 }
+      other { 개정 }
     }
   seconds: |-
     {count, plural,
-      =1 { Second }
-      other { Seconds }
+      =1 { 초 }
+      other { 초 }
     }
   sec: 초
   times: |-
     {count, plural,
-      =1 { Time }
-      other { Times }
+      =1 { 시간 }
+      other { 시간 }
     }
 
 ##############################
 # Components & Pages
 ##############################
 windowmanager:
-  closeTab: Close tab {tabId}
+  closeTab: 탭 닫기 {tabId}
 about:
   title: 정보
   versions:
-    downloadImages: "Download {listName} images list"
-    downloadCli: "Download CLI for {os}"
-    githubRepo: "Open GitHub repository for the {name} component"
+    downloadImages: "{listName} 이미지 목록 다운로드"
+    downloadCli: "{os}에 대한 CLI 다운로드"
+    githubRepo: "{name} 구성 요소에 대한 GitHub 저장소를 엽니다."
     title: 버전
     component: 구성요소
     version: 버전
@@ -1889,8 +1891,8 @@ about:
       subtitle: 최신 로그
     resourceCounts: |-
       {count, plural,
-        one { Resource Counts by Cluster ({count} cluster) }
-        other { Resource Counts by Cluster ({count} clusters) }
+        one { 클러스터별 리소스 수({count}개 클러스터) }
+        other { 클러스터별 리소스 수({count}개 클러스터) }
       }
     modal:
       title: 응답 시간이 아직 생성되지 않았습니다.
@@ -2163,6 +2165,7 @@ authConfig:
         body: "<p><b>추가 조치가 필요할 수 있습니다</b>. Azure AD 앱이 Microsoft Graph에 Directory.Read.All <b>Application</b> 권한이 추가되어 있는지 확인하세요.<br> Azure AD 인증을 Rancher에서 구성하는 동안 엔드포인트를 사용자 정의한 경우 자동으로 업데이트되지 않을 것입니다.</p>"
   oidc:
     oidc: OIDC 계정 구성
+    genericoidc: Configure an OIDC account
     keycloakoidc: Keycloak OIDC 계정 구성
     rancherUrl: Rancher URL
     clientId: 클라이언트 ID
@@ -2171,6 +2174,8 @@ authConfig:
       label: 엔드포인트
       custom: 지정
       standard: 생성
+    url: URL
+    realm: Realm
     keycloak:
       url: Keycloak URL
       realm: Keycloak Realm
@@ -2692,28 +2697,28 @@ catalog:
       label: 인덱스 URL
       placeholder: "예: https://charts.rancher.io"
     oci:
-      urlLabel: OCI Repository Host URL
+      urlLabel: OCI 저장소 호스트 URL
       placeholder: 'e.g. oci://<registry-host>/<namespace>/<chart-name>:<tag>'
-      warning: OCI URLs must ONLY target helm chart/s.
-      info: For large repositories containing many charts consider targeting a specific namespace or chart to improve performance, for example with oci://<registry-host>/<namespace> or oci://<registry-host>/<namespace>/<chart-name>.
-      skipTlsVerifications: Skip TLS Verifications
-      insecurePlainHttp: Insecure Plain Http
+      warning: OCI URL은 반드시 헬름 차트만 타겟으로 삼아야 합니다.
+      info: "많은 차트가 포함된 대규모 저장소의 경우 성능을 개선하기 위해 특정 네임스페이스나 차트를 타겟팅하는 것을 고려하세요(예: oci://<registry-host>/<namespace> 또는 oci://<registry-host>/<namespace>/<chart-name>)."
+      skipTlsVerifications: TLS 확인 건너뛰기
+      insecurePlainHttp: 안전하지 않은 일반 HTTP
       exponentialBackOff:
-        label: Exponential Back Off
+        label: 지수 백오프
         minWait:
-          label: Min Wait Time
+          label: 최소 대기 시간
           placeholder: 'default: 1'
         maxWait:
-          label: Max Wait Time
+          label: 최대 대기 시간
           placeholder: 'default: 5'
         maxRetries:
-          label: Max Number of Retries
+          label: 최대 재시도 횟수
           placeholder: 'default: 5'
     refreshInterval:
-      label: Refresh Interval
+      label: 새로 고침 간격
       placeholder: 'default: {hours}'
   tools:
-    iconAlt: Icon for {app} Cluster Tool  
+    iconAlt: '{app} 클러스터 도구 아이콘'
     header: 클러스터 도구
     noTools: "클러스터 도구를 찾을 수 없습니다."
     action:
@@ -2817,37 +2822,37 @@ cis:
 cluster:
   addonChart:
     rancher-vsphere-cpi:
-      label: "Add-on: vSphere CPI"
+      label: "애드-온: vSphere CPI"
       configuration: vSphere CPI    
     rancher-vsphere-csi:
-      label: "Add-on: vSphere CSI"
+      label: "애드-온: vSphere CSI"
       configuration: vSphere CSI    
     rke2-calico:
-      label: "Add-on: Calico"
+      label: "애드-온: Calico"
       configuration: Calico    
     rke2-calico-crd:
-      label:  "Add-on: Calico"
+      label:  "애드-온: Calico"
       configuration: Calico    
     rke2-canal:
-      label: "Add-on: Canal"
+      label: "애드-온: Canal"
       configuration: Canal    
     rke2-cilium:
-      label: "Add-on: Cilium"
+      label: "애드-온: Cilium"
       configuration: Cilium    
     rke2-coredns:
-      label: "Add-on: CoreDNS"
+      label: "애드-온: CoreDNS"
       configuration: CoreDNS    
     rke2-ingress-nginx:
-      label: "Add-on: NGINX"
+      label: "애드-온: NGINX"
       configuration: NGINX Ingress    
     rke2-kube-proxy:
-      label: "Add-on: Kube Proxy"
+      label: "애드-온: Kube Proxy"
       configuration: Kube Proxy    
     rke2-metrics-server:
-      label: "Add-on: Metrics Server"
+      label: "애드-온: Metrics Server"
       configuration: Metrics Server    
     rke2-multus:
-      label: "Add-on: Multus"
+      label: "애드-온: Multus"
       configuration: Multus    
   agentEnvVars:
     label: 에이전트 환경 변수
@@ -3144,6 +3149,7 @@ cluster:
         label: DNS 레이블
       environment:
         label: 환경
+        tooltip: The environment is configured when cloud credentials are created.
       faultDomainCount:
         help: 가용성 집합이 이미 생성된 경우 장애 도메인 수는 무시됩니다.
         label: 장애 도메인 수
@@ -3227,7 +3233,7 @@ cluster:
           other {# vCPUs}
         }, {disk} GB Disk ({value})
       tags:
-        label: Droplet Tags
+        label: Droplet 태그
         placeholder: e.g. my_server
     linode:
       typeLabel: |-
@@ -3768,6 +3774,7 @@ cluster:
       s3: s3
   tabs:
     ace: 승인된 엔드포인트
+    addOnAdditionalManifest: 추가 매니페스트
     addons: 추가 구성
     advanced: 고급
     agentEnv: 에이전트 환경 변수
@@ -3836,19 +3843,23 @@ clusterIndexPage:
       label: 비정상 노드
       noRows: 표시할 비정상 노드가 없습니다.
     componentStatus:
-      etcd: Etcd
-      scheduler: 스케줄러
-      controller-manager: 컨트롤러 관리자
-#        label: 컨트롤러 관리자
-      cattle:
-        label: Cattle
-      fleet:
-        label: Fleet
+      component:
+        etcd:
+          label: Etcd
+        scheduler:
+          label: 스케줄러
+        controller-manager:
+          label: 컨트롤러 관리자
+        cattle:
+          label: Cattle
+        fleet:
+          label: Fleet
       tooltip:
         disconnected: 에이전트 연결이 끊어졌습니다.
         unavailableReplicas: 복제본을 사용할 수 없습니다
     certs:
       label: 인증서
+
 configmap:
   tabs:
     data:
@@ -4043,6 +4054,7 @@ fleet:
       resources: 리소스
       unready: 준비되지 않음
     auth:
+      title: 인증
       label: 인증
       git: Git 인증
       helm: 헬름 인증
@@ -4635,18 +4647,18 @@ istio:
   v1Warning: 이 버전을 설치하기 전에 현재 이스티오 버전을 <code>istio-system</code> 네임스페이스에서 제거하세요.
 
 jwt:
-  title: JWT Authentication
+  title: JWT 인증증
   actions:
-    activate: Enable
-    deactivate: Disable
-    refresh: Refresh
+    activate: 활성화
+    deactivate: 비활성화
+    refresh: 새로고침
   state:
-    enabled: Enabled
-    disabled: Disabled
+    enabled: 활성화됨
+    disabled: 비활성화됨
   headers:
-    clusterName: Cluster Name
-    updatedOn: JWT Enabled On
-    clusterAge: Cluster Age
+    clusterName: 클러스터 이름
+    updatedOn: JWT 활성화됨
+    clusterAge: 클러스터 Age
 
 labels:
   addLabel: 레이블 추가
@@ -4677,7 +4689,9 @@ landing:
   clusters:
     title: 클러스터
     provider: 공급자
+    distro: 디스트로
     kubernetesVersion: 쿠버네티스 버전
+    architecture: 아키텍처
     explorer: 탐색기
     explore: 탐색
     cores: |-
@@ -4701,6 +4715,7 @@ landing:
     title: 로그인시 표시되는 내용을 환경 설정에서 변경할 수 있습니다.
     userPrefs: 환경 설정
     body: "로그인시 어디로 이동할지 변경할 수 있습니다."
+    ariaLabelTakeMeToCluster: 로그인 후 이동할 클러스터를 선택하세요
     options:
       homePage: 홈페이지로 이동
       lastVisited: 마지막으로 방문한 곳으로 이동
@@ -4737,6 +4752,7 @@ logging:
           include: 특정 컨테이너 이름으로 제한
           exclude: 특정 컨테이너 이름 제외
         placeholder: "기본값: 임의의 컨테이너"
+        enter: 선택하려면 컨테이너 이름을 입력하세요
       namespaces:
         title:
           include: 특정 네임스페이스로 제한
@@ -5034,9 +5050,10 @@ managementNode:
 
 members:
   clusterMembers: 클러스터 멤버
+  memberRoles: Member Roles
   clusterAndProject: 클러스터 및 프로젝트 멤버
   createActionLabel: 추가
-  clusterMemebership: 클러스터 멤버십
+  clusterMembership: 클러스터 멤버십
   projectMembership: 프로젝트 멤버십
   clusterPermissions:
     noDescription: 사용자 생성 - 설명 없음
@@ -5073,9 +5090,9 @@ membershipEditor:
 
 monitoring:
   accessModes:
-    many: ReadWriteMany
-    once: ReadWriteOnce
-    readOnlyMany: ReadOnlyMany
+    many: 읽기쓰기많음
+    once: 한 번 읽기 쓰기
+    readOnlyMany: 읽기 전용 다수
   aggregateDefaultRoles:
     label: 기본 쿠버네티스 역할에 집계
     tip: '모니터링 차트에 의해 배포된 클러스터 역할에 레이블을 추가하여 <a target="_blank" rel="noopener nofollow noreferrer" href="https://kubernetes.io/docs/reference/access-authn-authz/rbac/#aggregated-clusterroles"> 기본 k8s admin, edit 및 view 클러스터 역할과 집계.</a>'
@@ -5725,7 +5742,7 @@ persistentVolume:
       storageos: StorageOS (CSI)
       csi-vsphere-vmware-com: vSphere (CSI)
   cephfs:
-    label: Ceph Filesystem (지원되지 않음)
+    label: Ceph 파일시스템 (지원되지 않음)
     path:
       label: 경로
       placeholder: "예: /var"
@@ -6105,6 +6122,7 @@ plugins:
   tabs:
     all: 모두
     available: 사용 가능
+    builtin: Built-in
     images: 이미지
     installed: 설치됨
     updates: 업데이트
@@ -6682,6 +6700,7 @@ resourceList:
     createFromYaml: YAML에서 생성
     createResource: "{resourceName} 생성"
   nsFiltering: "위의 필터를 사용하여 하나 이상의 네임스페이스 또는 프로젝트를 선택하십시오."
+  nsFilteringGeneric: "위의 필터를 사용하여 유효한 네임스페이스 또는 프로젝트 옵션을 선택하세요."
   nsFilterToolTip: "필터링은 프로젝트 및 네임스페이스로 제한됩니다."
 resourceLoadingIndicator:
   loading: 로딩 중
@@ -6739,8 +6758,8 @@ secret:
     certificatePlaceholder: "CA 인증서를 붙여넣기하세요. -----BEGIN CERTIFICATE----로 시작합니다."
     cn: 도메인 이름
     expires: 만료일
-    expiresOn: Expires On
-    expiresDuration: Expires In
+    expiresOn: 만료 On
+    expiresDuration: 만료 In
     lifetime: Lifetime    
     issuer: 발급자
     paging: |-
@@ -6850,6 +6869,8 @@ selectOrCreateAuthSecret:
   basic:
     username: 사용자 이름
     password: 비밀번호
+  rke:
+    info: "RKE 인증 구성 비밀에는 사용자 이름과 비밀번호가 연결되어 있으며 비밀의 '인증' 키에 base64로 인코딩되어 있습니다."  
   namespaceGroup: "네임스페이스: {name}"
   chooseExisting: "기존 시크릿 선택:"
   createSsh: SSH 키 시크릿 생성
@@ -7378,7 +7399,7 @@ tableHeaders:
   createdAt: 생성일
   customVerbs: 사용자 정의 동사
   description: 설명
-  expires: 만료일
+#  expires: 만료일
   cpu: CPU
   currentReplicas: 현재 레플리카
   date: 날짜
@@ -7395,6 +7416,7 @@ tableHeaders:
   distinguisherMethod: 구별 메서드
   effect: 효과
   endpoints: 엔드포인트
+  expires: 만료
   firstSeen: 최초 발견
   fleetBundleType: 타입
   flow: Flow
@@ -7785,17 +7807,20 @@ validation:
   setting:
     serverUrl:
       https: 서버 URL은 https여야 합니다.
+      localhost: '서버 URL이 Rancher 서버 내부(예: localhost)인 경우 다운스트림 클러스터가 Rancher와 통신하지 못할 수 있습니다.'
+      trailingForwardSlash: 서버 URL에는 맨 뒤에 슬래시가 있어서는 안 됩니다.
+      url: 서버 URL은 URL이어야 합니다.
   stringLength:
-    between: '"{key}"은(는) {min}에서 {max} {max, plural, =1 {문자} other {문자}} 사이어야 합니다.'
-    exactly: '"{key}"은(는) {count, plural, =1 {# 문자} other {# 문자}}여야 합니다.'
-    max: '"{key}"은(는) 최대 {count} {count, plural, =1 {문자} other {문자}}까지어야 합니다.'
-    min: '"{key}"은(는) 최소 {count} {count, plural, =1 {문자} other {문자}}가 있어야 합니다.'
+    between: '{key}은(는) {min}에서 {max} {max, plural, =1 {문자} other {문자}} 사이어야 합니다.'
+    exactly: '{key}은(는) {count, plural, =1 {# 문자} other {# 문자}}여야 합니다.'
+    max: '{key}은(는) 최대 {count} {count, plural, =1 {문자} other {문자}}까지어야 합니다.'
+    min: '{key}은(는) 최소 {count} {count, plural, =1 {문자} other {문자}}가 있어야 합니다.'
   targets:
     missingProjectId: 대상은 프로젝트가 선택되어야 합니다.
   monitoring:
     route:
       match: 적어도 하나의 일치 또는 일치 정규식을 선택해야 합니다.
-      interval: '"{key}"은(는) 숫자 다음에 단위가 있는 형식이어야 합니다(예: 1h, 2m, 30s)'
+      interval: '{key}은(는) 숫자 다음에 단위가 있는 형식이어야 합니다(예: 1h, 2m, 30s)'
   tab: "이 탭의 하나 이상의 필드에 양식 유효성 검사 오류가 포함되어 있습니다"
 carousel:
   previous: 이전
@@ -7926,7 +7951,9 @@ workload:
         exec: 컨테이너 내부에서 실행되는 명령이 상태 0으로 종료됨
     image: 컨테이너 이미지
     imagePullPolicy: 이미지 풀 정책
-    imagePullSecrets: 이미지 풀 시크릿
+    imagePullSecrets: 
+      label: 풀 시크릿
+      tooltip: "`kubernetes.io/dockercfg` 또는 `kubernetes.io/dockerconfigjson` 유형이어야 합니다."
     init: 초기화 컨테이너
     lifecycleHook:
       postStart:
@@ -8268,7 +8295,8 @@ workload:
           managed: 관리됨
           shared: 공유
       drivers:
-        driver.longhorn.io: Longhorn
+#        driver.longhorn.io: Longhorn
+        driver-longhorn-io: Longhorn
       fsType: 파일 시스템 유형
       shareName: 공유 이름
       secretName: 시크릿 이름
@@ -9199,6 +9227,7 @@ action:
   viewYaml: YAML 보기
   activate: 활성화
   deactivate: 비활성화
+  editQuota: 할당량 편집
   show: 표시
   hide: 숨기기
   copy: 복사
@@ -9268,6 +9297,8 @@ registryConfig:
 ##############################
 
 advancedSettings:
+  setEnv: 환경 변수로 설정
+  hideShow: 숨기기/표시 설정
   label: 설정
   subtext: 일반 사용자는 이러한 값을 변경할 필요가 없습니다. 주의해서 진행하십시오. 잘못된 값은 {appName} 설치를 망가뜨릴 수 있습니다. 기본 설정에서 사용자 지정된 설정은 '수정됨'으로 표시됩니다.
   show: 표시
@@ -9275,6 +9306,7 @@ advancedSettings:
   none: 없음
   modified: 수정됨
   edit:
+    moreActions: 설정을 위한 추가 작업 - { setting }
     label: 설정 편집
     changeSetting: "설정 변경:"
     trueOption: "예"
@@ -9284,35 +9316,35 @@ advancedSettings:
     invalidJSON: 잘못된 JSON - 저장하기 전에 입력을 확인하고 수정하십시오.
   experimental: '실험적 기능을 통해 사용자는 공식 지원 릴리스 전에 조기 액세스 기능을 테스트하고 평가할 수 있습니다.'  
   descriptions:
-    "cacerts": "서버 인증서를 확인하는 데 필요한 CA 인증서."
-    "password-min-length": "사용자 비밀번호에 필요한 최소 문자 수를 정의합니다."
-    "cluster-defaults": "새 클러스터를 생성할 때 RKE 기본값을 재정의합니다."
-    "engine-install-url": "대부분의 노드 드라이버에 대한 기본 도커 엔진 설치 URL."
-    "engine-iso-url": "vSphere 드라이버에 대한 기본 OS 설치 URL."
-    "engine-newest-version": "릴리스 당시에 지원되는 도커의 최신 버전입니다. 이 버전보다 새로운 도커 버전은 지원되지 않는 것으로 표시됩니다."
-    "engine-supported-range": "지원되는 도커 엔진 버전의 Semver 범위입니다. 이 범위를 만족하지 않는 버전은 UI에서 지원되지 않는 것으로 표시됩니다."
-    "ingress-ip-domain": "자동으로 생성된 인그레스 호스트 이름에 사용할 와일드카드 DNS 도메인입니다. <ingress-name>.<namespace-name>.<ingress controller의 IP 주소>가 도메인에 추가됩니다."
-    "server-url": "기본 {appName} 설치 URL. HTTPS 여야 합니다. 클러스터의 모든 노드가 여기에 액세스할 수 있어야 합니다."
-    "system-default-registry": "모든 Rancher 시스템 컨테이너 이미지에 사용될 개인 레지스트리. 지정된 값이 없으면 컨테이너 런타임의 기본 레지스트리가 사용됩니다. 도커 및 containerd의 경우 기본값은 `docker.io`입니다."
-    "ui-index": "클러스터 매니저 UI의 HTML 인덱스 위치."
-    "ui-dashboard-index": "{appName} UI의 HTML 인덱스 위치."
-    "ui-offline-preferred": "UI 자산이 서버 컨테이너에서 로컬로 제공되거나 ui-index 및 ui-dashboard-index 설정에서 정의된 원격 URL에서 제공되는지를 제어합니다. `Dynamic` 옵션은 {appName}의 프로덕션 빌드에서 로컬 자산을 사용합니다."
-    "ui-pl": "사설 레이블 회사 이름."
-    "telemetry-opt": "Telemetry 보고서 선택 여부."
-    "auth-user-info-max-age-seconds": "사용자 인증 토큰의 최대 유효 기간(초)을 정의합니다. 인증 공급자 그룹 멤버십 동기화가 수행됩니다."
-    "auth-user-info-resync-cron": "인증 공급자 그룹 멤버십을 다시 동기화하는 기본 cron 일정."
-    "cluster-template-enforcement": "관리자가 아닌 사용자는 미리 승인된 RKE 템플릿을 통해서만 클러스터를 시작할 수 있습니다."
-    "auth-user-session-ttl-minutes": "사용자 인증 세션의 사용자 지정 TTL(분)."
-    "auth-token-max-ttl-minutes": "모든 인증 토큰의 최대 TTL(분). 0으로 설정하면 토큰이 만료되지 않습니다."
-    "kubeconfig-generate-token": "Kubeconfig 요청 시 사용자에 대한 토큰을 자동으로 생성합니다."
-    "kubeconfig-default-token-ttl-minutes": "모든 kubeconfig 토큰에 적용되는 TTL(분). 0으로 설정하면 토큰이 만료되지 않습니다."
-    "rke-metadata-config": "RKE 메타데이터 새로 고침 매개변수를 구성합니다."
-    "ui-banners": "분류 배너는 헤더, 푸터 또는 둘 다에 사용되는 사용자 정의 고정 배너를 표시하는 데 사용됩니다."
-    "custom-notifications": 사용자 정의 알림 편집
-    "ui-consent-banner": "배너는 사용자 로그인 중에 사용자에게 제시되는 사용자 지정 동의 배너를 표시하는 데 사용됩니다."
-    "ui-default-landing": "로그인 후 사용자가 착륙하는 기본 페이지."
-    "brand": "'/assets/brand'에서 정의된 대체 테마의 폴더 이름"
-    "hide-local-cluster": 로컬 클러스터 숨기기
+    'cacerts': "서버 인증서를 확인하는 데 필요한 CA 인증서."
+    'password-min-length': "사용자 비밀번호에 필요한 최소 문자 수를 정의합니다."
+    'cluster-defaults': "새 클러스터를 생성할 때 RKE 기본값을 재정의합니다."
+    'engine-install-url': "대부분의 노드 드라이버에 대한 기본 도커 엔진 설치 URL."
+    'engine-iso-url': "vSphere 드라이버에 대한 기본 OS 설치 URL."
+    'engine-newest-version': "릴리스 당시에 지원되는 도커의 최신 버전입니다. 이 버전보다 새로운 도커 버전은 지원되지 않는 것으로 표시됩니다."
+    'engine-supported-range': "지원되는 도커 엔진 버전의 Semver 범위입니다. 이 범위를 만족하지 않는 버전은 UI에서 지원되지 않는 것으로 표시됩니다."
+    'ingress-ip-domain': "자동으로 생성된 인그레스 호스트 이름에 사용할 와일드카드 DNS 도메인입니다. <ingress-name>.<namespace-name>.<ingress controller의 IP 주소>가 도메인에 추가됩니다."
+    'server-url': "기본 {appName} 설치 URL. HTTPS 여야 합니다. 클러스터의 모든 노드가 여기에 액세스할 수 있어야 합니다."
+    'system-default-registry': "모든 Rancher 시스템 컨테이너 이미지에 사용될 개인 레지스트리. 지정된 값이 없으면 컨테이너 런타임의 기본 레지스트리가 사용됩니다. 도커 및 containerd의 경우 기본값은 `docker.io`입니다."
+    'ui-index': "클러스터 매니저 UI의 HTML 인덱스 위치."
+    'ui-dashboard-index': "{appName} UI의 HTML 인덱스 위치."
+    'ui-offline-preferred': "UI 자산이 서버 컨테이너에서 로컬로 제공되거나 ui-index 및 ui-dashboard-index 설정에서 정의된 원격 URL에서 제공되는지를 제어합니다. `Dynamic` 옵션은 {appName}의 프로덕션 빌드에서 로컬 자산을 사용합니다."
+    'ui-pl': "사설 레이블 회사 이름."
+    'telemetry-opt': "Telemetry 보고서 선택 여부."
+    'auth-user-info-max-age-seconds': "사용자 인증 토큰의 최대 유효 기간(초)을 정의합니다. 인증 공급자 그룹 멤버십 동기화가 수행됩니다."
+    'auth-user-info-resync-cron': "인증 공급자 그룹 멤버십을 다시 동기화하는 기본 cron 일정."
+    'cluster-template-enforcement': "관리자가 아닌 사용자는 미리 승인된 RKE 템플릿을 통해서만 클러스터를 시작할 수 있습니다."
+    'auth-user-session-ttl-minutes': "사용자 인증 세션의 사용자 지정 TTL(분)."
+    'auth-token-max-ttl-minutes': "모든 인증 토큰의 최대 TTL(분). 0으로 설정하면 토큰이 만료되지 않습니다."
+    'kubeconfig-generate-token': "Kubeconfig 요청 시 사용자에 대한 토큰을 자동으로 생성합니다."
+    'kubeconfig-default-token-ttl-minutes': "모든 kubeconfig 토큰에 적용되는 TTL(분). 0으로 설정하면 토큰이 만료되지 않습니다."
+    'rke-metadata-config': "RKE 메타데이터 새로 고침 매개변수를 구성합니다."
+    'ui-banners': "분류 배너는 헤더, 푸터 또는 둘 다에 사용되는 사용자 정의 고정 배너를 표시하는 데 사용됩니다."
+    'custom-notifications': 사용자 정의 알림 편집
+    'ui-consent-banner': "배너는 사용자 로그인 중에 사용자에게 제시되는 사용자 지정 동의 배너를 표시하는 데 사용됩니다."
+    'ui-default-landing': "로그인 후 사용자가 착륙하는 기본 페이지."
+    'brand': "'/assets/brand'에서 정의된 대체 테마의 폴더 이름"
+    'hide-local-cluster': 로컬 클러스터 숨기기
     'agent-tls-mode': "Rancher 인증서 확인. `strict` 모드에서는 에이전트(시스템, 클러스터, 플릿 등)가 `cacerts` 설정에서 CABundle이 서명한 인증서를 사용하는 Rancher 설치만 신뢰합니다. 모드가 `system-store`인 경우, 에이전트는 운영 체제의 신뢰 저장소에 있는 CABundle이 서명한 모든 인증서를 신뢰합니다."
     'k3s-based-upgrader-uninstall-concurrency': Rancher가 가져온 K3s 또는 RKE2 클러스터에서 기존 `rancher-k3s-upgrader` 또는 `rancher-rke2-upgrader` 앱을 동시에 제거할 수 있는 최대 클러스터 수를 정의합니다.
     'imported-cluster-version-management': 가져온 RKE2/K3s 클러스터와 로컬 클러스터(RKE2/K3s 클러스터인 경우)에 대한 버전 관리를 활성화합니다. 클러스터별 버전 관리 설정은 클러스터 수준에서 이 전역 설정을 재정의합니다. 클러스터 수준 버전 관리가 'system-default'로 설정된 기존 클러스터의 경우, 이 플래그를 변경하면 다음 조정 시(기본적으로 5분마다 또는 클러스터가 편집되는 즉시, 둘 중 먼저 발생하는 시점) 클러스터 에이전트가 다시 배포됩니다.
@@ -9352,20 +9384,20 @@ advancedSettings:
     'agent-tls-mode': 'Changing this setting will cause all agents to be redeployed.'
 
   editHelp:
-    "ui-banners": 이 설정은 3개의 루트 매개변수를 포함하는 JSON 객체를 사용합니다. <code>banner</code>, <code>showHeader</code>, <code>showFooter</code>. <code>banner</code>는 <code>textColor</code>, <code>background</code>, 및 <code>text</code>를 포함하는 객체이며 <code>textColor</code> 및 <code>background</code>는 모든 유효한 CSS 색상 값입니다.
+    'ui-banners': 이 설정은 3개의 루트 매개변수를 포함하는 JSON 객체를 사용합니다. <code>banner</code>, <code>showHeader</code>, <code>showFooter</code>. <code>banner</code>는 <code>textColor</code>, <code>background</code>, 및 <code>text</code>를 포함하는 객체이며 <code>textColor</code> 및 <code>background</code>는 모든 유효한 CSS 색상 값입니다.
   enum:
-    "ui-default-landing":
+    'ui-default-landing':
       ember: 클러스터 매니저
       vue: 클러스터 탐색기
-    "ui-offline-preferred":
+    'ui-offline-preferred':
       dynamic: 동적
       true: 로컬
       false: 원격
-    "harv-ui-source":
+    'harv-ui-source':
       auto: "자동"
       bundled: "번들"
       external: "외부"
-    "harv-log-level":
+    'harv-log-level':
       info: 정보
       debug: 디버그
       trace: 추적
@@ -9376,6 +9408,7 @@ advancedSettings:
     header: 클러스터 프로비저닝
 featureFlags:
   label: 기능 플래그
+  title: "확실합니까?"
   warning: |-
     기능 플래그를 사용하면 {vendor}에서 특정 기능을 플래그 뒤에 숨길 수 있습니다.
     기본적으로 꺼져 있는 기능은 실험적인 기능으로 간주되어야 합니다.
@@ -9391,6 +9424,7 @@ featureFlags:
 performance:
   label: UI 성능 설정
   settingName: 성능
+  deprecatedForSSP: <i class="mr-5">"{setting}"</i> 설정은 더 이상 사용되지 않으며 향후 릴리스에서 제거될 예정입니다.
   experimental: 이 설정은 실험적이며 향후 버전에서 제거되거나 업데이트될 수 있습니다.
   incrementalLoad:
     label: 증분 로딩
@@ -9499,6 +9533,7 @@ branding:
   label: 브랜딩
   directoryName: 브랜드 자산 디렉터리 이름
   logos:
+    home: 제품 메인 페이지
     label: 로고
     tip: "상단 내비게이션 헤더의 Rancher 로고를 대체할 로고를 업로드하십시오. 이미지 높이는 최대 200픽셀이며 최대 폭은 20픽셀입니다. 최대 파일 크기는 20KB입니다. 허용된 형식: JPEG, PNG, SVG."
     lightPreview: 라이트 테마 미리보기
@@ -9615,6 +9650,8 @@ customLinks:
     issues: 이슈 제출
     getStarted: 시작하기
     commercialSupport: 상업용 지원
+    appCo: SUSE 애플리케이션 컬렉션
+
 
 ##############################
 ### Support Page
@@ -9701,7 +9738,7 @@ manager:
   nodeTemplates:
     label: 노드 템플릿
   jwtAuthentication:
-    label: JWT Authentication
+    label: JWT 인증
 auth:
   roleTemplate: 역할 템플릿
   config:
@@ -9709,6 +9746,8 @@ auth:
 vncConsole:
   error:
     message: Web VNC 콘솔 연결이 끊겼습니다.
+  reconnecting:
+    message: 웹 VNC 콘솔 재연결 시도
 
 gitPicker:
   github:
