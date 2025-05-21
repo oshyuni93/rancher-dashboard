@@ -14,7 +14,8 @@ export const HARVESTER_CHART = {
 
 export const HARVESTER_COMMUNITY_REPO = {
   metadata:  { name: 'harvester' },
-  gitRepo:   'https://github.com/harvester/harvester-ui-extension',
+  //gitRepo:   'https://github.com/harvester/harvester-ui-extension',
+  gitRepo:   'https://github.com/oshyuni93/harvester-ui-extension',
   gitBranch: 'gh-pages',
 };
 
