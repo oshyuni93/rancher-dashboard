@@ -615,11 +615,13 @@ export default {
                 role="link"
                 :aria-label="`${t('nav.ariaLabel.harvesterCluster')} ${ a.label }`"
               >
+              <!--
                 <IconOrSvg
                   class="app-icon"
                   :icon="a.icon"
                   :src="a.svg"
                 />
+                -->
                 <div>{{ a.label }}</div>
               </router-link>
             </div>
