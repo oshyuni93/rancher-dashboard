@@ -3060,10 +3060,10 @@
   resolved "https://registry.yarnpkg.com/@popperjs/core/-/core-2.11.8.tgz#6b79032e760a0899cd4204710beede972a3a185f"
   integrity sha512-P1st0aksCrn9sGZhp8GMYwBnQsbvAWsZAX44oXNNvLHGqAOcoVxmjZiohstwQ7SqKnbR47akdNi+uleWD8+g6A==
 
-"@rancher/icons@2.0.29":
-  version "2.0.29"
-  resolved "https://registry.yarnpkg.com/@rancher/icons/-/icons-2.0.29.tgz#6546d69768c706bebd66bfa73b36aef3d105987a"
-  integrity sha512-qBBqfazS9y5VjV7fJDPNXmxd9AP/2uiE05mKFWP41kpbO+tEb62RnUBXCm14XLeScDZQcOuiAKVHMmvCFzF0BA==
+"@rancher/icons@2.0.32":
+  version "2.0.32"
+  resolved "https://registry.yarnpkg.com/@rancher/icons/-/icons-2.0.32.tgz#c6b18c81b87bc9439b1e449b2f6bd859d76c0bbe"
+  integrity sha512-afZlIHPboVgQIwnMuaQT7LTPoWuCIgyqD2Ch277lEAoFIzuU+NwHzpEAvX5xcOpVXYAFlvDE/VlJ6FmYaQBBig==
 
 "@rtsao/scc@^1.1.0":
   version "1.1.0"
@@ -3690,10 +3690,10 @@
   dependencies:
     "@types/node" "*"
 
-"@types/is-url@1.2.30":
-  version "1.2.30"
-  resolved "https://registry.yarnpkg.com/@types/is-url/-/is-url-1.2.30.tgz#85567e8bee4fee69202bc3448f9fb34b0d56c50a"
-  integrity sha512-AnlNFwjzC8XLda5VjRl4ItSd8qp8pSNowvsut0WwQyBWHpOxjxRJm8iO6uETWqEyLdYdb9/1j+Qd9gQ4l5I4fw==
+"@types/is-url@1.2.32":
+  version "1.2.32"
+  resolved "https://registry.yarnpkg.com/@types/is-url/-/is-url-1.2.32.tgz#2883814affd004d3a6182d4a09c135d90e4fe28c"
+  integrity sha512-46VLdbWI8Sc+hPexQ6NLNR2YpoDyDZIpASHkJQ2Yr+Kf9Giw6LdCTkwOdsnHKPQeh7xTjTmSnxbE8qpxYuCiHA==
 
 "@types/istanbul-lib-coverage@*", "@types/istanbul-lib-coverage@^2.0.0", "@types/istanbul-lib-coverage@^2.0.1":
   version "2.0.6"
