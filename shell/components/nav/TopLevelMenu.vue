@@ -843,12 +843,14 @@ export default {
                   role="link"
                   :aria-label="`${t('nav.ariaLabel.multiClusterApps')} ${ a.label }`"
                 >
+                <!--
                   <IconOrSvg
                     v-clean-tooltip="getTooltipConfig(a.label)"
                     class="app-icon"
                     :icon="a.icon"
                     :src="a.svg"
                   />
+                  -->
                   <span class="option-link">{{ a.label }}</span>
                 </router-link>
               </div>
@@ -876,12 +878,14 @@ export default {
                   role="link"
                   :aria-label="`${t('nav.ariaLabel.configurationApps')} ${ a.label }`"
                 >
+                <!--
                   <IconOrSvg
                     v-clean-tooltip="getTooltipConfig(a.label)"
                     class="app-icon"
                     :icon="a.icon"
                     :src="a.svg"
                   />
+                  -->
                   <div>{{ a.label }}</div>
                 </router-link>
               </div>
