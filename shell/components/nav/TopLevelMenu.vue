@@ -841,14 +841,12 @@ export default {
                   role="link"
                   :aria-label="`${t('nav.ariaLabel.multiClusterApps')} ${ a.label }`"
                 >
-                <!--
                   <IconOrSvg
                     v-clean-tooltip="getTooltipConfig(a.label)"
                     class="app-icon"
                     :icon="a.icon"
                     :src="a.svg"
                   />
-                  -->
                   <span class="option-link">{{ a.label }}</span>
                 </router-link>
               </div>
