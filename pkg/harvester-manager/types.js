@@ -13,7 +13,7 @@ export const HARVESTER_CHART = {
 };
 
 export const HARVESTER_COMMUNITY_REPO = {
-  metadata:  { name: 'Infinitystack' },
+  metadata:  { name: 'infinitystack' },
   gitRepo:   'https://github.com/oshyuni93/harvester-ui-extension',
   gitBranch: 'gh-pages',
 };
