@@ -149,7 +149,7 @@ locale:
 unsupported:
   serverVersion: '현재 버전: <code>{serverVersion}</code>'
   description: InfinityStack UI는 InfinityStack 클러스터 버전 1.3.0 이상만 지원합니다.
-  learnMore: InfinityStack에 대해 자세히 알아보세요 <a target="_blank" href="https://harvesterhci.io/" rel="noopener noreferrer nofollow">InfinityStack Web Site</a> or read the <a target="_blank" href="https://docs.harvesterhci.io/" rel="noopener noreferrer nofollow">InfinityStack Docs</a>
+  learnMore: <a target="_blank" href="https://harvesterhci.io/" rel="noopener noreferrer nofollow">InfinityStack 웹사이트</a>에서 InfinityStack에 대해 자세히 알아보거나 <a target="_blank" href="https://docs.harvesterhci.io/" rel="noopener noreferrer nofollow">InfinityStack 문서</a>를 읽어보세요.
 
 
 nav:
@@ -210,7 +210,7 @@ nav:
     workload: 워크로드
     monitoring: 모니터링
     advanced: 고급
-    drivers: 드라이버버    
+    drivers: 드라이버    
     RKE1Configuration: RKE1 구성
     admission: 승인
     apps: 앱
@@ -256,7 +256,7 @@ nav:
     placeholder: 클러스터 검색
     noResults: 일치하는 클러스터가 없습니다
     clusters: 클러스터
-    ariaLabel: Filter clusters on main menu
+    ariaLabel: 메인 메뉴에서 클러스터 필터링
   resourceSearch:
     label: 리소스 검색
     toolTip: 리소스 검색 {key}
@@ -264,7 +264,7 @@ nav:
   header:
     setLoginPage: 로그인 페이지로 설정
     restoreCards: 숨겨진 카드 복원
-    showHideBanner: Show/Hide Banner    
+    showHideBanner: 배너 표시/숨기기 
   userMenu:
     preferences: 환경 설정
     accountAndKeys: 계정 및 API 키
@@ -289,10 +289,10 @@ nav:
 harvester:
   branding:
     logos:
-      tip: '상단 탐색 헤더에 있는 InfinityStack 로고를 대체할 로고를 업로드하세요. 이미지 높이는 21픽셀, 최대 너비는 200픽셀이어야 합니다. 최대 파일 크기는 20KB입니다. JPEG, PNG, SVG 형식을 지원합니다.'
+      tip: '상단 탐색 헤더에 있는 Infinitystack 로고를 대체할 로고를 업로드하세요. 이미지 높이는 21픽셀, 최대 너비는 200픽셀이어야 합니다. 최대 파일 크기는 20KB입니다. JPEG, PNG, SVG 형식을 지원합니다.'
     favicon:
-      tip: '브라우저 탭에 있는 InfinityStack 파비콘을 대체할 아이콘을 업로드하세요. 최대 파일 크기는 20KB입니다.'
-  productLabel: 'InfinityStack'
+      tip: '브라우저 탭에 있는 Infinitystack 파비콘을 대체할 아이콘을 업로드하세요. 최대 파일 크기는 20KB입니다.'
+  productLabel: 'Infinitystack'
   modal:
     backup:
       success: '백업 { backUpName } 이 시작 되었습니다.'

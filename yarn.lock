@@ -3324,7 +3324,7 @@
   version "2.0.32"
   resolved "https://registry.yarnpkg.com/@rancher/icons/-/icons-2.0.32.tgz#c6b18c81b87bc9439b1e449b2f6bd859d76c0bbe"
   integrity sha512-afZlIHPboVgQIwnMuaQT7LTPoWuCIgyqD2Ch277lEAoFIzuU+NwHzpEAvX5xcOpVXYAFlvDE/VlJ6FmYaQBBig==
-
+  
 "@rtsao/scc@^1.1.0":
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/@rtsao/scc/-/scc-1.1.0.tgz#927dd2fae9bc3361403ac2c7a00c32ddce9ad7e8"
