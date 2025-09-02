@@ -9,7 +9,7 @@ export const HARVESTER_CHART = {
   name:     'infinitystack',
   version:  '',
   repoType: 'cluster',
-  repoName: 'Infinitystack',
+  repoName: 'infinitystack',
 };
 
 export const HARVESTER_COMMUNITY_REPO = {
