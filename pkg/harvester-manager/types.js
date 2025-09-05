@@ -9,11 +9,11 @@ export const HARVESTER_CHART = {
   name:     'infinitystack',
   version:  '',
   repoType: 'cluster',
-  repoName: 'infinitystack',
+  repoName: 'harvester',
 };
 
 export const HARVESTER_COMMUNITY_REPO = {
-  metadata:  { name: 'infinitystack' },
+  metadata:  { name: 'harvester' },
   gitRepo:   'https://github.com/oshyuni93/harvester-ui-extension',
   gitBranch: 'gh-pages',
 };
