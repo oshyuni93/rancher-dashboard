@@ -6,7 +6,7 @@ export const communityRepoRegexes = [
 ];
 
 export const HARVESTER_CHART = {
-  name:     'harvester',
+  name:     'infinitystack',
   version:  '',
   repoType: 'cluster',
   repoName: 'infinitystack',
