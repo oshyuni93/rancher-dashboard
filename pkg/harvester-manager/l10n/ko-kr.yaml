@@ -26,7 +26,7 @@ generic:
   back: 뒤로
   cancel: 취소
   confirm: 확인
-  colorPicker: 색상 선택기
+  colorPicker: Color picker
   clear: 지우기
   clearAll: 전체 지우기
   close: 닫기
@@ -142,14 +142,14 @@ generic:
 
 locale:
   en-us: English
-  ko-kr: 한국어
   zh-hans: 简体中文
+  ko-kr: 한국어
   none: (None)
 
 unsupported:
   serverVersion: '현재 버전: <code>{serverVersion}</code>'
-  description: Infinitystack UI는 Infinitystack 클러스터 버전 1.3.0 이상만 지원합니다.
-  learnMore: <a target="_blank" href="https://harvesterhci.io/" rel="noopener noreferrer nofollow">Infinitystack 웹사이트</a>에서 Infinitystack에 대해 자세히 알아보거나 <a target="_blank" href="https://docs.harvesterhci.io/" rel="noopener noreferrer nofollow">Infinitystack 문서</a>를 읽어보세요.
+  description: InfinityStack UI는 InfinityStack 클러스터 버전 1.3.0 이상만 지원합니다.
+  learnMore: InfinityStack에 대해 자세히 알아보세요 <a target="_blank" href="https://harvesterhci.io/" rel="noopener noreferrer nofollow">InfinityStack Web Site</a> or read the <a target="_blank" href="https://docs.harvesterhci.io/" rel="noopener noreferrer nofollow">InfinityStack Docs</a>
 
 
 nav:
@@ -160,7 +160,7 @@ nav:
     topLevelMenu: 메인 메뉴
     homePage: 홈페이지 탐색 메뉴
     cluster: 클러스터 메뉴 항목
-    harvesterCluster: Infinitystack 클러스터 메뉴 항목
+    harvesterCluster: InfinityStack 클러스터 메뉴 항목
     seeAll: 모든 클러스터 메뉴 항목 보기
     multiClusterApps: 메인 메뉴 다중 클러스터 앱 메뉴 항목
     configurationApps: 메인 메뉴 구성 앱 메뉴 항목
@@ -173,7 +173,7 @@ nav:
     mainMenuIcon: 메인 메뉴 아이콘
     mainMenuRancherLogo: 메인 메뉴 Rancher 로고
   expandCollapseAppBar: 애플리케이션 표시줄 확장/축소
-  harvesterDashboard: Infinitystack 대시보드
+  harvesterDashboard: InfinityStack 대시보드
   backToRancher: 클러스터 매니저
   clusterTools: 클러스터 도구
   tools: 툴
@@ -210,7 +210,7 @@ nav:
     workload: 워크로드
     monitoring: 모니터링
     advanced: 고급
-    drivers: 드라이버
+    drivers: 드라이버버    
     RKE1Configuration: RKE1 구성
     admission: 승인
     apps: 앱
@@ -233,7 +233,7 @@ nav:
     backupAndSnapshot: 백업 및 스냅샷
     Monitoring: 모니터링
     Logging: 로깅
-    'Monitoring and Logging': 모니터링 및 로깅
+#    'Monitoring and Logging': 모니터링 및 로깅
     'Monitoring & Logging': 모니터링 및 로깅
 
   ns:
@@ -256,7 +256,7 @@ nav:
     placeholder: 클러스터 검색
     noResults: 일치하는 클러스터가 없습니다
     clusters: 클러스터
-    ariaLabel: 메인 메뉴에서 클러스터 필터링
+    ariaLabel: Filter clusters on main menu
   resourceSearch:
     label: 리소스 검색
     toolTip: 리소스 검색 {key}
@@ -264,7 +264,7 @@ nav:
   header:
     setLoginPage: 로그인 페이지로 설정
     restoreCards: 숨겨진 카드 복원
-    showHideBanner: 배너 표시/숨기기
+    showHideBanner: Show/Hide Banner    
   userMenu:
     preferences: 환경 설정
     accountAndKeys: 계정 및 API 키
@@ -289,10 +289,10 @@ nav:
 harvester:
   branding:
     logos:
-      tip: '상단 탐색 헤더에 있는 Infinitystack 로고를 대체할 로고를 업로드하세요. 이미지 높이는 21픽셀, 최대 너비는 200픽셀이어야 합니다. 최대 파일 크기는 20KB입니다. JPEG, PNG, SVG 형식을 지원합니다.'
+      tip: '상단 탐색 헤더에 있는 InfinityStack 로고를 대체할 로고를 업로드하세요. 이미지 높이는 21픽셀, 최대 너비는 200픽셀이어야 합니다. 최대 파일 크기는 20KB입니다. JPEG, PNG, SVG 형식을 지원합니다.'
     favicon:
-      tip: '브라우저 탭에 있는 Infinitystack 파비콘을 대체할 아이콘을 업로드하세요. 최대 파일 크기는 20KB입니다.'
-  productLabel: 'Infinitystack'
+      tip: '브라우저 탭에 있는 InfinityStack 파비콘을 대체할 아이콘을 업로드하세요. 최대 파일 크기는 20KB입니다.'
+  productLabel: 'InfinityStack'
   modal:
     backup:
       success: '백업 { backUpName } 이 시작 되었습니다.'
@@ -364,28 +364,10 @@ harvester:
       url: 문제 URL
       description: 설명
       requiredDesc: 설명은 필수입니다!
-      titleDescription: 문제 해결 및 지원에 도움이 되도록 Infinitystack에서 시스템 관련 로그를 수집합니다.
-      namespaces:
-        label: 네임스페이스스
-        tooltip: 지원 번들에 포함할 추가 네임스페이스를 선택하세요.<br/>자세한 내용은 support-bundle-namespaces 문서를 참조하세요.
-        selectAll: '모두 선택'
-        unselectAll: '모두 선택 취소'
-      timeout:
-        label: 타임아웃웃
-        tooltip: 지원 번들 생성 프로세스를 완료하는 데 몇 분이 소요됩니다.<br/>자세한 내용은 support-bundle-timeout 문서를 참조하세요.
-      expiration:
-        label: 만료
-        tooltip: 패키징되었지만 다운로드되지 않은 지원 번들을 삭제하기 몇 분 전입니다.<br/>자세한 내용은 support-bundle-expiration 문서를 참조하세요.
-      nodeTimeout:
-        label: 노드 수집 시간 초과
-        tooltip: 노드에서 로그/구성을 수집하는 데 허용되는 시간(분)입니다.<br/>자세한 내용은 support-bundle-node-collection-timeout 문서를 참조하세요.
+      titleDescription: 문제 해결 및 지원에 도움이 되도록 InfinityStack에서 시스템 관련 로그를 수집합니다.
     hotplug:
       success: '볼륨 { diskName }이 가상 머신 { vm }에 마운트되었습니다.'
       title: 불륨 추가
-    cpuMemoryHotplug:
-      success: 'CPU와 메모리가 가상 머신 { vm }에 업데이트됩니다.'
-      title: CPU 및 메모리 편집
-      maxResourcesMessage: 'CPU를 최대 { maxCpu }C로, 메모리를 최대 { maxMemory }로 늘릴 수 있습니다.'
     hotunplug:
       success: '볼륨 {name}이 성공적으로 분리되었습니다.'
     snapshot:
@@ -449,7 +431,6 @@ harvester:
     suspendSchedule: 유예
     restoreExistingVM: 기존 교체
     migrate: 마이그레이션
-    cpuAndMemoryHotplug: CPU 및 메모리 편집
     abortMigration: 마이그레이션 중단
     createTemplate: 템플릿 생성
     enableMaintenance: 유지 관리 모드 활성화
@@ -483,8 +464,6 @@ harvester:
           {count, plural,
           =1 {core}
           other {cores}}
-    harvesterIpAddress:
-      customIpTooltip: 사용자 지정 IP(주석을 통해 설정)"
   tableHeaders:
     imageEncryption: 암호화
     size: 크기
@@ -532,8 +511,6 @@ harvester:
     quotas: 할당량
     snapshots: 스냅샷
     instanceLabel: 인스턴스 라벨
-    annotations: 주석
-    addOns: 애드-온
   fields:
     version: 버전
     name: 이름
@@ -634,12 +611,10 @@ harvester:
       ruleFileTip: '선택하신 파일의 확장자는 저희가 지원하지 않습니다. .img, .iso, .qcow, .qcow2, .raw로 끝나는 이미지 파일만 허용됩니다.'
     hash:
       sha512: '잘못된 SHA512 체크섬입니다.'
-    subnet:
-      excludeIps: '제외 IP는 비워둘 수 없습니다. 제외 IP를 삭제하거나 입력해 주세요.'
 
   dashboard:
     label: 대시보드
-    header: "Infinitystack 클러스터: {cluster}"
+    header: "InfinityStack 클러스터: {cluster}"
     hardwareResourceGauge:
       cpu: CPU
       memory: 메모리
@@ -688,10 +663,10 @@ harvester:
       consoleUrl: 콘솔 URL
       more: 추가 정보
       uuid: UUID
-      containerRuntime: 컨테이너 런타임
-      kernel: 커널널
-      management: 관리 노드
-      compute: 컴퓨트 노드
+      containerRuntime: Container Runtime
+      kernel: Kernel
+      management: Management Node
+      compute: Compute Node
       storage: 스토리지
       nic: 물리 NIC
       notRecommended: '권장되지 않음'
@@ -809,10 +784,6 @@ harvester:
   virtualMachine:
     label: 가상 머신
     osType: 운영체제 유형
-    hotplug:
-      title: CPU 및 메모리 핫플러그 활성화
-      tooltip: 기본 최대 CPU 및 최대 메모리는 CPU 및 메모리를 기준으로 {hotPlugTimes} 배입니다.
-      restartVMMessage: 가상 머신 구성 변경 사항을 적용하려면 재시작 작업이 필요합니다.
     instance:
       singleInstance:
       multipleInstance:
@@ -962,9 +933,6 @@ harvester:
       invalidUser: 잘못된 사용자 이름입니다.
     input:
       name: 이름
-      cpu: CPU
-      maxCpu: 최대 CPU
-      maxMemory: 최대 Memory
       memory: 메모리
       image: 이미지
       sshKey: SSH키
@@ -1025,7 +993,6 @@ harvester:
         dedicatedResources: 전담 리소스
         down: 가상 머신이 실행되지 않음
         affinityRules: 선호도 규칙
-        phase: 단계
         sourceNode: 소스 노드
         targetNode: 대상 노드
         started: 시작됨
@@ -1063,8 +1030,6 @@ harvester:
       banner: 이러한 레이블은 가상 머신 인스턴스와 자동으로 동기화됩니다.
     labels:
       banner: 이러한 주요 값은 가상 머신에 레이블로 추가됩니다.
-    annotations:
-      banner: These key values are added as annotations to the virtual machine.
 
   volume:
     label: 볼륨
@@ -1126,8 +1091,6 @@ harvester:
         }
     checksum: 체크섬
     checksumTip: 지정된 경우 SHA512 체크섬을 사용하여 이미지를 검증합니다.
-    tooltip:
-      imported: vm-import-controller에 의해 자동으로 생성됨
 
   vmTemplate:
     label: 템플릿
@@ -1159,17 +1122,15 @@ harvester:
     selectExisting: 기존 이미지 선택
     createRepository: 업그레이드 저장소 생성
     succeeded: 성공
-    releaseTip: 업그레이드 설명서를 주의 깊게 읽어주세요. 자세한 내용은 <a href="{url}" target="_blank">Infinitystack 릴리스 노트</a>에서 확인하실 수 있습니다.
-    checkReady: 저는 이 Infinitystack 버전과 관련된 업그레이드 지침을 읽고 이해했습니다.
+    releaseTip: 업그레이드 설명서를 주의 깊게 읽어주세요. 자세한 내용은 <a href="{url}" target="_blank">InfinityStack 릴리스 노트</a>에서 확인하실 수 있습니다.
+    checkReady: 저는 이 InfinityStack 버전과 관련된 업그레이드 지침을 읽고 이해했습니다.
     pending: 보류 중
-    upload:
-      duplicatedFile: The file you are trying to upload already exists.
     repoInfo:
       upgradeStatus: 업그레이드 상태
       os: 운영체제
       kubernetes: Kubernetes
       monitoringChart: 모니터링 차트
-      harvesterChart: Infinitystack 차트
+      harvesterChart: InfinityStack 차트
       success: 성공
       fail:  실패
       ongoing: 진행중
@@ -1205,7 +1166,7 @@ harvester:
     maxFailure:
       label: 최대 실패
       count: Count
-      tooltip: 허용 가능한 연속 백업 실패 횟수의 최대값입니다. 이 임계값에 도달하면 Infinitystack 컨트롤러가 예약 작업을 일시 중단합니다. 이 값은 보유 횟수보다 작아야 합니다.
+      tooltip: 허용 가능한 연속 백업 실패 횟수의 최대값입니다. 이 임계값에 도달하면 InfinityStack 컨트롤러가 예약 작업을 일시 중단합니다. 이 값은 보유 횟수보다 작아야 합니다.
     virtualMachine:
       title: 가상 머신 이름
       placeholder: 가상 머신 선택
@@ -1238,7 +1199,7 @@ harvester:
         actionLabel: 테스트 연결
         waitingLabel: 연결 테스트...
         successLabel: 연결 테스트됨
-        successMessage: 'Infinitystack은 엔드포인트 {endpoint}에 성공적으로 연결할 수 있습니다.'
+        successMessage: 'InfinityStack은 엔드포인트 {endpoint}에 성공적으로 연결할 수 있습니다.'
     restore:
       backup: 백업
       deletePreviousVolumes: 이전 볼륨 삭제
@@ -1260,58 +1221,6 @@ harvester:
         starting: 복원 시작 중
         progress: 복원 진행 중
         complete: 복원 완료
-
-  subnet:
-    cidrBlock:
-      tooltip: CIDR 표기법으로 나타낸 서브넷 범위입니다. 동일 VPC 내 다른 서브넷의 CIDR 블록은 겹칠 수 없습니다.
-      label: CIDR 블록
-      placeholder: e.g. 172.20.0.0/16
-    protocol:
-      label: 프로토콜
-    provider:
-      tooltip: 이 서브넷의 네트워크 공급자입니다. OverlayNetwork 유형의 가상 머신 네트워크 중 하나여야 합니다.
-      label: 공급자
-    vpc:
-      label: 가상 프라이빗 클라우드
-    gateway:
-      label: 게이트웨이 IP
-      placeholder: e.g. 172.20.0.1
-    private:
-      label: 프라이빗 서브넷
-      tooltip: 이 서브넷에 대해 네트워크 격리를 활성화하세요. 활성화하면 VM은 동일한 VPC에 다른 서브넷이 있더라도 이 서브넷 내에서만 통신할 수 있습니다.
-    allowSubnet:
-      label: 서브넷 허용
-      tooltip: 이 서브넷과 통신할 수 있는 특정 서브넷을 지정할 수 있습니다.
-      addSubnet: 허용 서브넷 추가
-      placeholder: e.g. 172.16.0.0/16
-    excludeIPs:
-      tooltip: 자동 할당에서 예약할 IP 주소 목록입니다. 게이트웨이 IP 주소는 항상 제외되며 목록에 자동으로 추가됩니다.
-  
-  vpc:
-    noAddonEnabled:
-      prefix: kubeovn-operator 추가 기능이 활성화되지 않았습니다. 클릭하세요.
-      middle: 여기
-      suffix: 애드온이 VPC와 서브넷을 성공적으로 생성할 수 있도록 합니다.
-    label: 가상 프라이빗 클라우드
-    noChild: 이 가상 사설 클라우드에는 정의된 서브넷이 없습니다.
-    createSubnet: 서브넷 생성
-    staticRoutes:
-      label: 정적 라우트
-      cidr:
-        label: CIDR
-        placeholder: e.g. 172.16.0.0/16
-      nextHopIP:
-        tooltip: 피어링 VPC의 다른 쪽 끝에 있는 localConnectIP입니다.
-        label: 다음 홉 IP
-        placeholder: e.g. 169.254.0.2
-    vpcPeerings:
-      label: VPC 피어링
-      localConnectIP:
-        tooltip:  VPC 피어링 엔드포인트의 CIDR 표기법으로 지정된 IP 주소입니다. VPC와 다른 VPC의 IP 주소 모두 동일한 서브넷 범위에 속해야 하며, 기존 서브넷의 cidrBlock과 충돌해서는 안 됩니다.
-        label: 로컬 연결 IP
-        placeholder: e.g. 169.254.0.1/16
-      remoteVpc:
-        label: 원격 VPC
 
   network:
     label: 가상 머신 네트워크
@@ -1355,7 +1264,6 @@ harvester:
       accessKeyId: 액세스 키 ID를 지정하세요
       secretAccessKey: 비밀 액세스 키를 지정하세요
       cert: 자체 서명된 SSL 인증서를 업로드하세요
-    noSearchMatch: 검색 조건에 맞는 설정이 없습니다.
     vlanChangeTip: 새로 수정된 기본 네트워크 인터페이스는 새로 추가된 노드에만 적용되며, 기존 노드에는 적용되지 않습니다.
     defaultPhysicalNIC: 기본 네트워크 인터페이스e
     modifiedMessage: 기본 설정에서 사용자 정의된 설정에는 '수정됨'이라는 태그가 지정됩니다.
@@ -1369,9 +1277,6 @@ harvester:
       publicCertificate: 공공 인증서
       privateKey: 개인 키
       ca: CA
-    rancherCluster:
-      kubeConfig: Rancher KubeConfig
-      removeUpstreamClusterWhenNamespaceIsDeleted: 네임스페이스 삭제 시 업스트림 클러스터 제거
     storageNetwork:
       range:
         placeholder: e.g. 172.16.0.0/24
@@ -1385,28 +1290,14 @@ harvester:
         invalid: '"제외 목록"이 잘못되었습니다.'
         addIp: 제외 IP 추가
       warning: '경고: <br/> 스토리지 네트워크를 변경하려면 이 설정을 적용하기 전에 모든 가상 머신을 종료해야 합니다. <br/> 사용자는 클러스터 네트워크가 구성되었고 VLAN 구성이 모든 노드를 포괄하는지 확인해야 하며 모든 노드에서 네트워크 연결이 작동하고 예상대로 작동하는지 확인해야 합니다.'
-      tip: 'IPv4 CIDR 형식으로 IP 범위를 지정하세요. <code>필요한 IP 수 = 노드 수 * 4 + 디스크 수 * 2 + 다운로드/업로드할 이미지 수</code>. 저장소 네트워크 설정에 대한 자세한 내용은 <a href="{url}" target="_blank">설명서</a>를 참조하세요.'
+      tip: 'IPv4 CIDR 형식으로 IP 범위를 지정하세요. <code>필요한 IP 수 = 노드 수 * 4 + 디스크 수 * 2 + 다운로드/업로드할 이미지 수</code>. 저장소 네트워크 설정에 대한 자세한 내용은 <a href="{url}" target="_blank">설명서</a>를 참조하세요.
     vmForceDeletionPolicy:
       period: 기간
-    vmMigrationNetwork:
-      parseError: "기존 구성을 구문 분석하는 데 실패했습니다."
-      fetchError: "필요한 네트워크 리소스를 로드하지 못했습니다: {error}. 페이지를 새로 고치거나 나중에 다시 시도하세요."
-      clusterNetwork: Cluster Network
-      vlan: VLAN ID
-      range:
-        placeholder: e.g. 172.16.0.0/24
-        label: IP Range
-        invalid: '"범위"가 잘못되었습니다.'
-      exclude:
-        label: 제외된 IP
-        placeholder: e.g. 172.16.0.1/32
-        invalid: '"제외 목록"이 잘못되었습니다.'
-        addButton: 제외 IP 추가
     ratio : 비율
     autoRotateRKE2Certs:
       expiringInHours: 만료 날짜
     httpProxy:
-      warning: '경고: <br/> "http-proxy" 및 "https-proxy"를 구성하는 경우 Infinitystack 노드의 CIDR도 "no-proxy"로 설정해야 합니다. 그렇지 않으면 Infinitystack 클러스터가 손상됩니다.'
+      warning: '경고: <br/> "http-proxy" 및 "https-proxy"를 구성하는 경우 InfinityStack 노드의 CIDR도 "no-proxy"로 설정해야 합니다. 그렇지 않으면 InfinityStack 클러스터가 손상됩니다.'
     supportBundleImage:
       imagePullPolicy: Pull 정책
       repo: 저장소
@@ -1415,11 +1306,6 @@ harvester:
       provisioner: 제공자
       volumeSnapshotClassName: 볼륨 스냅샷 클래스 이름
       backupVolumeSnapshotClassName: 백업 볼륨 스냅샷 클래스 이름
-    csiOnlineExpandValidation:
-      provisioner: 제공자
-      value: 값값
-      invalidJsonFormat: "구성 값이 유효한 JSON 형식이 아닙니다: {error}"
-      failedToLoadDrivers: "CSI 드라이버를 로드하지 못했습니다. 오류: {error}"
     containerdRegistry:
       mirrors:
         mirrors: 미러
@@ -1445,29 +1331,20 @@ harvester:
       imageUrl: 유효한 이미지 URL을 입력하세요.
       chooseFile: 이미지를 업로드하려면 선택하세요.
       checksum: 체크섬
-      networkError: 이미지를 업로드할 수 없습니다. 발생한 네트워크 문제를 해결하고 다시 시도해 보세요.
-      cancelUpload: 이미지 업로드를 취소했습니다.
-      uploadSuccess:  "{name}이(가) 성공적으로 업로드되었습니다. 업그레이드 버튼을 눌러 클러스터 업그레이드 프로세스를 시작하세요."
-      deleteImage: 삭제할 이미지를 선택해 주세요.
-      deleteSuccess: "{name}이(가) 성공적으로 삭제되었습니다."
-      imagePreloadStrategy: 이미지 사전 로드 전략
-      restoreVM: VM 복원
-      strategyType: 전략 유형
-      concurrency: 동시성
     harvesterMonitoring:
-      label: Infinitystack 모니터링
+      label: InfinityStack 모니터링
       section:
-        prometheus: 프로메테우스
-        prometheusNodeExporter: 프로메테우스 노드 Exporter
-        grafana: 그라파나
-        alertmanager: Alert관리자
+        prometheus: Prometheus
+        prometheusNodeExporter: Prometheus Node Exporter
+        grafana: Grafana
+        alertmanager: Alertmanager
       tips:
         scrape: 연속 스크래핑 사이의 간격
         evaluation: 연속 평가 간 간격
         retention: 메트릭을 보관하는 기간
         retentionSize: 측정항목의 최대 크기
     clusterRegistrationUrl:
-      message: 가져온 Infinitystack 클러스터를 완전히 해제하려면 <code>가상화 관리</code> 페이지를 통해 Rancher 대시보드 UI에서도 제거하세요.
+      message: 가져온 InfinityStack 클러스터를 완전히 해제하려면 <code>가상화 관리</code> 페이지를 통해 Rancher 대시보드 UI에서도 제거하세요.
     ntpServers:
       isNotIPV4: 입력하신 주소는 IPv4 또는 호스트가 아닙니다. 유효한 IPv4 주소 또는 호스트 주소를 입력하세요.
       isDuplicate: 중복된 NTP 서버 구성이 있습니다.
@@ -1478,19 +1355,19 @@ harvester:
     networkData: 네트워크 데이터
 
   support:
-    title: Infinitystack 지원
+    title: InfinityStack 지원
     kubeconfig:
       title: KubeConfig 다운로드
       titleDescription: 디버깅을 위해 kubeconfig를 다운로드하세요.
     internal:
       rancher:
         title: 임베디드 Rancher UI에 액세스
-        titleDescription: 내장된 Rancher UI는 디버깅 및 검증 목적으로만 사용할 수 있습니다. Infinitystack와 Rancher 통합 방식에 대한 자세한 내용은 <a target="_blank" href="{url}" rel="noopener noreferrer nofollow">문서</a>를 참조하세요.
+        titleDescription: 내장된 Rancher UI는 디버깅 및 검증 목적으로만 사용할 수 있습니다. InfinityStack와 Rancher의 통합 방식에 대한 자세한 내용은 <a target="_blank" href="{url}" rel="noopener noreferrer nofollow">문서</a>를 참조하세요.
       longhorn:
         title: 임베디드 롱혼 UI에 액세스
         titleDescription: 디버깅 및 검증 목적으로만 내장된 Longhorn UI를 지원합니다.
     community:
-      learnMore: SUSE Infinitystack 지원에 대해 자세히 알아보세요
+      learnMore: SUSE InfinityStack 지원에 대해 자세히 알아보세요
       pricing: 가격 문의
 
   namespace:
@@ -1615,33 +1492,6 @@ harvester:
     allowedTopologies:
       title: 허용된 토폴로지
       tooltip: 허용된 토폴로지는 아래 표현식을 모두 충족하는 호스트에서 가상 머신을 예약하는 데 도움이 됩니다.
-    
-    internal:
-      label: 내부 저장소 클래스
-      cannotDeleteTooltip: 내부 저장소 클래스 볼륨을 삭제할 수 없습니다.
-      cannotDeleteOrDefaultTooltip: 내부 저장소 클래스는 삭제하거나 기본값으로 설정할 수 없습니다.
-    cdiSettings:
-      label: CDI 설정
-      volumeModeAccessModes:
-        label: 볼륨 모드/액세스 모드
-        tooltip: 기본 볼륨 모드와 액세스 모드를 지정합니다.
-        add: 추가
-        volumeMode: 볼륨 모드
-        accessModes:
-          label: 액세스 모드
-      volumeSnapshotClass:
-        label: 볼륨 스냅샷 클래스
-        tooltip: 이 StorageClass에서 PVC의 스냅샷을 찍을 때 사용할 볼륨 스냅샷 클래스 이름을 설정합니다.
-      cloneStrategy:
-        label: 클론 전략
-        tooltip: 이 StorageClass로 생성된 볼륨에 사용할 복제 전략을 정의합니다.
-        copy: 복사
-        snapshot: 스냅샷
-        csiClone: CSI 클론
-      fileSystemOverhead:
-        label: 파일 시스템 오버헤드
-        tooltip: PVC 크기를 계산할 때 고려할 파일 시스템 오버헤드의 백분율을 지정합니다.
-        placeholder: '예: 0.05(소수점 3자리까지, 0~1 사이)'
 
   vlanConfig:
     title: 네트워크 구성
@@ -1699,17 +1549,17 @@ harvester:
 
   addons:
     descriptions:
-      'harvester-system/vm-import-controller': vm-import-controller는 다른 소스 클러스터에서 기존 Infinitystack 클러스터로 가상 머신 워크로드를 마이그레이션하는 데 도움이 되는 추가 기능입니다.
-      'harvester-system/pcidevices-controller': pcidevices-controller는 클러스터의 노드에 대한 PCI 장치를 검색하고 사용자가 Infinitystack 가상 머신 및 게스트 클러스터와 함께 사용할 PCI 패스스루를 위한 장치를 준비할 수 있도록 돕는 애드온입니다.
-      'cattle-logging-system/rancher-logging': rancher-logging은 Infinitystack 클러스터에서 다양한 로그, 이벤트, 감사를 수집하고 흐름에 따라 다양한 종류의 서버로 라우팅하는 애드온입니다.
-      'harvester-system/rancher-vcluster': rancher-vcluster는 Rancher이 설치된 가상 클러스터(vcluster)를 배포합니다.
-      'cattle-monitoring-system/rancher-monitoring': rancher-monitoring은 Infinitystack 클러스터와 가상 머신 메트릭을 수집하고 내장된 대시보드에서 메트릭을 보고 원격 서버로 알림을 보낼 수 있는 애드온입니다.
-      'vm-import-controller': vm-import-controller는 다른 소스 클러스터에서 기존 Infinitystack 클러스터로 가상 머신 워크로드를 마이그레이션하는 데 도움이 되는 추가 기능입니다.
-      'pcidevices-controller': pcidevices-controller는 클러스터의 노드에 대한 PCI 장치를 검색하고 사용자가 Infinitystack 가상 머신 및 게스트 클러스터와 함께 사용할 PCI 패스스루를 위한 장치를 준비할 수 있도록 돕는 애드온입니다.
-      'nvidia-driver-toolkit': 'nvidia-driver-toolkit은 vGPU 장치를 활성화하고 이를 Infinitystack 가상 머신에 할당하는 애드온입니다.'
-      'rancher-logging': rancher-logging은 Infinitystack 클러스터에서 다양한 로그, 이벤트 및 감사를 수집하고 흐름에 따라 여러 종류의 서버로 라우팅하는 애드온입니다..
-      'rancher-monitoring': rancher-monitoring은 Infinitystack 클러스터와 가상 머신 메트릭을 수집하고, 내장된 대시보드에서 이를 보고, 원격 서버로 알림을 보내는 애드온입니다.
-      'rancher-vcluster': rancher-vcluster는 Rancher이 설치된 가상 클러스터(vcluster)를 배포합니다.
+      'harvester-system/vm-import-controller': vm-import-controller는 다른 소스 클러스터에서 기존 InfinityStack 클러스터로 가상 머신 워크로드를 마이그레이션하는 데 도움이 되는 추가 기능입니다.
+      'harvester-system/pcidevices-controller': pcidevices-controller는 클러스터의 노드에 대한 PCI 장치를 검색하고 사용자가 InfinityStack 가상 머신 및 게스트 클러스터와 함께 사용할 PCI 패스스루를 위한 장치를 준비할 수 있도록 돕는 애드온입니다.
+      'cattle-logging-system/rancher-logging': rancher-logging은 InfinityStack 클러스터에서 다양한 로그, 이벤트, 감사를 수집하고 흐름에 따라 다양한 종류의 서버로 라우팅하는 애드온입니다.
+      'harvester-system/rancher-vcluster': rancher-vcluster는 Rancher가 설치된 가상 클러스터(vcluster)를 배포합니다.
+      'cattle-monitoring-system/rancher-monitoring': rancher-monitoring은 InfinityStack 클러스터와 가상 머신 메트릭을 수집하고 내장된 대시보드에서 메트릭을 보고 원격 서버로 알림을 보낼 수 있는 애드온입니다.
+      'vm-import-controller': vm-import-controller는 다른 소스 클러스터에서 기존 InfinityStack 클러스터로 가상 머신 워크로드를 마이그레이션하는 데 도움이 되는 추가 기능입니다.
+      'pcidevices-controller': pcidevices-controller는 클러스터의 노드에 대한 PCI 장치를 검색하고 사용자가 InfinityStack 가상 머신 및 게스트 클러스터와 함께 사용할 PCI 패스스루를 위한 장치를 준비할 수 있도록 돕는 애드온입니다.
+      'nvidia-driver-toolkit': 'nvidia-driver-toolkit은 vGPU 장치를 활성화하고 이를 InfinityStack 가상 머신에 할당하는 애드온입니다.'
+      'rancher-logging': rancher-logging은 InfinityStack 클러스터에서 다양한 로그, 이벤트 및 감사를 수집하고 흐름에 따라 여러 종류의 서버로 라우팅하는 애드온입니다..
+      'rancher-monitoring': rancher-monitoring은 InfinityStack 클러스터와 가상 머신 메트릭을 수집하고, 내장된 대시보드에서 이를 보고, 원격 서버로 알림을 보내는 애드온입니다.
+      'rancher-vcluster': rancher-vcluster는 Rancher가 설치된 가상 클러스터(vcluster)를 배포합니다.
       'harvester-seeder': harvester-seeder는 IPMI와 Redfish를 사용하여 하드웨어 정보를 검색하고 대역 외 작업을 수행하는 애드온입니다.
       'harvester-system/harvester-seeder': harvester-seeder는 IPMI와 Redfish를 사용하여 하드웨어 정보를 검색하고 대역 외 작업을 수행하는 애드온입니다.
       'harvester-csi-driver-lvm': harvester-csi-driver-lvm은 사용자가 로컬 장치로 LVM을 통해 PVC를 생성할 수 있도록 해주는 애드온입니다.
@@ -1791,9 +1641,9 @@ harvester:
     tabs:
       range: 범위
       scope: Scope
-      selector: 수집기
+      selector: 수집기기
     subnet:
-      label: 서브넷
+      label: 서브넷넷
     startIP:
       label: 시작IP
     endIP:
@@ -1801,7 +1651,7 @@ harvester:
     gateway:
       label: 게이트웨이
     namespace:
-      label: 네임스페이스
+      label: 네임스페이스스
     project:
       label: 프로젝트
     guestCluster:
@@ -1853,7 +1703,7 @@ harvester:
     vGpuDevices: vGPU 장치
     showMore: 더보기
     parentSriov: 부모 SR-IOV GPU로 필터링
-    noPermission: 먼저 시스템 관리자에게 문의하여 Infinitystack 애드온을 추가하세요.
+    noPermission: 먼저 시스템 관리자에게 문의하여 InfinityStack 애드온을 추가하세요.
     goSetting:
       prefix: nvidia-driver-toolkit 추가 기능이 활성화되지 않았습니다. 클릭하세요.
       middle: 여기
@@ -1861,7 +1711,7 @@ harvester:
 
   vgpu:
     label: vGPU 장치
-    noPermission: Infinitystack 애드온을 추가하려면 먼저 시스템 관리자에게 문의하세요.
+    noPermission: InfinityStack 애드온을 추가하려면 먼저 시스템 관리자에게 문의하세요.
     goSetting:
       prefix: nvidia-driver-toolkit 추가 기능이 활성화되지 않았습니다. 클릭하세요.
       middle: 여기
@@ -1879,7 +1729,7 @@ harvester:
 
   usb:
     label: USB 장치
-    noPermission: 먼저 시스템 관리자에게 문의하여 Infinitystack 추가 기능을 추가하세요.
+    noPermission: 먼저 시스템 관리자에게 문의하여 InfinityStack 추가 기능을 추가하세요.
     goSetting:
       prefix: pcidevices-controller 추가 기능이 활성화되지 않았습니다. 클릭하세요.
       middle: 여기
@@ -2226,7 +2076,7 @@ authConfig:
       tip: 연결 프로세스 중에 TLS로 래핑하여 암호화되지 않은 연결을 업그레이드합니다. TLS와 함께 사용할 수 없습니다.
     searchUsingServiceAccount: 
       label: 서비스 계정 검색 활성화
-      tip: 이 기능을 활성화하면 Rancher은 사용자 계정 대신 서비스 계정을 사용하여 사용자와 그룹을 검색합니다.
+      tip: 이 기능을 활성화하면 Rancher는 사용자 계정 대신 서비스 계정을 사용하여 사용자와 그룹을 검색합니다.
     tls: TLS
     userEnabledAttribute: 사용자 활성화 속성
     userMemberAttribute: 사용자 멤버 속성
@@ -2551,15 +2401,6 @@ dialog:
       message: "{type} {names}을(를) 중지하시겠습니까?"
     pause:
       message: "{type} {names}을(를) 일시 중지하시겠습니까?"
-    restart:
-      message: "{type} {names}을(를) 다시 시작하시겠습니까?"
-    softreboot:
-      message: "{type} {names}를 소프트 재부팅하시겠습니까?"  
-  promptRemove:
-    title: "{type} 삭제제"
-    warningMessage: "선택한 {type}을(를) 삭제하면 {thisOrThese} {type}의 모든 리소스가 영구적으로 삭제됩니다. 이 작업은 되돌릴 수 없습니다. 계속하시겠습니까?"
-    confirmName: "{type}을 삭제하려면 <b>{nameToMatch</b>를 입력하세요."
-    protip: "팁: 확인 단계를 건너뛰려면 삭제를 클릭하는 동안 {alternateLabel} 키를 누르세요."
 
 backupRestoreOperator:
   backup:
@@ -3030,7 +2871,7 @@ cluster:
       label: vSphere
       note: "<b>중요:</b> Add-On Config 탭에서 vSphere Cloud Provider 및 Storage Provider 옵션을 구성하십시오."
     harvester:
-      label: Infinitystack
+      label: InfinityStack
   copyConfig: KubeConfig 복사
   copiedConfig: KubeConfig를 클립보드에 복사했습니다.
   custom:
@@ -3196,25 +3037,25 @@ cluster:
       kubeconfigContent:
         label: Kubeconfig 콘텐츠
       placeholder: "네임스페이스/이름"
-      cluster: 가져온 Infinitystack 클러스터
+      cluster: 가져온 InfinityStack 클러스터
       installGuestAgent: 게스트 에이전트 설치
   description:
     label: 클러스터 설명
     placeholder: 이 클러스터를 더 잘 설명하는 임의의 텍스트
   harvester:
-    importNotice: Infinitystack 클러스터 가져오기
+    importNotice: InfinityStack 클러스터 가져오기
     warning:
-      label: 이것은 Infinitystack 클러스터입니다 - Infinitystack 기능 플래그를 활성화하여 관리하세요
+      label: 이것은 InfinityStack 클러스터입니다 - InfinityStack 기능 플래그를 활성화하여 관리하세요
       state: 경고
       cloudProvider:
-        incompatible: 선택한 RKE2 쿠버네티스 버전과 현재 Infinitystack 버전이 호환되지 않으므로 Infinitystack 클라우드 프로바이더를 선택할 수 없습니다. 사용 가능한 쿠버네티스 버전은 <a target="_blank" rel="noopener noreferrer nofollow" href="https://www.suse.com/suse-harvester/support-matrix/all-supported-versions">여기</a>에서 확인하세요.
+        incompatible: 선택한 RKE2 쿠버네티스 버전과 현재 InfinityStack 버전이 호환되지 않으므로 InfinityStack 클라우드 프로바이더를 선택할 수 없습니다. 사용 가능한 쿠버네티스 버전은 <a target="_blank" rel="noopener noreferrer nofollow" href="https://www.suse.com/suse-harvester/support-matrix/all-supported-versions">여기</a>에서 확인하세요.
     clusterWarning: |-
       There {count, plural,
-      =1 {표시되지 않은 1개의 Infinitystack 클러스터입니다.}
-      other {표시되지 않는 # Infinitystack 클러스터가 있습니다.}
+      =1 {표시되지 않은 1개의 InfinityStack 클러스터입니다.}
+      other {표시되지 않는 # InfinityStack 클러스터가 있습니다.}
       }
     registration:
-      step1: "1. 대상 Infinitystack UI의 <code>고급 / 설정</code> 페이지로 이동하세요."
+      step1: "1. 대상 InfinityStack UI의 <code>고급 / 설정</code> 페이지로 이동하세요."
       step2: '<code>클러스터-등록-URL</code> 설정을 찾아 <code><i class="icon icon-actions" ></i></code> -> <code>설정 편집</code> 버튼을 클릭하세요.'
       step3: "3. 다음 등록 URL을 입력하고 <code>저장</code> 버튼을 클릭하세요."
       step4: "등록 URL"
@@ -3322,7 +3163,7 @@ cluster:
       managedDisksSize:
         label: 관리 디스크 크기
       nsg:
-        help: Rancher이 관리하거나 기존 NSG를 제공하는 경우이 템플릿을 사용하는 모든 노드가 제공된 NSG를 사용합니다. NSG가 제공되지 않으면 각 노드에 대해 새 NSG가 생성됩니다.
+        help: Rancher가 관리하거나 기존 NSG를 제공하는 경우이 템플릿을 사용하는 모든 노드가 제공된 NSG를 사용합니다. NSG가 제공되지 않으면 각 노드에 대해 새 NSG가 생성됩니다.
         label: 네트워크 보안 그룹
       openPort:
         add: 포트 추가
@@ -3745,7 +3586,7 @@ cluster:
     googlegke: Google GKE
     gke: Google GKE
     googlekubernetesengine: Google GKE (Unsupported Kev1)
-    harvester: Infinitystack
+    harvester: InfinityStack
     huaweicce: Huawei CCE
     import: 일반
     imported: 가져옴
@@ -4163,21 +4004,21 @@ fleet:
   clusters:
     harvester: |-
       There {count, plural,
-      =1 {지속적인 배포(Continuous Delivery)에 사용할 수 없기 때문에 숨겨진 Infinitystack 클러스터 1개가 있습니다.}
-      other {지속적인 배포(Continuous Delivery)에 사용할 수 없기 때문에 숨겨진 Infinitystack 클러스터가 #개 있습니다.}
+      =1 {지속적인 배포(Continuous Delivery)에 사용할 수 없기 때문에 숨겨진 InfinityStack 클러스터 1개가 있습니다.}
+      other {지속적인 배포(Continuous Delivery)에 사용할 수 없기 때문에 숨겨진 InfinityStack 클러스터가 #개 있습니다.}
       }
   tokens:
     harvester: |-
       {count, plural,
-      =1 {지속적인 배포(Continuous Delivery)에 사용할 수 없는 Infinitystack 클러스터에 속해 있기 때문에 토큰 1개가 숨겨졌습니다.}
-      other {지속적인 배포(Continuous Delivery)에 사용할 수 없는 Infinitystack 클러스터에 속해 있기 때문에 토큰 #개가 숨겨졌습니다.}
+      =1 {지속적인 배포(Continuous Delivery)에 사용할 수 없는 InfinityStack 클러스터에 속해 있기 때문에 토큰 1개가 숨겨졌습니다.}
+      other {지속적인 배포(Continuous Delivery)에 사용할 수 없는 InfinityStack 클러스터에 속해 있기 때문에 토큰 #개가 숨겨졌습니다.}
       }
   bundles:
     resources: Resources
     harvester: |-
       {count, plural,
-      =1 {지속적인 배포(Continuous Delivery)에 사용할 수 없는 Infinitystack 클러스터에 속해 있기 때문에 번들 1개가 숨겨졌습니다.}
-      other {지속적인 배포(Continuous Delivery)에 사용할 수 없는 Infinitystack 클러스터에 속해 있기 때문에 번들 #개가 숨겨졌습니다.}
+      =1 {지속적인 배포(Continuous Delivery)에 사용할 수 없는 InfinityStack 클러스터에 속해 있기 때문에 번들 1개가 숨겨졌습니다.}
+      other {지속적인 배포(Continuous Delivery)에 사용할 수 없는 InfinityStack 클러스터에 속해 있기 때문에 번들 #개가 숨겨졌습니다.}
       }
   fleetSummary:
     noClustersGitRepo: 이 git 저장소는 어떤 클러스터도 대상으로 하지 않습니다
@@ -5169,7 +5010,7 @@ neuvector:
 
 login:
   howdy: 안녕하세요!
-  welcome: "Infinitystack에 오신 것을 환영합니다."
+  welcome: "{vendor}에 오신 것을 환영합니다."
   loggedOut: 로그아웃되었습니다.
   loggedOutFromSso: You've been logged out of Rancher, however you may still be logged in to your single sign-on identity provider.
   loggedOutFromSlo: You've been logged out of Rancher and from your single sign-on identity provider.
@@ -5888,7 +5729,7 @@ persistentVolume:
       disk-csi-azure-com: Azure Disk (CSI)
       file-csi-azure-com: Azure File (CSI)
       driver-longhorn-io: Longhorn (CSI)
-      driver-harvesterhci-io: Infinitystack (CSI)
+      driver-harvesterhci-io: InfinityStack (CSI)
       lvm-driver-harvesterhci-io: LVM
       nfs-csi-k8s-io: NFS (CSI)
       ebs-csi-aws-com: AWS Elastic Block Store (CSI)
@@ -7180,7 +7021,7 @@ setup:
   telemetry: <a href="{docsBase}/faq/telemetry/" target="_blank" rel="noopener noreferrer nofollow">익명 통계 정보</a> 수집을 허용하여 {name}을(를) 개선하는 데 도움을 주십시오.
   useManual: 특정 비밀번호 설정
   useRandom: 무작위 생성된 비밀번호 사용
-  welcome: "Infinitystack에 오신 것을 환영합니다!"
+  welcome: "{vendor}에 오신 것을 환영합니다!"
 
 sortableTable:
   genericGroupCheckbox: 테이블 그룹 선택 체크박스
@@ -7510,13 +7351,13 @@ storageClass:
     title: (폐기 예정)
     warning: '{provisioner} in-tree 플러그인은 폐기 예정입니다. <a target="_blank" rel="noopener noreferrer nofollow" href="https://kubernetes-csi.github.io/docs/drivers.html">여기에서</a> CSI 드라이버를 찾으세요.'
   harvesterhci:
-    title: Infinitystack (CSI)
+    title: InfinityStack (CSI)
     warning:
-      unSatisfiesVersion: 이 기능을 사용하려면 Infinitystack CSI 드라이버 버전을 업그레이드하세요. (csi-driver >= v0.1.15)
+      unSatisfiesVersion: 이 기능을 사용하려면 InfinityStack CSI 드라이버 버전을 업그레이드하세요. (csi-driver >= v0.1.15)
     hostStorageClass:
       label: 호스트 스토리지 클래스
-      placeholder: 호스트 Infinitystack 클러스터의 스토리지 클래스 이름
-      tooltip: 기본적으로 호스트 Infinitystack 클러스터의 기본 스토리지 클래스가 사용됩니다.
+      placeholder: 호스트 InfinityStack 클러스터의 스토리지 클래스 이름
+      tooltip: 기본적으로 호스트 InfinityStack 클러스터의 기본 스토리지 클래스가 사용됩니다.
 
 tableHeaders:
   assuredConcurrencyShares: 보장된 동시성 공유
@@ -8658,7 +8499,7 @@ typeDescription:
   logging.banzaicloud.io.flow: flow는 수집 및 필터링할 로그 및 로그를 보낼 Output을 정의합니다. flow는 네임스페이스별 리소스이므로 로그는 flow가 배포된 네임스페이스에서만 수집됩니다.
   logging.banzaicloud.io.output: Output은 로그를 전송할 수 있는 로깅 제공자를 정의합니다. Output은 해당 Output을 사용하는 flow와 동일한 네임스페이스에 있어야 합니다.
   group.principal: 그룹에 전역 역할을 할당하는 것은 그룹을 지원하는 외부 인증 공급자에서만 작동합니다. 로컬 권한 부여는 그룹을 지원하지 않습니다.
-  harvester: "브랜딩을 통해 관리자는 Infinitystack 제품 이름, 로고 및 색 구성표를 사용자 정의하여 UI를 전 세계적으로 리브랜딩할 수 있습니다."
+  harvester: "브랜딩을 통해 관리자는 InfinityStack 제품 이름, 로고 및 색 구성표를 사용자 정의하여 UI를 전 세계적으로 리브랜딩할 수 있습니다."
 
 typeLabel:
   kubevirt.io.virtualmachine: |-
@@ -8716,11 +8557,6 @@ typeLabel:
       one { 가상 머신 백업 }
       other { 가상 머신 백업 }
     }  
-  kubeovn.io.vpc: |-
-    {count, plural,
-      one { 가상 프라이빗 클라우드 }
-      other { 가상 프라이빗 클라우드 }
-    }
   harvesterhci.io.volumesnapshot: |-
     {count, plural,
       one { 볼륨 스냅샷 }
@@ -9187,8 +9023,8 @@ typeLabel:
     }
   harvesterhci.io.management.cluster: |-
     {count, plural,
-      one { Infinitystack 클러스터 }
-      other { Infinitystack 클러스터 }
+      one { InfinityStack 클러스터 }
+      other { InfinityStack 클러스터 }
     }
   harvesterhci.io.cloudtemplate: |-
     {count, plural,
@@ -9514,20 +9350,19 @@ advancedSettings:
     'imported-cluster-version-management': 가져온 RKE2/K3s 클러스터와 로컬 클러스터(RKE2/K3s 클러스터인 경우)에 대한 버전 관리를 활성화합니다. 클러스터별 버전 관리 설정은 클러스터 수준에서 이 전역 설정을 재정의합니다. 클러스터 수준 버전 관리가 'system-default'로 설정된 기존 클러스터의 경우, 이 플래그를 변경하면 다음 조정 시(기본적으로 5분마다 또는 클러스터가 편집되는 즉시, 둘 중 먼저 발생하는 시점) 클러스터 에이전트가 다시 배포됩니다.
     'harv-vlan': VLAN 네트워크의 기본 네트워크 인터페이스 이름입니다.
     'harv-backup-target': 가상 머신 백업을 저장하기 위한 사용자 정의 백업 대상입니다.
-    'branding': 브랜딩을 통해 관리자는 Infinitystack 제품 이름, 로고, 색 구성표를 사용자 정의하여 UI를 전 세계적으로 리브랜딩할 수 있습니다.
+    'branding': 브랜딩을 통해 관리자는 InfinityStack 제품 이름, 로고, 색 구성표를 사용자 정의하여 UI를 전 세계적으로 리브랜딩할 수 있습니다.
     'harv-csi-driver-config': CSI 드라이버에 대한 추가 정보를 구성합니다.
-    'harv-csi-online-expand-validation': 특정 CSI 드라이버에 대한 온라인 볼륨 확장을 허용합니다.
     'harv-containerd-registry': 개인 레지스트리를 연결하기 위한 Containerd 레지스트리 구성.
-    'harv-log-level': Infinitystack 서버 로그 수준을 구성합니다. 기본값은 Info입니다.
-    'harv-server-version': Infinitystack 서버 버전.
-    'harv-upgrade-checker-enabled': Infinitystack 업그레이드 확인 기능을 활성화할지 여부를 지정합니다. 기본값은 True입니다.
-    'harv-upgrade-checker-url': 기본 Infinitystack 업그레이드 확인 URL입니다. <code>upgrade-checker-enabled</code>가 True인 경우에만 사용됩니다.
+    'harv-log-level': InfinityStack 서버 로그 수준을 구성합니다. 기본값은 Info입니다.
+    'harv-server-version': InfinityStack 서버 버전.
+    'harv-upgrade-checker-enabled': InfinityStack 업그레이드 확인 기능을 활성화할지 여부를 지정합니다. 기본값은 True입니다.
+    'harv-upgrade-checker-url': 기본 InfinityStack 업그레이드 확인 URL입니다. <code>upgrade-checker-enabled</code>가 True인 경우에만 사용됩니다.
     'harv-ui-source': UI 소스를 로드하는 방법을 구성합니다.
     'harv-ui-index': 'UI에 대한 HTML 인덱스 위치.'
-    'harv-ui-plugin-index': 'Infinitystack 플러그인 UI의 JS 인덱스 위치입니다.'
+    'harv-ui-plugin-index': 'InfinityStack 플러그인 UI의 JS 인덱스 위치입니다.'
     'harv-cluster-registration-url': 멀티 클러스터 관리를 위한 등록 URL입니다.
-    'harv-http-proxy': 'Infinitystack 외부 서비스에 접근하기 위한 HTTP 프록시입니다.'
-    'harv-additional-ca': TLS 검증을 위한 사용자 정의 CA 루트 인증서.
+    'harv-http-proxy': 'InfinityStack 외부 서비스에 접근하기 위한 HTTP 프록시입니다.'
+    'harv-additional-ca': 'TLS 검증을 위한 사용자 정의 CA 루트 인증서.'
     'harv-overcommit-config': '리소스 오버커밋 구성.'
     'harv-support-bundle-timeout': '분 단위의 지원 번들 시간 초과 구성, 시간 초과를 비활성화하려면 0을 사용하세요.'
     'harv-support-bundle-expiration': '지원 번들의 만료 시간을 분 단위로 설정.'
@@ -9536,21 +9371,17 @@ advancedSettings:
     'harv-ssl-parameters': TLS 검증을 위한 사용자 정의 SSL 매개변수.
     'harv-storage-network': 'Longhorn 스토리지 네트워크 설정.'
     'harv-support-bundle-namespaces': 지원 패키지에서 수집할 다른 네임스페이스의 리소스를 지정합니다.
-    'harv-auto-disk-provision-paths': Infinitystack 가상 머신 스토리지로 자동으로 추가할 디스크를 지정합니다(glob 패턴 사용).
+    'harv-auto-disk-provision-paths': InfinityStack 가상 머신 스토리지로 자동으로 추가할 디스크를 지정합니다(glob 패턴 사용).
     'harv-support-bundle-image': 번들 이미지 구성을 지원합니다. <a href="https://hub.docker.com/r/rancher/support-bundle-kit/tags" target="_blank">rancher/support-bundle-kit</a>에서 다른 버전을 확인하세요.
-    'harv-release-download-url': 이 설정을 사용하면 <code>업그레이드 릴리스 다운로드</code> URL 주소를 구성할 수 있습니다. Infinitystack는 구성된 URL에서 호스팅되는 (<code>$URL</code>/<code>$VERSION</code>/version.yaml) 파일에서 ISO URL과 체크섬 값을 가져옵니다.
+    'harv-release-download-url': 이 설정을 사용하면 <code>업그레이드 릴리스 다운로드</code> URL 주소를 구성할 수 있습니다. InfinityStack는 구성된 URL에서 호스팅되는 (<code>$URL</code>/<code>$VERSION</code>/version.yaml) 파일에서 ISO URL과 체크섬 값을 가져옵니다.
     'harv-default-vm-termination-grace-period-seconds': 가상 머신 중지에 대한 가상 머신 종료 유예 기간을 구성합니다.
     'harv-ntp-servers': NTP 서버를 구성하세요. 여러 IPv4 주소 또는 호스트 주소를 구성할 수 있습니다.
-    'harv-auto-rotate-rke2-certs': 인증서 순환 메커니즘은 Rancher를 기반으로 합니다. Infinitystack는 인증서 생성을 자동으로 업데이트하여 순환을 트리거합니다.
-    'harv-kubeconfig-default-token-ttl-minutes': 'Infinitystack 관리 kubeconfig 파일에 적용되는 TTL(분)입니다. 기본값은 0이며, 만료되지 않음을 의미합니다.'
+    'harv-auto-rotate-rke2-certs': 인증서 순환 메커니즘은 Rancher를 기반으로 합니다. InfinityStack는 인증서 생성을 자동으로 업데이트하여 순환을 트리거합니다.
+    'harv-kubeconfig-default-token-ttl-minutes': 'InfinityStack 관리 kubeconfig 파일에 적용되는 TTL(분)입니다. 기본값은 0이며, 만료되지 않음을 의미합니다.'
     'harv-longhorn-v2-data-engine-enabled': 'Longhorn V2 데이터 엔진을 활성화합니다. 기본값은 false입니다. <ul><li>이 설정을 변경하면 모든 노드에서 RKE2가 다시 시작됩니다. 실행 중인 VM 워크로드에는 영향을 미치지 않습니다.</li><li>이 설정을 활성화할 때 "hugepages 용량 부족 - 2Mi" 오류가 표시되면 오류가 사라질 때까지 잠시 기다리세요. 오류가 지속되면 영향을 받는 노드를 재부팅하세요.</li></ul>'
-    'harv-additional-guest-memory-overhead-ratio': 'Kubevirt가 VM 오버헤드 메모리를 조정하는 비율입니다. 값은 0, 빈 값 또는 1.0에서 10.0 사이의 부동 소수점 수일 수 있으며, 기본값은 1.5입니다.'
-    'harv-upgrade-config': '업그레이드를 위한 이미지 사전 로딩 및 VM 복원 옵션을 구성합니다. <a href="{url}" target="_blank" rel="noopener">settings/upgrade-config</a>에서 관련 필드를 참조하세요.'
-    'harv-vm-migration-network': 'VM 마이그레이션 트래픽을 위한 분리된 네트워크.VM 마이그레이션 트래픽을 위한 분리된 네트워크.'
-    'harv-rancher-cluster': '게스트 클러스터 관리를 위해 Rancher 클러스터 통합 설정을 구성합니다.'
-    'harv-max-hotplug-ratio': 'kubevirt가 VM에 핫플러그로 연결할 수 있는 최대 CPU 및 메모리를 제한하는 비율입니다. 값은 1에서 20 사이의 정수이며, 기본값은 4입니다.'
+    'harv-additional-guest-memory-overhead-ratio': 'TKubevirt가 VM 오버헤드 메모리를 조정하는 비율입니다. 값은 0, 빈 값 또는 1.0에서 10.0 사이의 부동 소수점 수일 수 있으며, 기본값은 1.5입니다.'
   warnings:
-    'agent-tls-mode': '이 설정을 변경하면 모든 에이전트가 다시 배포됩니다.'
+    'agent-tls-mode': 'Changing this setting will cause all agents to be redeployed.'
 
   editHelp:
     'ui-banners': 이 설정은 3개의 루트 매개변수를 포함하는 JSON 객체를 사용합니다. <code>banner</code>, <code>showHeader</code>, <code>showFooter</code>. <code>banner</code>는 <code>textColor</code>, <code>background</code>, 및 <code>text</code>를 포함하는 객체이며 <code>textColor</code> 및 <code>background</code>는 모든 유효한 CSS 색상 값입니다.
