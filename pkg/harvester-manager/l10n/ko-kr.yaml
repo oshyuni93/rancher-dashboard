@@ -1485,7 +1485,7 @@ harvester:
     internal:
       rancher:
         title: 임베디드 Rancher UI에 액세스
-        titleDescription: 내장된 Rancher UI는 디버깅 및 검증 목적으로만 사용할 수 있습니다. Infinitystack와 Rancher의 통합 방식에 대한 자세한 내용은 <a target="_blank" href="{url}" rel="noopener noreferrer nofollow">문서</a>를 참조하세요.
+        titleDescription: 내장된 Rancher UI는 디버깅 및 검증 목적으로만 사용할 수 있습니다. Infinitystack와 Rancher 통합 방식에 대한 자세한 내용은 <a target="_blank" href="{url}" rel="noopener noreferrer nofollow">문서</a>를 참조하세요.
       longhorn:
         title: 임베디드 롱혼 UI에 액세스
         titleDescription: 디버깅 및 검증 목적으로만 내장된 Longhorn UI를 지원합니다.
@@ -1702,14 +1702,14 @@ harvester:
       'harvester-system/vm-import-controller': vm-import-controller는 다른 소스 클러스터에서 기존 Infinitystack 클러스터로 가상 머신 워크로드를 마이그레이션하는 데 도움이 되는 추가 기능입니다.
       'harvester-system/pcidevices-controller': pcidevices-controller는 클러스터의 노드에 대한 PCI 장치를 검색하고 사용자가 Infinitystack 가상 머신 및 게스트 클러스터와 함께 사용할 PCI 패스스루를 위한 장치를 준비할 수 있도록 돕는 애드온입니다.
       'cattle-logging-system/rancher-logging': rancher-logging은 Infinitystack 클러스터에서 다양한 로그, 이벤트, 감사를 수집하고 흐름에 따라 다양한 종류의 서버로 라우팅하는 애드온입니다.
-      'harvester-system/rancher-vcluster': rancher-vcluster는 Rancher가 설치된 가상 클러스터(vcluster)를 배포합니다.
+      'harvester-system/rancher-vcluster': rancher-vcluster는 Rancher이 설치된 가상 클러스터(vcluster)를 배포합니다.
       'cattle-monitoring-system/rancher-monitoring': rancher-monitoring은 Infinitystack 클러스터와 가상 머신 메트릭을 수집하고 내장된 대시보드에서 메트릭을 보고 원격 서버로 알림을 보낼 수 있는 애드온입니다.
       'vm-import-controller': vm-import-controller는 다른 소스 클러스터에서 기존 Infinitystack 클러스터로 가상 머신 워크로드를 마이그레이션하는 데 도움이 되는 추가 기능입니다.
       'pcidevices-controller': pcidevices-controller는 클러스터의 노드에 대한 PCI 장치를 검색하고 사용자가 Infinitystack 가상 머신 및 게스트 클러스터와 함께 사용할 PCI 패스스루를 위한 장치를 준비할 수 있도록 돕는 애드온입니다.
       'nvidia-driver-toolkit': 'nvidia-driver-toolkit은 vGPU 장치를 활성화하고 이를 Infinitystack 가상 머신에 할당하는 애드온입니다.'
       'rancher-logging': rancher-logging은 Infinitystack 클러스터에서 다양한 로그, 이벤트 및 감사를 수집하고 흐름에 따라 여러 종류의 서버로 라우팅하는 애드온입니다..
       'rancher-monitoring': rancher-monitoring은 Infinitystack 클러스터와 가상 머신 메트릭을 수집하고, 내장된 대시보드에서 이를 보고, 원격 서버로 알림을 보내는 애드온입니다.
-      'rancher-vcluster': rancher-vcluster는 Rancher가 설치된 가상 클러스터(vcluster)를 배포합니다.
+      'rancher-vcluster': rancher-vcluster는 Rancher이 설치된 가상 클러스터(vcluster)를 배포합니다.
       'harvester-seeder': harvester-seeder는 IPMI와 Redfish를 사용하여 하드웨어 정보를 검색하고 대역 외 작업을 수행하는 애드온입니다.
       'harvester-system/harvester-seeder': harvester-seeder는 IPMI와 Redfish를 사용하여 하드웨어 정보를 검색하고 대역 외 작업을 수행하는 애드온입니다.
       'harvester-csi-driver-lvm': harvester-csi-driver-lvm은 사용자가 로컬 장치로 LVM을 통해 PVC를 생성할 수 있도록 해주는 애드온입니다.
@@ -2226,7 +2226,7 @@ authConfig:
       tip: 연결 프로세스 중에 TLS로 래핑하여 암호화되지 않은 연결을 업그레이드합니다. TLS와 함께 사용할 수 없습니다.
     searchUsingServiceAccount: 
       label: 서비스 계정 검색 활성화
-      tip: 이 기능을 활성화하면 Rancher는 사용자 계정 대신 서비스 계정을 사용하여 사용자와 그룹을 검색합니다.
+      tip: 이 기능을 활성화하면 Rancher은 사용자 계정 대신 서비스 계정을 사용하여 사용자와 그룹을 검색합니다.
     tls: TLS
     userEnabledAttribute: 사용자 활성화 속성
     userMemberAttribute: 사용자 멤버 속성
@@ -3322,7 +3322,7 @@ cluster:
       managedDisksSize:
         label: 관리 디스크 크기
       nsg:
-        help: Rancher가 관리하거나 기존 NSG를 제공하는 경우이 템플릿을 사용하는 모든 노드가 제공된 NSG를 사용합니다. NSG가 제공되지 않으면 각 노드에 대해 새 NSG가 생성됩니다.
+        help: Rancher이 관리하거나 기존 NSG를 제공하는 경우이 템플릿을 사용하는 모든 노드가 제공된 NSG를 사용합니다. NSG가 제공되지 않으면 각 노드에 대해 새 NSG가 생성됩니다.
         label: 네트워크 보안 그룹
       openPort:
         add: 포트 추가
