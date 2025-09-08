@@ -3324,7 +3324,7 @@
   version "2.0.32"
   resolved "https://registry.yarnpkg.com/@rancher/icons/-/icons-2.0.32.tgz#c6b18c81b87bc9439b1e449b2f6bd859d76c0bbe"
   integrity sha512-afZlIHPboVgQIwnMuaQT7LTPoWuCIgyqD2Ch277lEAoFIzuU+NwHzpEAvX5xcOpVXYAFlvDE/VlJ6FmYaQBBig==
-  
+
 "@rtsao/scc@^1.1.0":
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/@rtsao/scc/-/scc-1.1.0.tgz#927dd2fae9bc3361403ac2c7a00c32ddce9ad7e8"
@@ -8157,7 +8157,6 @@ eslint-plugin-jest@24.4.0:
 
 "eslint-plugin-local-rules@link:./eslint-plugin-local-rules":
   version "0.0.0"
-  uid ""
 
 "eslint-plugin-local-rules@link:eslint-plugin-local-rules":
   version "0.0.0"
@@ -11608,10 +11607,10 @@ markdown-it@^12.0.0:
     mdurl "^1.0.1"
     uc.micro "^1.0.5"
 
-marked@4.0.17:
-  version "4.0.17"
-  resolved "https://registry.npmjs.org/marked/-/marked-4.0.17.tgz#1186193d85bb7882159cdcfc57d1dfccaffb3fe9"
-  integrity sha512-Wfk0ATOK5iPxM4ptrORkFemqroz0ZDxp5MWfYA7H/F+wO17NRWV5Ypxi6p3g2Xmw2bKeiYOl6oVnLHKxBA0VhA==
+marked@16.2.1:
+  version "16.2.1"
+  resolved "https://registry.yarnpkg.com/marked/-/marked-16.2.1.tgz#f4b82ffa8e6201bafebc59249492b88b2dcc949f"
+  integrity sha512-r3UrXED9lMlHF97jJByry90cwrZBBvZmjG1L68oYfuPMW+uDTnuMbyJDymCWwbTE+f+3LhpNDKfpR3a3saFyjA==
 
 math-intrinsics@^1.1.0:
   version "1.1.0"
