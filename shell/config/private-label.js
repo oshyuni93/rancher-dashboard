@@ -58,8 +58,9 @@ export function matches(pl) {
 }
 
 export function getVendor() {
-  if ( vendor === 'Rancher' )
+  if ( vendor === 'Rancher' ) {
     return STANDARD_VENDOR;
+  }
 
   if ( vendor === SETTING.PL_RANCHER_VALUE ) {
     // Custom vendor override based on brand
