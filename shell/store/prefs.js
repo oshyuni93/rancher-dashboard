@@ -64,7 +64,6 @@ export const THEME = create('theme', 'auto', {
   mangleWrite: (x) => `ui-${ x }`,
 });
 export const PREFERS_SCHEME = create('pcs', '', { asCookie, asUserPreference: false });
-//export const LOCALE = create('locale', 'en-us', { asCookie });
 export const LOCALE = create('locale', 'ko-kr', { asCookie });
 export const KEYMAP = create('keymap', 'sublime', { options: ['sublime', 'emacs', 'vim'] });
 export const ROWS_PER_PAGE = create('per-page', 100, { options: [10, 25, 50, 100], parseJSON });
