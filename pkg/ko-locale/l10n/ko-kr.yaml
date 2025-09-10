@@ -148,8 +148,8 @@ locale:
 
 unsupported:
   serverVersion: '현재 버전: <code>{serverVersion}</code>'
-  description: InfinityStack UI는 InfinityStack 클러스터 버전 1.3.0 이상만 지원합니다.
-  learnMore: InfinityStack에 대해 자세히 알아보세요 <a target="_blank" href="https://harvesterhci.io/" rel="noopener noreferrer nofollow">InfinityStack Web Site</a> or read the <a target="_blank" href="https://docs.harvesterhci.io/" rel="noopener noreferrer nofollow">InfinityStack Docs</a>
+  description: Infinitystack UI는 Infinitystack 클러스터 버전 1.3.0 이상만 지원합니다.
+  learnMore: InfinityStack에 대해 자세히 알아보세요 <a target="_blank" href="https://harvesterhci.io/" rel="noopener noreferrer nofollow">Infinitystack Web Site</a> or read the <a target="_blank" href="https://docs.harvesterhci.io/" rel="noopener noreferrer nofollow">Infinitystack Docs</a>
 
 
 nav:
@@ -160,7 +160,7 @@ nav:
     topLevelMenu: 메인 메뉴
     homePage: 홈페이지 탐색 메뉴
     cluster: 클러스터 메뉴 항목
-    harvesterCluster: InfinityStack 클러스터 메뉴 항목
+    harvesterCluster: Infinitystack 클러스터 메뉴 항목
     seeAll: 모든 클러스터 메뉴 항목 보기
     multiClusterApps: 메인 메뉴 다중 클러스터 앱 메뉴 항목
     configurationApps: 메인 메뉴 구성 앱 메뉴 항목
@@ -173,7 +173,7 @@ nav:
     mainMenuIcon: 메인 메뉴 아이콘
     mainMenuRancherLogo: 메인 메뉴 Barastack 로고
   expandCollapseAppBar: 애플리케이션 표시줄 확장/축소
-  harvesterDashboard: InfinityStack 대시보드
+  harvesterDashboard: Infinitystack 대시보드
   backToRancher: 클러스터 매니저
   clusterTools: 클러스터 도구
   tools: 툴
@@ -289,10 +289,10 @@ nav:
 harvester:
   branding:
     logos:
-      tip: '상단 탐색 헤더에 있는 InfinityStack 로고를 대체할 로고를 업로드하세요. 이미지 높이는 21픽셀, 최대 너비는 200픽셀이어야 합니다. 최대 파일 크기는 20KB입니다. JPEG, PNG, SVG 형식을 지원합니다.'
+      tip: '상단 탐색 헤더에 있는 Infinitystack 로고를 대체할 로고를 업로드하세요. 이미지 높이는 21픽셀, 최대 너비는 200픽셀이어야 합니다. 최대 파일 크기는 20KB입니다. JPEG, PNG, SVG 형식을 지원합니다.'
     favicon:
-      tip: '브라우저 탭에 있는 InfinityStack 파비콘을 대체할 아이콘을 업로드하세요. 최대 파일 크기는 20KB입니다.'
-  productLabel: 'InfinityStack'
+      tip: '브라우저 탭에 있는 Infinitystack 파비콘을 대체할 아이콘을 업로드하세요. 최대 파일 크기는 20KB입니다.'
+  productLabel: 'Infinitystack'
   modal:
     backup:
       success: '백업 { backUpName } 이 시작 되었습니다.'
@@ -614,7 +614,7 @@ harvester:
 
   dashboard:
     label: 대시보드
-    header: "InfinityStack 클러스터: {cluster}"
+    header: "Infinitystack 클러스터: {cluster}"
     hardwareResourceGauge:
       cpu: CPU
       memory: 메모리
@@ -1122,15 +1122,15 @@ harvester:
     selectExisting: 기존 이미지 선택
     createRepository: 업그레이드 저장소 생성
     succeeded: 성공
-    releaseTip: 업그레이드 설명서를 주의 깊게 읽어주세요. 자세한 내용은 <a href="{url}" target="_blank">InfinityStack 릴리스 노트</a>에서 확인하실 수 있습니다.
-    checkReady: 저는 이 InfinityStack 버전과 관련된 업그레이드 지침을 읽고 이해했습니다.
+    releaseTip: 업그레이드 설명서를 주의 깊게 읽어주세요. 자세한 내용은 <a href="{url}" target="_blank">Infinitystack 릴리스 노트</a>에서 확인하실 수 있습니다.
+    checkReady: 저는 이 Infinitystack 버전과 관련된 업그레이드 지침을 읽고 이해했습니다.
     pending: 보류 중
     repoInfo:
       upgradeStatus: 업그레이드 상태
       os: 운영체제
       kubernetes: Kubernetes
       monitoringChart: 모니터링 차트
-      harvesterChart: InfinityStack 차트
+      harvesterChart: Infinitystack 차트
       success: 성공
       fail:  실패
       ongoing: 진행중
@@ -1166,7 +1166,7 @@ harvester:
     maxFailure:
       label: 최대 실패
       count: Count
-      tooltip: 허용 가능한 연속 백업 실패 횟수의 최대값입니다. 이 임계값에 도달하면 InfinityStack 컨트롤러가 예약 작업을 일시 중단합니다. 이 값은 보유 횟수보다 작아야 합니다.
+      tooltip: 허용 가능한 연속 백업 실패 횟수의 최대값입니다. 이 임계값에 도달하면 Infinitystack 컨트롤러가 예약 작업을 일시 중단합니다. 이 값은 보유 횟수보다 작아야 합니다.
     virtualMachine:
       title: 가상 머신 이름
       placeholder: 가상 머신 선택
@@ -1297,7 +1297,7 @@ harvester:
     autoRotateRKE2Certs:
       expiringInHours: 만료 날짜
     httpProxy:
-      warning: '경고: <br/> "http-proxy" 및 "https-proxy"를 구성하는 경우 InfinityStack 노드의 CIDR도 "no-proxy"로 설정해야 합니다. 그렇지 않으면 InfinityStack 클러스터가 손상됩니다.'
+      warning: '경고: <br/> "http-proxy" 및 "https-proxy"를 구성하는 경우 Infinitystack 노드의 CIDR도 "no-proxy"로 설정해야 합니다. 그렇지 않으면 Infinitystack 클러스터가 손상됩니다.'
     supportBundleImage:
       imagePullPolicy: Pull 정책
       repo: 저장소
@@ -1332,7 +1332,7 @@ harvester:
       chooseFile: 이미지를 업로드하려면 선택하세요.
       checksum: 체크섬
     harvesterMonitoring:
-      label: InfinityStack 모니터링
+      label: Infinitystack 모니터링
       section:
         prometheus: Prometheus
         prometheusNodeExporter: Prometheus Node Exporter
@@ -1344,7 +1344,7 @@ harvester:
         retention: 메트릭을 보관하는 기간
         retentionSize: 측정항목의 최대 크기
     clusterRegistrationUrl:
-      message: 가져온 InfinityStack 클러스터를 완전히 해제하려면 <code>가상화 관리</code> 페이지를 통해 Barastack 대시보드 UI에서도 제거하세요.
+      message: 가져온 Infinitystack 클러스터를 완전히 해제하려면 <code>가상화 관리</code> 페이지를 통해 Barastack 대시보드 UI에서도 제거하세요.
     ntpServers:
       isNotIPV4: 입력하신 주소는 IPv4 또는 호스트가 아닙니다. 유효한 IPv4 주소 또는 호스트 주소를 입력하세요.
       isDuplicate: 중복된 NTP 서버 구성이 있습니다.
@@ -1355,7 +1355,7 @@ harvester:
     networkData: 네트워크 데이터
 
   support:
-    title: InfinityStack 지원
+    title: Infinitystack 지원
     kubeconfig:
       title: KubeConfig 다운로드
       titleDescription: 디버깅을 위해 kubeconfig를 다운로드하세요.
@@ -1367,7 +1367,7 @@ harvester:
         title: 임베디드 롱혼 UI에 액세스
         titleDescription: 디버깅 및 검증 목적으로만 내장된 Longhorn UI를 지원합니다.
     community:
-      learnMore: SUSE InfinityStack 지원에 대해 자세히 알아보세요
+      learnMore: SUSE Infinitystack 지원에 대해 자세히 알아보세요
       pricing: 가격 문의
 
   namespace:
@@ -1549,16 +1549,16 @@ harvester:
 
   addons:
     descriptions:
-      'harvester-system/vm-import-controller': vm-import-controller는 다른 소스 클러스터에서 기존 InfinityStack 클러스터로 가상 머신 워크로드를 마이그레이션하는 데 도움이 되는 추가 기능입니다.
-      'harvester-system/pcidevices-controller': pcidevices-controller는 클러스터의 노드에 대한 PCI 장치를 검색하고 사용자가 InfinityStack 가상 머신 및 게스트 클러스터와 함께 사용할 PCI 패스스루를 위한 장치를 준비할 수 있도록 돕는 애드온입니다.
-      'cattle-logging-system/rancher-logging': rancher-logging은 InfinityStack 클러스터에서 다양한 로그, 이벤트, 감사를 수집하고 흐름에 따라 다양한 종류의 서버로 라우팅하는 애드온입니다.
+      'harvester-system/vm-import-controller': vm-import-controller는 다른 소스 클러스터에서 기존 Infinitystack 클러스터로 가상 머신 워크로드를 마이그레이션하는 데 도움이 되는 추가 기능입니다.
+      'harvester-system/pcidevices-controller': pcidevices-controller는 클러스터의 노드에 대한 PCI 장치를 검색하고 사용자가 Infinitystack 가상 머신 및 게스트 클러스터와 함께 사용할 PCI 패스스루를 위한 장치를 준비할 수 있도록 돕는 애드온입니다.
+      'cattle-logging-system/rancher-logging': rancher-logging은 Infinitystack 클러스터에서 다양한 로그, 이벤트, 감사를 수집하고 흐름에 따라 다양한 종류의 서버로 라우팅하는 애드온입니다.
       'harvester-system/rancher-vcluster': rancher-vcluster는 Barastack가 설치된 가상 클러스터(vcluster)를 배포합니다.
-      'cattle-monitoring-system/rancher-monitoring': rancher-monitoring은 InfinityStack 클러스터와 가상 머신 메트릭을 수집하고 내장된 대시보드에서 메트릭을 보고 원격 서버로 알림을 보낼 수 있는 애드온입니다.
-      'vm-import-controller': vm-import-controller는 다른 소스 클러스터에서 기존 InfinityStack 클러스터로 가상 머신 워크로드를 마이그레이션하는 데 도움이 되는 추가 기능입니다.
-      'pcidevices-controller': pcidevices-controller는 클러스터의 노드에 대한 PCI 장치를 검색하고 사용자가 InfinityStack 가상 머신 및 게스트 클러스터와 함께 사용할 PCI 패스스루를 위한 장치를 준비할 수 있도록 돕는 애드온입니다.
-      'nvidia-driver-toolkit': 'nvidia-driver-toolkit은 vGPU 장치를 활성화하고 이를 InfinityStack 가상 머신에 할당하는 애드온입니다.'
-      'rancher-logging': rancher-logging은 InfinityStack 클러스터에서 다양한 로그, 이벤트 및 감사를 수집하고 흐름에 따라 여러 종류의 서버로 라우팅하는 애드온입니다..
-      'rancher-monitoring': rancher-monitoring은 InfinityStack 클러스터와 가상 머신 메트릭을 수집하고, 내장된 대시보드에서 이를 보고, 원격 서버로 알림을 보내는 애드온입니다.
+      'cattle-monitoring-system/rancher-monitoring': rancher-monitoring은 Infinitystack 클러스터와 가상 머신 메트릭을 수집하고 내장된 대시보드에서 메트릭을 보고 원격 서버로 알림을 보낼 수 있는 애드온입니다.
+      'vm-import-controller': vm-import-controller는 다른 소스 클러스터에서 기존 Infinitystack 클러스터로 가상 머신 워크로드를 마이그레이션하는 데 도움이 되는 추가 기능입니다.
+      'pcidevices-controller': pcidevices-controller는 클러스터의 노드에 대한 PCI 장치를 검색하고 사용자가 Infinitystack 가상 머신 및 게스트 클러스터와 함께 사용할 PCI 패스스루를 위한 장치를 준비할 수 있도록 돕는 애드온입니다.
+      'nvidia-driver-toolkit': 'nvidia-driver-toolkit은 vGPU 장치를 활성화하고 이를 Infinitystack 가상 머신에 할당하는 애드온입니다.'
+      'rancher-logging': rancher-logging은 Infinitystack 클러스터에서 다양한 로그, 이벤트 및 감사를 수집하고 흐름에 따라 여러 종류의 서버로 라우팅하는 애드온입니다..
+      'rancher-monitoring': rancher-monitoring은 Infinitystack 클러스터와 가상 머신 메트릭을 수집하고, 내장된 대시보드에서 이를 보고, 원격 서버로 알림을 보내는 애드온입니다.
       'rancher-vcluster': rancher-vcluster는 Barastack가 설치된 가상 클러스터(vcluster)를 배포합니다.
       'harvester-seeder': harvester-seeder는 IPMI와 Redfish를 사용하여 하드웨어 정보를 검색하고 대역 외 작업을 수행하는 애드온입니다.
       'harvester-system/harvester-seeder': harvester-seeder는 IPMI와 Redfish를 사용하여 하드웨어 정보를 검색하고 대역 외 작업을 수행하는 애드온입니다.
@@ -1703,7 +1703,7 @@ harvester:
     vGpuDevices: vGPU 장치
     showMore: 더보기
     parentSriov: 부모 SR-IOV GPU로 필터링
-    noPermission: 먼저 시스템 관리자에게 문의하여 InfinityStack 애드온을 추가하세요.
+    noPermission: 먼저 시스템 관리자에게 문의하여 Infinitystack 애드온을 추가하세요.
     goSetting:
       prefix: nvidia-driver-toolkit 추가 기능이 활성화되지 않았습니다. 클릭하세요.
       middle: 여기
@@ -1711,7 +1711,7 @@ harvester:
 
   vgpu:
     label: vGPU 장치
-    noPermission: InfinityStack 애드온을 추가하려면 먼저 시스템 관리자에게 문의하세요.
+    noPermission: Infinitystack 애드온을 추가하려면 먼저 시스템 관리자에게 문의하세요.
     goSetting:
       prefix: nvidia-driver-toolkit 추가 기능이 활성화되지 않았습니다. 클릭하세요.
       middle: 여기
@@ -1729,7 +1729,7 @@ harvester:
 
   usb:
     label: USB 장치
-    noPermission: 먼저 시스템 관리자에게 문의하여 InfinityStack 추가 기능을 추가하세요.
+    noPermission: 먼저 시스템 관리자에게 문의하여 Infinitystack 추가 기능을 추가하세요.
     goSetting:
       prefix: pcidevices-controller 추가 기능이 활성화되지 않았습니다. 클릭하세요.
       middle: 여기
@@ -2871,7 +2871,7 @@ cluster:
       label: vSphere
       note: "<b>중요:</b> Add-On Config 탭에서 vSphere Cloud Provider 및 Storage Provider 옵션을 구성하십시오."
     harvester:
-      label: InfinityStack
+      label: Infinitystack
   copyConfig: KubeConfig 복사
   copiedConfig: KubeConfig를 클립보드에 복사했습니다.
   custom:
@@ -3037,25 +3037,25 @@ cluster:
       kubeconfigContent:
         label: Kubeconfig 콘텐츠
       placeholder: "네임스페이스/이름"
-      cluster: 가져온 InfinityStack 클러스터
+      cluster: 가져온 Infinitystack 클러스터
       installGuestAgent: 게스트 에이전트 설치
   description:
     label: 클러스터 설명
     placeholder: 이 클러스터를 더 잘 설명하는 임의의 텍스트
   harvester:
-    importNotice: InfinityStack 클러스터 가져오기
+    importNotice: Infinitystack 클러스터 가져오기
     warning:
-      label: 이것은 InfinityStack 클러스터입니다 - InfinityStack 기능 플래그를 활성화하여 관리하세요
+      label: 이것은 Infinitystack 클러스터입니다 - Infinitystack 기능 플래그를 활성화하여 관리하세요
       state: 경고
       cloudProvider:
-        incompatible: 선택한 RKE2 쿠버네티스 버전과 현재 InfinityStack 버전이 호환되지 않으므로 InfinityStack 클라우드 프로바이더를 선택할 수 없습니다. 사용 가능한 쿠버네티스 버전은 <a target="_blank" rel="noopener noreferrer nofollow" href="https://www.suse.com/suse-harvester/support-matrix/all-supported-versions">여기</a>에서 확인하세요.
+        incompatible: 선택한 RKE2 쿠버네티스 버전과 현재 Infinitystack 버전이 호환되지 않으므로 Infinitystack 클라우드 프로바이더를 선택할 수 없습니다. 사용 가능한 쿠버네티스 버전은 <a target="_blank" rel="noopener noreferrer nofollow" href="https://www.suse.com/suse-harvester/support-matrix/all-supported-versions">여기</a>에서 확인하세요.
     clusterWarning: |-
       There {count, plural,
-      =1 {표시되지 않은 1개의 InfinityStack 클러스터입니다.}
-      other {표시되지 않는 # InfinityStack 클러스터가 있습니다.}
+      =1 {표시되지 않은 1개의 Infinitystack 클러스터입니다.}
+      other {표시되지 않는 # Infinitystack 클러스터가 있습니다.}
       }
     registration:
-      step1: "1. 대상 InfinityStack UI의 <code>고급 / 설정</code> 페이지로 이동하세요."
+      step1: "1. 대상 Infinitystack UI의 <code>고급 / 설정</code> 페이지로 이동하세요."
       step2: '<code>클러스터-등록-URL</code> 설정을 찾아 <code><i class="icon icon-actions" ></i></code> -> <code>설정 편집</code> 버튼을 클릭하세요.'
       step3: "3. 다음 등록 URL을 입력하고 <code>저장</code> 버튼을 클릭하세요."
       step4: "등록 URL"
@@ -3586,7 +3586,7 @@ cluster:
     googlegke: Google GKE
     gke: Google GKE
     googlekubernetesengine: Google GKE (Unsupported Kev1)
-    harvester: InfinityStack
+    harvester: Infinitystack
     huaweicce: Huawei CCE
     import: 일반
     imported: 가져옴
@@ -4004,21 +4004,21 @@ fleet:
   clusters:
     harvester: |-
       There {count, plural,
-      =1 {지속적인 배포(Continuous Delivery)에 사용할 수 없기 때문에 숨겨진 InfinityStack 클러스터 1개가 있습니다.}
-      other {지속적인 배포(Continuous Delivery)에 사용할 수 없기 때문에 숨겨진 InfinityStack 클러스터가 #개 있습니다.}
+      =1 {지속적인 배포(Continuous Delivery)에 사용할 수 없기 때문에 숨겨진 Infinitystack 클러스터 1개가 있습니다.}
+      other {지속적인 배포(Continuous Delivery)에 사용할 수 없기 때문에 숨겨진 Infinitystack 클러스터가 #개 있습니다.}
       }
   tokens:
     harvester: |-
       {count, plural,
-      =1 {지속적인 배포(Continuous Delivery)에 사용할 수 없는 InfinityStack 클러스터에 속해 있기 때문에 토큰 1개가 숨겨졌습니다.}
-      other {지속적인 배포(Continuous Delivery)에 사용할 수 없는 InfinityStack 클러스터에 속해 있기 때문에 토큰 #개가 숨겨졌습니다.}
+      =1 {지속적인 배포(Continuous Delivery)에 사용할 수 없는 Infinitystack 클러스터에 속해 있기 때문에 토큰 1개가 숨겨졌습니다.}
+      other {지속적인 배포(Continuous Delivery)에 사용할 수 없는 Infinitystack 클러스터에 속해 있기 때문에 토큰 #개가 숨겨졌습니다.}
       }
   bundles:
     resources: Resources
     harvester: |-
       {count, plural,
-      =1 {지속적인 배포(Continuous Delivery)에 사용할 수 없는 InfinityStack 클러스터에 속해 있기 때문에 번들 1개가 숨겨졌습니다.}
-      other {지속적인 배포(Continuous Delivery)에 사용할 수 없는 InfinityStack 클러스터에 속해 있기 때문에 번들 #개가 숨겨졌습니다.}
+      =1 {지속적인 배포(Continuous Delivery)에 사용할 수 없는 Infinitystack 클러스터에 속해 있기 때문에 번들 1개가 숨겨졌습니다.}
+      other {지속적인 배포(Continuous Delivery)에 사용할 수 없는 Infinitystack 클러스터에 속해 있기 때문에 번들 #개가 숨겨졌습니다.}
       }
   fleetSummary:
     noClustersGitRepo: 이 git 저장소는 어떤 클러스터도 대상으로 하지 않습니다
@@ -5729,7 +5729,7 @@ persistentVolume:
       disk-csi-azure-com: Azure Disk (CSI)
       file-csi-azure-com: Azure File (CSI)
       driver-longhorn-io: Longhorn (CSI)
-      driver-harvesterhci-io: InfinityStack (CSI)
+      driver-harvesterhci-io: Infinitystack (CSI)
       lvm-driver-harvesterhci-io: LVM
       nfs-csi-k8s-io: NFS (CSI)
       ebs-csi-aws-com: AWS Elastic Block Store (CSI)
@@ -7351,13 +7351,13 @@ storageClass:
     title: (폐기 예정)
     warning: '{provisioner} in-tree 플러그인은 폐기 예정입니다. <a target="_blank" rel="noopener noreferrer nofollow" href="https://kubernetes-csi.github.io/docs/drivers.html">여기에서</a> CSI 드라이버를 찾으세요.'
   harvesterhci:
-    title: InfinityStack (CSI)
+    title: Infinitystack (CSI)
     warning:
-      unSatisfiesVersion: 이 기능을 사용하려면 InfinityStack CSI 드라이버 버전을 업그레이드하세요. (csi-driver >= v0.1.15)
+      unSatisfiesVersion: 이 기능을 사용하려면 Infinitystack CSI 드라이버 버전을 업그레이드하세요. (csi-driver >= v0.1.15)
     hostStorageClass:
       label: 호스트 스토리지 클래스
-      placeholder: 호스트 InfinityStack 클러스터의 스토리지 클래스 이름
-      tooltip: 기본적으로 호스트 InfinityStack 클러스터의 기본 스토리지 클래스가 사용됩니다.
+      placeholder: 호스트 Infinitystack 클러스터의 스토리지 클래스 이름
+      tooltip: 기본적으로 호스트 Infinitystack 클러스터의 기본 스토리지 클래스가 사용됩니다.
 
 tableHeaders:
   assuredConcurrencyShares: 보장된 동시성 공유
@@ -8499,7 +8499,7 @@ typeDescription:
   logging.banzaicloud.io.flow: flow는 수집 및 필터링할 로그 및 로그를 보낼 Output을 정의합니다. flow는 네임스페이스별 리소스이므로 로그는 flow가 배포된 네임스페이스에서만 수집됩니다.
   logging.banzaicloud.io.output: Output은 로그를 전송할 수 있는 로깅 제공자를 정의합니다. Output은 해당 Output을 사용하는 flow와 동일한 네임스페이스에 있어야 합니다.
   group.principal: 그룹에 전역 역할을 할당하는 것은 그룹을 지원하는 외부 인증 공급자에서만 작동합니다. 로컬 권한 부여는 그룹을 지원하지 않습니다.
-  harvester: "브랜딩을 통해 관리자는 InfinityStack 제품 이름, 로고 및 색 구성표를 사용자 정의하여 UI를 전 세계적으로 리브랜딩할 수 있습니다."
+  harvester: "브랜딩을 통해 관리자는 Infinitystack 제품 이름, 로고 및 색 구성표를 사용자 정의하여 UI를 전 세계적으로 리브랜딩할 수 있습니다."
 
 typeLabel:
   kubevirt.io.virtualmachine: |-
@@ -9023,8 +9023,8 @@ typeLabel:
     }
   harvesterhci.io.management.cluster: |-
     {count, plural,
-      one { InfinityStack 클러스터 }
-      other { InfinityStack 클러스터 }
+      one { Infinitystack 클러스터 }
+      other { Infinitystack 클러스터 }
     }
   harvesterhci.io.cloudtemplate: |-
     {count, plural,
@@ -9350,18 +9350,18 @@ advancedSettings:
     'imported-cluster-version-management': 가져온 RKE2/K3s 클러스터와 로컬 클러스터(RKE2/K3s 클러스터인 경우)에 대한 버전 관리를 활성화합니다. 클러스터별 버전 관리 설정은 클러스터 수준에서 이 전역 설정을 재정의합니다. 클러스터 수준 버전 관리가 'system-default'로 설정된 기존 클러스터의 경우, 이 플래그를 변경하면 다음 조정 시(기본적으로 5분마다 또는 클러스터가 편집되는 즉시, 둘 중 먼저 발생하는 시점) 클러스터 에이전트가 다시 배포됩니다.
     'harv-vlan': VLAN 네트워크의 기본 네트워크 인터페이스 이름입니다.
     'harv-backup-target': 가상 머신 백업을 저장하기 위한 사용자 정의 백업 대상입니다.
-    'branding': 브랜딩을 통해 관리자는 InfinityStack 제품 이름, 로고, 색 구성표를 사용자 정의하여 UI를 전 세계적으로 리브랜딩할 수 있습니다.
+    'branding': 브랜딩을 통해 관리자는 Infinitystack 제품 이름, 로고, 색 구성표를 사용자 정의하여 UI를 전 세계적으로 리브랜딩할 수 있습니다.
     'harv-csi-driver-config': CSI 드라이버에 대한 추가 정보를 구성합니다.
     'harv-containerd-registry': 개인 레지스트리를 연결하기 위한 Containerd 레지스트리 구성.
-    'harv-log-level': InfinityStack 서버 로그 수준을 구성합니다. 기본값은 Info입니다.
-    'harv-server-version': InfinityStack 서버 버전.
-    'harv-upgrade-checker-enabled': InfinityStack 업그레이드 확인 기능을 활성화할지 여부를 지정합니다. 기본값은 True입니다.
-    'harv-upgrade-checker-url': 기본 InfinityStack 업그레이드 확인 URL입니다. <code>upgrade-checker-enabled</code>가 True인 경우에만 사용됩니다.
+    'harv-log-level': Infinitystack 서버 로그 수준을 구성합니다. 기본값은 Info입니다.
+    'harv-server-version': Infinitystack 서버 버전.
+    'harv-upgrade-checker-enabled': Infinitystack 업그레이드 확인 기능을 활성화할지 여부를 지정합니다. 기본값은 True입니다.
+    'harv-upgrade-checker-url': 기본 Infinitystack 업그레이드 확인 URL입니다. <code>upgrade-checker-enabled</code>가 True인 경우에만 사용됩니다.
     'harv-ui-source': UI 소스를 로드하는 방법을 구성합니다.
     'harv-ui-index': 'UI에 대한 HTML 인덱스 위치.'
-    'harv-ui-plugin-index': 'InfinityStack 플러그인 UI의 JS 인덱스 위치입니다.'
+    'harv-ui-plugin-index': 'Infinitystack 플러그인 UI의 JS 인덱스 위치입니다.'
     'harv-cluster-registration-url': 멀티 클러스터 관리를 위한 등록 URL입니다.
-    'harv-http-proxy': 'InfinityStack 외부 서비스에 접근하기 위한 HTTP 프록시입니다.'
+    'harv-http-proxy': 'Infinitystack 외부 서비스에 접근하기 위한 HTTP 프록시입니다.'
     'harv-additional-ca': 'TLS 검증을 위한 사용자 정의 CA 루트 인증서.'
     'harv-overcommit-config': '리소스 오버커밋 구성.'
     'harv-support-bundle-timeout': '분 단위의 지원 번들 시간 초과 구성, 시간 초과를 비활성화하려면 0을 사용하세요.'
@@ -9371,13 +9371,13 @@ advancedSettings:
     'harv-ssl-parameters': TLS 검증을 위한 사용자 정의 SSL 매개변수.
     'harv-storage-network': 'Longhorn 스토리지 네트워크 설정.'
     'harv-support-bundle-namespaces': 지원 패키지에서 수집할 다른 네임스페이스의 리소스를 지정합니다.
-    'harv-auto-disk-provision-paths': InfinityStack 가상 머신 스토리지로 자동으로 추가할 디스크를 지정합니다(glob 패턴 사용).
+    'harv-auto-disk-provision-paths': Infinitystack 가상 머신 스토리지로 자동으로 추가할 디스크를 지정합니다(glob 패턴 사용).
     'harv-support-bundle-image': 번들 이미지 구성을 지원합니다. <a href="https://hub.docker.com/r/rancher/support-bundle-kit/tags" target="_blank">rancher/support-bundle-kit</a>에서 다른 버전을 확인하세요.
     'harv-release-download-url': 이 설정을 사용하면 <code>업그레이드 릴리스 다운로드</code> URL 주소를 구성할 수 있습니다. InfinityStack는 구성된 URL에서 호스팅되는 (<code>$URL</code>/<code>$VERSION</code>/version.yaml) 파일에서 ISO URL과 체크섬 값을 가져옵니다.
     'harv-default-vm-termination-grace-period-seconds': 가상 머신 중지에 대한 가상 머신 종료 유예 기간을 구성합니다.
     'harv-ntp-servers': NTP 서버를 구성하세요. 여러 IPv4 주소 또는 호스트 주소를 구성할 수 있습니다.
     'harv-auto-rotate-rke2-certs': 인증서 순환 메커니즘은 Barastack를 기반으로 합니다. InfinityStack는 인증서 생성을 자동으로 업데이트하여 순환을 트리거합니다.
-    'harv-kubeconfig-default-token-ttl-minutes': 'InfinityStack 관리 kubeconfig 파일에 적용되는 TTL(분)입니다. 기본값은 0이며, 만료되지 않음을 의미합니다.'
+    'harv-kubeconfig-default-token-ttl-minutes': 'Infinitystack 관리 kubeconfig 파일에 적용되는 TTL(분)입니다. 기본값은 0이며, 만료되지 않음을 의미합니다.'
     'harv-longhorn-v2-data-engine-enabled': 'Longhorn V2 데이터 엔진을 활성화합니다. 기본값은 false입니다. <ul><li>이 설정을 변경하면 모든 노드에서 RKE2가 다시 시작됩니다. 실행 중인 VM 워크로드에는 영향을 미치지 않습니다.</li><li>이 설정을 활성화할 때 "hugepages 용량 부족 - 2Mi" 오류가 표시되면 오류가 사라질 때까지 잠시 기다리세요. 오류가 지속되면 영향을 받는 노드를 재부팅하세요.</li></ul>'
     'harv-additional-guest-memory-overhead-ratio': 'TKubevirt가 VM 오버헤드 메모리를 조정하는 비율입니다. 값은 0, 빈 값 또는 1.0에서 10.0 사이의 부동 소수점 수일 수 있으며, 기본값은 1.5입니다.'
   warnings:
