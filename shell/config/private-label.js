@@ -6,7 +6,7 @@ export const STANDARD = 1;
 export const CUSTOM = 2;
 export const DOCS_BASE = `https://ranchermanager.docs.rancher.com/v${ CURRENT_RANCHER_VERSION }`;
 
-const STANDARD_VENDOR = 'Rancher';
+const STANDARD_VENDOR = 'Barastack';
 const STANDARD_PRODUCT = 'Explorer';
 const CUSTOM_VENDOR = {
   suse: 'Rancher Prime',
@@ -58,6 +58,9 @@ export function matches(pl) {
 }
 
 export function getVendor() {
+  if ( vendor === 'Rancher')
+    return STANDARD_VENDOR;
+
   if ( vendor === SETTING.PL_RANCHER_VALUE ) {
     // Custom vendor override based on brand
     if (brand && CUSTOM_VENDOR[brand]) {
@@ -77,10 +80,10 @@ export function getProduct() {
 export function setTitle() {
   const v = getVendor();
 
-  if (v === 'Harvester') {
+  if (v === 'Infinitystack' || v === 'Harvester') {
     const ico = require(`~shell/assets/images/pl/harvester.png`);
 
-    document.title = 'Harvester';
+    document.title = 'Infinitystack';
     const link = document.createElement('link');
 
     link.hid = 'icon';

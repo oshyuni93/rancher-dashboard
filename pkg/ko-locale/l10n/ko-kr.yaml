@@ -171,7 +171,7 @@ nav:
     productAboutPage: 상품에 관한 페이지 링크 
   alt:
     mainMenuIcon: 메인 메뉴 아이콘
-    mainMenuRancherLogo: 메인 메뉴 Rancher 로고
+    mainMenuRancherLogo: 메인 메뉴 Barastack 로고
   expandCollapseAppBar: 애플리케이션 표시줄 확장/축소
   harvesterDashboard: InfinityStack 대시보드
   backToRancher: 클러스터 매니저
@@ -224,7 +224,7 @@ nav:
     Fleet: Fleet
     K3s: K3s
     Networking: 네트워킹
-    Rancher: Rancher
+    Rancher: Barastack
     RBAC: RBAC
     Scheduling: 스케줄링
     Storage: 스토리지
@@ -1344,7 +1344,7 @@ harvester:
         retention: 메트릭을 보관하는 기간
         retentionSize: 측정항목의 최대 크기
     clusterRegistrationUrl:
-      message: 가져온 InfinityStack 클러스터를 완전히 해제하려면 <code>가상화 관리</code> 페이지를 통해 Rancher 대시보드 UI에서도 제거하세요.
+      message: 가져온 InfinityStack 클러스터를 완전히 해제하려면 <code>가상화 관리</code> 페이지를 통해 Barastack 대시보드 UI에서도 제거하세요.
     ntpServers:
       isNotIPV4: 입력하신 주소는 IPv4 또는 호스트가 아닙니다. 유효한 IPv4 주소 또는 호스트 주소를 입력하세요.
       isDuplicate: 중복된 NTP 서버 구성이 있습니다.
@@ -1361,8 +1361,8 @@ harvester:
       titleDescription: 디버깅을 위해 kubeconfig를 다운로드하세요.
     internal:
       rancher:
-        title: 임베디드 Rancher UI에 액세스
-        titleDescription: 내장된 Rancher UI는 디버깅 및 검증 목적으로만 사용할 수 있습니다. InfinityStack와 Rancher의 통합 방식에 대한 자세한 내용은 <a target="_blank" href="{url}" rel="noopener noreferrer nofollow">문서</a>를 참조하세요.
+        title: 임베디드 Barastack UI에 액세스
+        titleDescription: 내장된 Barastack UI는 디버깅 및 검증 목적으로만 사용할 수 있습니다. InfinityStack와 Barastack의 통합 방식에 대한 자세한 내용은 <a target="_blank" href="{url}" rel="noopener noreferrer nofollow">문서</a>를 참조하세요.
       longhorn:
         title: 임베디드 롱혼 UI에 액세스
         titleDescription: 디버깅 및 검증 목적으로만 내장된 Longhorn UI를 지원합니다.
@@ -1552,14 +1552,14 @@ harvester:
       'harvester-system/vm-import-controller': vm-import-controller는 다른 소스 클러스터에서 기존 InfinityStack 클러스터로 가상 머신 워크로드를 마이그레이션하는 데 도움이 되는 추가 기능입니다.
       'harvester-system/pcidevices-controller': pcidevices-controller는 클러스터의 노드에 대한 PCI 장치를 검색하고 사용자가 InfinityStack 가상 머신 및 게스트 클러스터와 함께 사용할 PCI 패스스루를 위한 장치를 준비할 수 있도록 돕는 애드온입니다.
       'cattle-logging-system/rancher-logging': rancher-logging은 InfinityStack 클러스터에서 다양한 로그, 이벤트, 감사를 수집하고 흐름에 따라 다양한 종류의 서버로 라우팅하는 애드온입니다.
-      'harvester-system/rancher-vcluster': rancher-vcluster는 Rancher가 설치된 가상 클러스터(vcluster)를 배포합니다.
+      'harvester-system/rancher-vcluster': rancher-vcluster는 Barastack가 설치된 가상 클러스터(vcluster)를 배포합니다.
       'cattle-monitoring-system/rancher-monitoring': rancher-monitoring은 InfinityStack 클러스터와 가상 머신 메트릭을 수집하고 내장된 대시보드에서 메트릭을 보고 원격 서버로 알림을 보낼 수 있는 애드온입니다.
       'vm-import-controller': vm-import-controller는 다른 소스 클러스터에서 기존 InfinityStack 클러스터로 가상 머신 워크로드를 마이그레이션하는 데 도움이 되는 추가 기능입니다.
       'pcidevices-controller': pcidevices-controller는 클러스터의 노드에 대한 PCI 장치를 검색하고 사용자가 InfinityStack 가상 머신 및 게스트 클러스터와 함께 사용할 PCI 패스스루를 위한 장치를 준비할 수 있도록 돕는 애드온입니다.
       'nvidia-driver-toolkit': 'nvidia-driver-toolkit은 vGPU 장치를 활성화하고 이를 InfinityStack 가상 머신에 할당하는 애드온입니다.'
       'rancher-logging': rancher-logging은 InfinityStack 클러스터에서 다양한 로그, 이벤트 및 감사를 수집하고 흐름에 따라 여러 종류의 서버로 라우팅하는 애드온입니다..
       'rancher-monitoring': rancher-monitoring은 InfinityStack 클러스터와 가상 머신 메트릭을 수집하고, 내장된 대시보드에서 이를 보고, 원격 서버로 알림을 보내는 애드온입니다.
-      'rancher-vcluster': rancher-vcluster는 Rancher가 설치된 가상 클러스터(vcluster)를 배포합니다.
+      'rancher-vcluster': rancher-vcluster는 Barastack가 설치된 가상 클러스터(vcluster)를 배포합니다.
       'harvester-seeder': harvester-seeder는 IPMI와 Redfish를 사용하여 하드웨어 정보를 검색하고 대역 외 작업을 수행하는 애드온입니다.
       'harvester-system/harvester-seeder': harvester-seeder는 IPMI와 Redfish를 사용하여 하드웨어 정보를 검색하고 대역 외 작업을 수행하는 애드온입니다.
       'harvester-csi-driver-lvm': harvester-csi-driver-lvm은 사용자가 로컬 장치로 LVM을 통해 PVC를 생성할 수 있도록 해주는 애드온입니다.
@@ -1568,9 +1568,9 @@ harvester:
         basic: 기본
         pvc: 볼륨
     rancherVcluster:
-      accessRancher: Rancher 대시보드에 접속하세요
+      accessRancher: Barastack 대시보드에 접속하세요
       hostname: 호스트 이름
-      rancherVersion: Rancher 버전
+      rancherVersion: Barastack 버전
       password: 부트스트랩 비밀번호
     switchFailed: "{action} {name}이 실패했습니다!"
     nvidiaDriverToolkit:
@@ -1795,7 +1795,7 @@ harvester:
 product:
   apps: 앱
   auth: 사용자 및 인증
-  backup: Rancher 백업
+  backup: Barastack 백업
   cis: CIS 벤치마크
   ecm: 클러스터 매니저
   explorer: 클러스터 탐색기
@@ -1811,7 +1811,7 @@ product:
   mcapps: 전역 구성
   neuvector: NeuVector
   harvesterManager: 가상화 관리
-  rancher: Rancher
+  rancher: Barastack
   legacy: 레거시
   uiplugins: 확장
   elemental: OS 관리
@@ -1861,7 +1861,7 @@ about:
     cli: CLI
     helm: 헬름
     machine: 머신
-    rancher: Rancher
+    rancher: Barastack
     releaseNotes: "릴리스 노트 보기"
   os:
     mac: macOS
@@ -2076,7 +2076,7 @@ authConfig:
       tip: 연결 프로세스 중에 TLS로 래핑하여 암호화되지 않은 연결을 업그레이드합니다. TLS와 함께 사용할 수 없습니다.
     searchUsingServiceAccount: 
       label: 서비스 계정 검색 활성화
-      tip: 이 기능을 활성화하면 Rancher는 사용자 계정 대신 서비스 계정을 사용하여 사용자와 그룹을 검색합니다.
+      tip: 이 기능을 활성화하면 Barastack는 사용자 계정 대신 서비스 계정을 사용하여 사용자와 그룹을 검색합니다.
     tls: TLS
     userEnabledAttribute: 사용자 활성화 속성
     userMemberAttribute: 사용자 멤버 속성
@@ -2096,8 +2096,8 @@ authConfig:
     api: "{vendor} API 호스트"
     sloTitle: 로그아웃 동작
     sloOptions:
-      onlyRancher: Rancher에서 로그아웃하고 {name}에서 로그아웃하지 마세요
-      logoutAll: Rancher 및 {name}에서 로그아웃합니다({name}에 등록된 다른 모든 애플리케이션 포함)
+      onlyRancher: Barastack에서 로그아웃하고 {name}에서 로그아웃하지 마세요
+      logoutAll: Barastack 및 {name}에서 로그아웃합니다({name}에 등록된 다른 모든 애플리케이션 포함)
       choose: 추가 로그아웃 단계에서 사용자가 위의 항목 중 하나를 선택하도록 허용합니다.
     cert:
       label: 인증서
@@ -2153,7 +2153,7 @@ authConfig:
       externalHelp: 자세한 내용은 OData 필터 표현식 설명서를 참조하세요.
       externalHelpLink: https://learn.microsoft.com/en-us/dynamics365/business-central/dev-itpro/webservices/use-filter-expressions-in-odata-uris#filter-expressions
     reply:
-      info: "Azure AD에서는 Rancher 서버에 대한 화이트리스트 URL이 설정되어야 합니다. 이 설정을 시작하기 전에 아래 URL이 Azure 포털의 회신 URL 섹션에 설정되어 있는지 확인하세요. 화이트리스트 URL이 전파되기까지 최대 5분이 소요될 수 있습니다."
+      info: "Azure AD에서는 Barastack 서버에 대한 화이트리스트 URL이 설정되어야 합니다. 이 설정을 시작하기 전에 아래 URL이 Azure 포털의 회신 URL 섹션에 설정되어 있는지 확인하세요. 화이트리스트 URL이 전파되기까지 최대 5분이 소요될 수 있습니다."
       label: 회신 URL
     updateEndpoint:
       button: 엔드포인트 업데이트
@@ -2162,12 +2162,12 @@ authConfig:
         linkText: "여기에서 업데이트하세요."
       modal:
         title: 확실합니까? 이 업데이트는 되돌릴 수 없습니다.
-        body: "<p><b>추가 조치가 필요할 수 있습니다</b>. Azure AD 앱이 Microsoft Graph에 Directory.Read.All <b>Application</b> 권한이 추가되어 있는지 확인하세요.<br> Azure AD 인증을 Rancher에서 구성하는 동안 엔드포인트를 사용자 정의한 경우 자동으로 업데이트되지 않을 것입니다.</p>"
+        body: "<p><b>추가 조치가 필요할 수 있습니다</b>. Azure AD 앱이 Microsoft Graph에 Directory.Read.All <b>Application</b> 권한이 추가되어 있는지 확인하세요.<br> Azure AD 인증을 Barastack에서 구성하는 동안 엔드포인트를 사용자 정의한 경우 자동으로 업데이트되지 않을 것입니다.</p>"
   oidc:
     oidc: OIDC 계정 구성
     genericoidc: Configure an OIDC account
     keycloakoidc: Keycloak OIDC 계정 구성
-    rancherUrl: Rancher URL
+    rancherUrl: Barastack URL
     clientId: 클라이언트 ID
     clientSecret: 클라이언트 시크릿
     customEndpoint:
@@ -2406,11 +2406,11 @@ backupRestoreOperator:
   backup:
     label: 리소스 세트
     description: 리소스 세트는 백업-복원-운영자가 백업에서 수집하는 리소스를 결정합니다.
-    enableEncryptionWarning: '암호화를 활성화하는 것이 좋습니다.<b><i>전체 Rancher 백업 리소스 세트</i></b>, 그렇지 않으면 민감한 정보가 일반 텍스트로 백업됩니다. <a target="_blank" rel="noopener noreferrer nofollow" href="https://ranchermanager.docs.rancher.com/reference-guides/backup-restore-configuration/backup-configuration#resourcesets">더 읽어보세요</a>.'
+    enableEncryptionWarning: '암호화를 활성화하는 것이 좋습니다.<b><i>전체 Barastack 백업 리소스 세트</i></b>, 그렇지 않으면 민감한 정보가 일반 텍스트로 백업됩니다. <a target="_blank" rel="noopener noreferrer nofollow" href="https://ranchermanager.docs.rancher.com/reference-guides/backup-restore-configuration/backup-configuration#resourcesets">더 읽어보세요</a>.'
     missingResourceSetWarning: The <b><i>{resourceSet}</i></b> 리소스 세트가 존재하지 않습니다. 삭제되었을 수 있습니다. 다른 옵션을 선택하세요.
     resourceSetOptions: 
-      'rancher-resource-set-basic': '기본 Rancher 백업 리소스 세트'
-      'rancher-resource-set-full': '전체 Rancher 백업 리소스 세트'
+      'rancher-resource-set-basic': '기본 Barastack 백업 리소스 세트'
+      'rancher-resource-set-full': '전체 Barastack 백업 리소스 세트'
       custom: 사용자 정의
       customResourceSetLabel: 사용자 정의 리소스 세트
   backupFilename: 백업 파일 이름
@@ -2418,7 +2418,7 @@ backupRestoreOperator:
     label: 삭제 제한 시간
     tip: 리소스 삭제가 성공할 때까지 기다리는 초 단위 시간. 삭제를 강제로 진행하기 전에 최종 확정자를 제거합니다.
   deployment:
-    rancherNamespace: Rancher 리소스 세트 네임스페이스
+    rancherNamespace: Barastack 리소스 세트 네임스페이스
     size: 크기
     storage:
       label: 기본 저장 위치
@@ -2436,19 +2436,19 @@ backupRestoreOperator:
       warning: '이 {type}은 "유지"로 설정되어 있지 않습니다. 볼륨이 변경되거나 언바인드되면 백업이 손실될 수 있습니다.'
   encryption: 암호화
   encryptionConfigName:
-    backuptip: "<code>cattle-resources-system</code> 네임스페이스에 <code>encryption-provider-config.yaml</code> 키가 있는 모든 시크릿에 대한 정보입니다. <br/> 이 파일의 내용은 Rancher Backup에서 저장되지 않으며 복원에 필요합니다."
+    backuptip: "<code>cattle-resources-system</code> 네임스페이스에 <code>encryption-provider-config.yaml</code> 키가 있는 모든 시크릿에 대한 정보입니다. <br/> 이 파일의 내용은 Barastack Backup에서 저장되지 않으며 복원에 필요합니다."
     label: 암호화 구성 시크릿
     options:
       none: 백업 내용을 암호화하지 않음
       secret: '<a target="_blank" rel="noopener noreferrer nofollow" href="https://kubernetes.io/docs/tasks/administer-cluster/encrypt-data/#understanding-the-encryption-at-rest-configuration">Encryption Config Secret</a>을 사용하여 백업 암호화 (권장됨)'
     restoretip: "백업이 암호화로 수행된 경우 복원 중에 동일한 암호화 제공자 구성을 포함하는 시크릿을 사용해야 합니다."
-    warning: "이 파일의 내용은 Rancher Backup에서 저장되지 않으며 복원에 필요합니다."
+    warning: "이 파일의 내용은 Barastack Backup에서 저장되지 않으며 복원에 필요합니다."
   lastBackup: 마지막 백업
   nextBackup: 다음 백업
   noResourceSet: 백업 CR을 생성하려면이 네임스페이스에 리소스 세트를 정의해야 합니다.
   prune:
     label: 제거
-    tip: Rancher에서 관리하는 리소스 중 백업에 없는 리소스를 제거합니다. (권장됨)
+    tip: Barastack에서 관리하는 리소스 중 백업에 없는 리소스를 제거합니다. (권장됨)
   resourceSetName: 리소스 세트
   restoreFrom:
     default: 기본 저장 대상
@@ -2507,7 +2507,7 @@ catalog:
       label: 컨테이너 레지스트리
       tooltip: 컨테이너 이미지는 클러스터 컨테이너 레지스트리 또는 해당되지 않는 경우 시스템 컨테이너 레지스트리 설정에서 가져옵니다. 이 기본 동작을 변경하려면 여기에 레지스트리를 입력하거나 업데이트하세요.
       custom:
-        checkBoxLabel: Rancher 시스템 컨테이너 이미지용 컨테이너 레지스트리
+        checkBoxLabel: Barastack 시스템 컨테이너 이미지용 컨테이너 레지스트리
         inputLabel: 컨테이너 레지스트리
         placeholder: "레지스트리 도메인 및 포트, 예: registry.io:5000"
     header:
@@ -2569,7 +2569,7 @@ catalog:
         경고, {manager}님이 {name} 앱의 배포 및 업그레이드를 관리합니다. 이 앱의 업그레이드는 지원되지 않습니다.<br>
         {version, select,
           null { }
-          other { 대부분의 상황에서는 {version} 버전이 현재 실행 중인 Rancher 버전과 호환되는지 확인하기 위해 사용자 개입이 필요하지 않습니다.}
+          other { 대부분의 상황에서는 {version} 버전이 현재 실행 중인 Barastack 버전과 호환되는지 확인하기 위해 사용자 개입이 필요하지 않습니다.}
         }    
     error:
       requiresFound: '<a href="{url}">{name}</a>을(를) 설치하기 전에 이 차트를 설치해야 합니다.'
@@ -2687,7 +2687,7 @@ catalog:
       rancher-charts: "{vendor}"
       rancher-partner-charts: 파트너
       rancher-rke2-charts: RKE2
-      rancher-ui-plugins: Rancher 확장
+      rancher-ui-plugins: Barastack 확장
 
     target:
       git: 헬름 차트 또는 클러스터 템플릿 정의를 포함하는 Git 저장소
@@ -2894,7 +2894,7 @@ cluster:
       windowsDetail: 등록하려는 기존의 각 Windows 시스템에서 PowerShell에서 이 명령을 실행합니다. Windows 노드는 작업자만 될 수 있습니다.
       windowsWorkersOnly: <b>Windows 노드는 워커노드만 될 수 있습니다.</b>
       windowsNotReady: Windows 작업자를 추가하기 위한 등록 명령이 표시되기 전에 클러스터가 Linux etcd, 컨트롤 플레인 및 작업자 노드와 함께 실행되고 있어야 합니다.
-      windowsWarning: 기본적으로 Rancher 차트에 의해 배포된 일부를 포함한 워크로드 파드는 Linux 및 Windows 노드 모두에서 예약됩니다. 차트에서 NodeSelector를 편집하여 호환되는 노드에 배치하도록 지시합니다.
+      windowsWarning: 기본적으로 Barastack 차트에 의해 배포된 일부를 포함한 워크로드 파드는 Linux 및 Windows 노드 모두에서 예약됩니다. 차트에서 NodeSelector를 편집하여 호환되는 노드에 배치하도록 지시합니다.
       windowsDeprecatedForRKE1: RKE1에 대해 Windows 지원이 사용되지 않습니다. RKE2로 마이그레이션하는 것이 좋습니다.
       insecure: "Insecure: 서버에 자체 서명된 인증서가 있는 경우 TLS 확인을 생략하려면 이 옵션을 선택합니다."
   credential:
@@ -3077,7 +3077,7 @@ cluster:
         toolTip: 선택한 OS 이미지로 로그인할 SSH 사용자
   haveOneOwner: 적어도 하나의 소유자 역할을 가진 멤버가 있어야 합니다.
   import:
-    warningBanner: "데이터 손상을 일으킬 수 있으므로 이미 다른 Rancher 인스턴스에 연결된 클러스터를 가져오지 마세요."
+    warningBanner: "데이터 손상을 일으킬 수 있으므로 이미 다른 Barastack 인스턴스에 연결된 클러스터를 가져오지 마세요."
     commandInstructions: "지원되는 쿠버네티스 버전이 실행 중인 기존 쿠버네티스 클러스터에서 아래의 <code>kubectl</code> 명령을 실행하여 {vendor}에 가져오세요:"
     commandInstructionsInsecure: "{vendor} 설치에 자체 서명 또는 신뢰할 수 없는 SSL 인증서가 있는 경우 &quot;알 수 없는 기관에 의해 서명된 인증서&quot; 오류가 발생합니다. 대신 인증서 확인을 우회하려면 아래 명령을 실행하세요:"
     clusterRoleBindingInstructions: "일부 리소스를 만들 때 권한 오류가 발생하면 사용자에게 <code>cluster-admin</code> 역할이 없을 수 있습니다. 이 명령을 사용하여 적용하세요:"
@@ -3163,7 +3163,7 @@ cluster:
       managedDisksSize:
         label: 관리 디스크 크기
       nsg:
-        help: Rancher가 관리하거나 기존 NSG를 제공하는 경우이 템플릿을 사용하는 모든 노드가 제공된 NSG를 사용합니다. NSG가 제공되지 않으면 각 노드에 대해 새 NSG가 생성됩니다.
+        help: Barastack가 관리하거나 기존 NSG를 제공하는 경우이 템플릿을 사용하는 모든 노드가 제공된 NSG를 사용합니다. NSG가 제공되지 않으면 각 노드에 대해 새 NSG가 생성됩니다.
         label: 네트워크 보안 그룹
       openPort:
         add: 포트 추가
@@ -3409,17 +3409,17 @@ cluster:
       podAffinityAnti: 파드 어피니티/안티-어피니티
       nodeAffinity: 노드 어피니티
       schedulingCustomization: 
-        label: Rancher 클러스터 에이전트 포드 퇴거 방지
+        label: Barastack 클러스터 에이전트 포드 퇴거 방지
         description: 이렇게 하면 노드 압력, 리소스 제약 또는 스케줄러 정책으로 인해 클러스터 에이전트 포드가 추방되는 일이 없습니다.
         banner: 이 기능은 글로벌 기본 설정과 다른 설정으로 활성화되었습니다.
         innerCheckbox: 우선순위 클래스 및 Pod 중단 예산에 대한 글로벌 설정 적용
     banners:
       advanced: 이는 고급 구성 옵션입니다. 일반적으로 그대로 두는 것이 좋습니다.
-      tolerations: 추가 파드 톨러레이션은 Rancher에서 적용하는 기본 톨러레이션에 추가됩니다.
+      tolerations: 추가 파드 톨러레이션은 Barastack에서 적용하는 기본 톨러레이션에 추가됩니다.
       limits: 파드 요청 및 제한에는 기본 구성이 없습니다.
       windowsCompatibility: "<b>에이전트</b>가 Windows 노드에서 실행되지 않도록 하는 노드 어피니티 규칙을 제거하지 않는 것이 좋습니다. 이는 지원되지 않는 구성입니다."
     affinity:
-      default: Rancher에서 정의한 기본 어피니티 규칙 사용
+      default: Barastack에서 정의한 기본 어피니티 규칙 사용
       custom: 사용자 정의 어피니티 규칙 사용
   advanced:
     argInfo:
@@ -3457,11 +3457,11 @@ cluster:
     cloudProviderAddConfig: '쿠버네티스 1.27 이상에서는 Amazon Cloud Provider에 추가 구성이 필요합니다. 자세한 내용은 <a href="https://ranchermanager.docs.rancher.com/how-to-guides/new-user-guides/kubernetes-clusters-in-rancher-setup/set-up-cloud-providers/amazon" target="_blank" rel="noopener noreferrer nofollow">문서</a>를 참조하세요.'
     machinePoolError: |-
       {count, plural,
-        =1 { {pool_name}: {fields}에 제공된 값을 예상 값 목록에서 찾을 수 없습니다. 이는 Rancher 외부에서 프로비저닝된 클러스터에서 발생하거나 공급자 옵션이 변경된 경우 발생할 수 있습니다.}
-        other { {pool_name}: {fields}에 제공된 값을 예상 값 목록에서 찾을 수 없습니다. 이는 Rancher 외부에서 프로비저닝된 클러스터에서 발생하거나 공급자 옵션이 변경된 경우 발생할 수 있습니다. }
+        =1 { {pool_name}: {fields}에 제공된 값을 예상 값 목록에서 찾을 수 없습니다. 이는 Barastack 외부에서 프로비저닝된 클러스터에서 발생하거나 공급자 옵션이 변경된 경우 발생할 수 있습니다.}
+        other { {pool_name}: {fields}에 제공된 값을 예상 값 목록에서 찾을 수 없습니다. 이는 Barastack 외부에서 프로비저닝된 클러스터에서 발생하거나 공급자 옵션이 변경된 경우 발생할 수 있습니다. }
       }
-    rke1DeprecationMessage: 'Rancher Kubernetes Engine(RKE/RKE1)은 2025년 7월 31일에 지원이 종료됩니다. Rancher 2.12.0 이상 버전은 다운스트림 RKE1 클러스터의 프로비저닝 또는 관리를 더 이상 지원하지 않습니다. 지속적인 지원 및 보안 업데이트를 위해 RKE1 클러스터를 RKE2로 재플랫폼하는 것이 좋습니다. 전환에 대해 더 자세히 알아보세요 <a href="https://www.suse.com/support/kb/doc/?id=000021518" target="_blank" rel="noopener noreferrer nofollow">here</a>.'
-    rke1DeprecationShortMessage: Rancher Kubernetes Engine(RKE/RKE1)은 2025년 7월 31일에 지원이 종료됩니다. Rancher 2.12.0 이상에서는 다운스트림 RKE1 클러스터의 프로비저닝이나 관리를 더 이상 지원하지 않습니다.
+    rke1DeprecationMessage: 'Rancher Kubernetes Engine(RKE/RKE1)은 2025년 7월 31일에 지원이 종료됩니다. Barastack 2.12.0 이상 버전은 다운스트림 RKE1 클러스터의 프로비저닝 또는 관리를 더 이상 지원하지 않습니다. 지속적인 지원 및 보안 업데이트를 위해 RKE1 클러스터를 RKE2로 재플랫폼하는 것이 좋습니다. 전환에 대해 더 자세히 알아보세요 <a href="https://www.suse.com/support/kb/doc/?id=000021518" target="_blank" rel="noopener noreferrer nofollow">here</a>.'
+    rke1DeprecationShortMessage: Rancher Kubernetes Engine(RKE/RKE1)은 2025년 7월 31일에 지원이 종료됩니다. Barastack 2.12.0 이상에서는 다운스트림 RKE1 클러스터의 프로비저닝이나 관리를 더 이상 지원하지 않습니다.
   rkeTemplateUpgrade: 템플릿 수정 {name} 업그레이드 가능
   cloudCredentials:
     renew: 클라우드 자격 증명 갱신
@@ -3553,10 +3553,10 @@ cluster:
       searchPlaceholder: 검색을 시작하려면 입력하세요.
       noResults: 결과가 없습니다.
   privateRegistry:
-    header: Rancher 시스템 컨테이너 이미지용 레지스트리
-    label: Rancher 시스템 컨테이너 이미지를 위한 클러스터 범위 컨테이너 레지스트리 활성화
-    description: "활성화되면 Rancher는 클러스터 프로비저닝 중에 이 레지스트리에서 컨테이너 이미지를 가져올 것입니다. 기본적으로 Rancher는 Rancher의 공식 헬름 차트 앱을 설치할 때도 이 레지스트리를 사용합니다. 클러스터 범위 레지스트리가 비활성화된 경우 시스템 이미지는 전역 설정의 System Default Registry에서 가져옵니다."
-    importedDescription: "기본적으로 Rancher는 Rancher의 공식 Helm 차트 앱을 설치할 때 이 레지스트리를 사용합니다. 클러스터 범위 레지스트리가 비활성화된 경우 시스템 이미지는 글로벌 설정의 시스템 기본 레지스트리에서 가져옵니다."
+    header: Barastack 시스템 컨테이너 이미지용 레지스트리
+    label: Barastack 시스템 컨테이너 이미지를 위한 클러스터 범위 컨테이너 레지스트리 활성화
+    description: "활성화되면 Barastack는 클러스터 프로비저닝 중에 이 레지스트리에서 컨테이너 이미지를 가져올 것입니다. 기본적으로 Barastack는 Barastack의 공식 헬름 차트 앱을 설치할 때도 이 레지스트리를 사용합니다. 클러스터 범위 레지스트리가 비활성화된 경우 시스템 이미지는 전역 설정의 System Default Registry에서 가져옵니다."
+    importedDescription: "기본적으로 Barastack는 Barastack의 공식 Helm 차트 앱을 설치할 때 이 레지스트리를 사용합니다. 클러스터 범위 레지스트리가 비활성화된 경우 시스템 이미지는 글로벌 설정의 시스템 기본 레지스트리에서 가져옵니다."
     docsLinkRke2: '개인 레지스트리 미러를 구성하는 데 도움이 필요한 경우 RKE2 <a href="https://docs.rke2.io/install/containerd_registry_configuration/" target="_blank">문서</a>를 참조하세요.'
     docsLinkK3s: '개인 레지스트리 미러를 구성하는 데 도움이 필요한 경우 K3s <a href="https://docs.k3s.io/installation/private-registry" target="_blank">문서</a>를 참조하세요.'
     privateRegistryUrlError: 레지스트리는 유효한 URL이어야 합니다. 스키마는 선택 사항입니다.
@@ -3634,7 +3634,7 @@ cluster:
     register-custom: 모든 쿠버네티스 클러스터를 가져옵니다.
   rke2:
     banner:
-      psaChange: PSACT가 자동으로 Rancher 기본값으로 설정되었습니다.
+      psaChange: PSACT가 자동으로 Barastack 기본값으로 설정되었습니다.
       cisOverride: 이 설정을 변경하면 클러스터 보안에 영향을 미칠 수 있으며 기본 CIS 설정을 무시합니다.
       cisUnsupported: 선택한 쿠버네티스 버전은 더 이상 CIS 프로필 "{cisProfile}"을 지원하지 않습니다. 지원되는 프로필을 선택하세요. 변경된 CIS 프로필의 영향을 평가하려면 <a href="https://docs.rke2.io/security/hardening_guide" target="_blank" rel="noopener noreferrer nofollow">문서</a>를 확인하는 것이 좋습니다.
     modal:
@@ -4085,7 +4085,7 @@ fleet:
       pollingInterval:
         label: 폴링 간격
         tooltip: 폴링 간격은 저장소에 푸시한 후 Fleet이 이에 반응하는 데 걸리는 시간입니다.
-        webhookWarning: Rancher에는 Git 업데이트와 GitRepo 리소스를 조정하기 위한 웹훅이 구성되어 있습니다. 폴링 간격은 자동으로 1시간으로 조정됩니다.
+        webhookWarning: Barastack에는 Git 업데이트와 GitRepo 리소스를 조정하기 위한 웹훅이 구성되어 있습니다. 폴링 간격은 자동으로 1시간으로 조정됩니다.
         minimumValuewarning: 권장되는 최소 폴링 간격은 15초입니다. 많은 리소스가 포함된 GitRepos의 성능 문제를 방지하려면 이 값을 늘리는 것을 고려해 보세요.
     add:
       steps:
@@ -4229,7 +4229,7 @@ gatekeeperIndex:
   poweredBy: OPA 게이트키퍼
   unavailable: 시스템 차트 카탈로그에서 OPA + 게이트키퍼를 사용할 수 없습니다.
   violations: 위반 사항
-  deprecated: Rancher 2.8에서 OPA 게이트키퍼 차트는 사용 중단되었으며 향후 릴리스에서 제거될 예정입니다. <a target="_blank" rel="noopener noreferrer nofollow" href="https://www.kubewarden.io">Kubewarden</a>로 전환하는 것을 고려하십시오.
+  deprecated: Barastack 2.8에서 OPA 게이트키퍼 차트는 사용 중단되었으며 향후 릴리스에서 제거될 예정입니다. <a target="_blank" rel="noopener noreferrer nofollow" href="https://www.kubewarden.io">Kubewarden</a>로 전환하는 것을 고려하십시오.
 
 gatekeeperInstall:
   auditInterval: 자동 간격
@@ -4996,7 +4996,7 @@ longhorn:
         label: "Longhorn"
         description: "UI를 통한 스토리지 시스템 관리"
         na: 리소스를 사용할 수 없음
-        uiServiceUnavailable: The Longhorn UI service is not available or you do not have permission to access it.
+        uiServiceUnavailable: Longhorn UI 서비스를 사용할 수 없거나 액세스 권한이 없습니다.
 
 neuvector:
   overview:
@@ -5012,8 +5012,8 @@ login:
   howdy: 안녕하세요!
   welcome: "{vendor}에 오신 것을 환영합니다."
   loggedOut: 로그아웃되었습니다.
-  loggedOutFromSso: You've been logged out of Rancher, however you may still be logged in to your single sign-on identity provider.
-  loggedOutFromSlo: You've been logged out of Rancher and from your single sign-on identity provider.
+  loggedOutFromSso: Barastack에서 로그아웃되었지만 Single Sign-On ID 공급자에는 여전히 로그인된 상태가 유지될 수 있습니다.
+  loggedOutFromSlo: Barastack와 단일 로그인 ID 공급자에서 로그아웃되었습니다.
   loginAgain: 계속하려면 다시 로그인하세요.
   serverError:
     authFailedCreds: "로그인 실패: 자격 증명을 확인하거나 계정이 로그인 권한이 없을 수 있습니다."
@@ -5022,9 +5022,9 @@ login:
     invalidSamlAttrs: "잘못된 SAML 속성"
     noResponse: "응답을 받지 못했습니다"
   error: 로그인 중 오류가 발생했습니다. 다시 시도하세요.
-  invalidResponseError: Invalid response received to login request. Please try again.
+  invalidResponseError: 로그인 요청에 대한 잘못된 응답을 받았습니다. 다시 시도해 주세요.
   clientError: 잘못된 사용자 이름 또는 비밀번호입니다. 다시 시도하세요.
-  userUnauthorized: You are not authorized to use this system.
+  userUnauthorized: 이 시스템을 사용할 권한이 없습니다.
   specificError: "로그인 중 오류가 발생했습니다: {msg}"
   useLocal: 로컬 사용자 사용
   loginWithProvider: "{provider}로 로그인"
@@ -5080,7 +5080,7 @@ members:
       label: 사용자 정의
       description: 이 사용자에 대해 개별 역할을 선택하세요.
       lockedRole: 이 역할은 잠겨 있습니다.
-  localClusterWarning: "주의: 이 클러스터는 Rancher가 데이터 저장소로 사용하는 클러스터입니다. 이 클러스터에 쓰기 액세스 권한을 부여받아야 하는 것은 관리자뿐입니다. 이 클러스터에 대한 쓰기 액세스 권한을 가진 사용자는 이 설치의 모든 부분에 액세스 권한을 부여할 수 있습니다."
+  localClusterWarning: "주의: 이 클러스터는 Barastack가 데이터 저장소로 사용하는 클러스터입니다. 이 클러스터에 쓰기 액세스 권한을 부여받아야 하는 것은 관리자뿐입니다. 이 클러스터에 대한 쓰기 액세스 권한을 가진 사용자는 이 설치의 모든 부분에 액세스 권한을 부여할 수 있습니다."
   noRolesAssigned: 이 프로젝트에 할당된 사용자가 없습니다.
   
 membershipEditor:
@@ -6043,8 +6043,8 @@ plugins:
     apiAnnotationMissing: '확장 프로그램을 로드할 수 없습니다. 설치된 버전이 현재 확장 프로그램 API 버전과 호환되지 않습니다. (확장 프로그램에 catalog.cattle.io/ui-extensions-version 애노테이션이 누락되어 Rancher 2.10 이상 버전과 호환되지 않습니다.)'
     api: 이 확장 프로그램은 확장 API와 호환되지 않습니다.
     host: 이 확장 프로그램은 이 응용 프로그램과 호환되지 않습니다.
-    version: 이 확장 프로그램은 Rancher의 이 버전과 호환되지 않습니다.
-    kubeVersion: 확장 프로그램을 로드할 수 없습니다. 설치된 버전이 현재 Rancher Kubernetes 버전과 호환되지 않습니다.
+    version: 이 확장 프로그램은 Barastack의 이 버전과 호환되지 않습니다.
+    kubeVersion: 확장 프로그램을 로드할 수 없습니다. 설치된 버전이 현재 Barastack Kubernetes 버전과 호환되지 않습니다.
     load: 이 확장 프로그램의 코드를 로드하는 중에 오류가 발생했습니다.
     developerPkg: 이 확장 프로그램은 내부적으로 로드되었으므로 외부 버전을 로드하지 않습니다.
   success:
@@ -6062,9 +6062,9 @@ plugins:
     detail: 상세 정보
     versions: 버전
     versionError: 버전 정보를 로드할 수 없습니다.
-    requiresRancherVersion: "Rancher {version}이 필요함"
+    requiresRancherVersion: "Barastack {version}이 필요함"
     requiresKubeVersion: "Kube 버전 {version}이 필요함"
-    requiresExtensionApiVersionMissing: 'Rancher 2.10 이상과 호환되지 않는다는 것을 의미하는 catalog.cattle.io/ui-extensions-version 주석이 없습니다.'
+    requiresExtensionApiVersionMissing: 'Barastack 2.10 이상과 호환되지 않는다는 것을 의미하는 catalog.cattle.io/ui-extensions-version 주석이 없습니다.'
     requiresExtensionApiVersion: "확장 API 버전이 필요합니다. {required}"
     requiresHost: '일치하는 호스트가 필요합니다. "{mainHost}"'
   empty:
@@ -6076,7 +6076,7 @@ plugins:
   loadError: 이 확장 프로그램의 코드를 로드하는 중에 오류가 발생했습니다.
   helmError: "헬름을 통한 확장 프로그램 설치 중에 오류가 발생했습니다."
   manageRepos: 저장소 관리
-  addRancherRepos: Rancher 저장소 추가
+  addRancherRepos: Barastack 저장소 추가
   manageCharts: 확장 프로그램 차트 관리
   warnNoAuth: 이 버전의 확장 프로그램은 인증 전에 로드되며 로그인 프로세스에 액세스할 수 있습니다.
   manageCatalog:
@@ -6156,7 +6156,7 @@ plugins:
     banner: 새로운 확장 프로그램 저장소를 사용할 수 있습니다. 이러한 저장소를 활성화하려면 오른쪽의 버튼을 클릭하세요.
     bannerBtn: 저장소 추가
     title: 확장 프로그램 저장소 추가
-    prompt: 여러 Rancher 확장 프로그램 저장소를 설치하여 확장 프로그램 카탈로그를 확장할 수 있습니다.
+    prompt: 여러 Barastack 확장 프로그램 저장소를 설치하여 확장 프로그램 카탈로그를 확장할 수 있습니다.
   setup:
     installed: 이미 설치됨
     uninstalled: 이미 제거됨
@@ -6164,14 +6164,14 @@ plugins:
     prompt:
       cant: 자동 설치를 사용할 수 없습니다 - 필요한 헬름 차트를 찾을 수 없습니다.
       can: 확장 프로그램 연산자를 설치해야 합니다.
-      official: 공식 Rancher 확장 프로그램 저장소는 Rancher에서 게시한 확장 프로그램을 제공합니다.
-      partners: 파트너 확장 프로그램 저장소는 Rancher 파트너에서 게시한 확장 프로그램을 제공합니다.
-      community: 커뮤니티 확장 프로그램 저장소는 Rancher 커뮤니티에서 게시한 확장 프로그램을 제공합니다.
+      official: 공식 Barastack 확장 프로그램 저장소는 Barastack에서 게시한 확장 프로그램을 제공합니다.
+      partners: 파트너 확장 프로그램 저장소는 Barastack 파트너에서 게시한 확장 프로그램을 제공합니다.
+      community: 커뮤니티 확장 프로그램 저장소는 Barastack 커뮤니티에서 게시한 확장 프로그램을 제공합니다.
     install:
       title: 확장 프로그램 지원 활성화?
       prompt: 이를 통해 확장 프로그램 지원을 활성화하는 데 필요한 헬름 차트가 설치됩니다.
       airgap: Air-gapped 설치는 이 기능을 활성화하면 안 됩니다.
-      addRancherRepo: 공식 Rancher 확장 프로그램 저장소 추가
+      addRancherRepo: 공식 Barastack 확장 프로그램 저장소 추가
       addPartnersRancherRepo: 파트너 확장 프로그램 저장소 추가
       addCommunityRancherRepo: 커뮤니티 확장 프로그램 저장소 추가
     remove:
@@ -6180,13 +6180,13 @@ plugins:
       prompt: 이를 통해 확장 프로그램 지원을 활성화하는 데 필요한 헬름 차트가 제거됩니다.
       registry:
         official:
-          title: 공식 Rancher 확장 프로그램 저장소 제거
+          title: 공식 Barastack 확장 프로그램 저장소 제거
         partners:
           title: 파트너 확장 프로그램 저장소 제거
         community:
           title: 커뮤니티 확장 프로그램 저장소 제거
       crd:
-        title: Rancher 확장 프로그램 커스텀 리소스 정의 제거
+        title: Barastack 확장 프로그램 커스텀 리소스 정의 제거
         prompt: 하나 이상의 확장 프로그램이 설치되어 있습니다. CRD를 제거하면 이후 확장 프로그램 지원을 나중에 다시 활성화할 경우 이러한 확장 프로그램을 수동으로 다시 설치해야 합니다.
 podSecurityAdmission:
   name: 파드 보안 승인
@@ -6245,7 +6245,7 @@ prefs:
   advFeatures:
     title: 고급 기능
     viewInApi: '"API에서 보기" 활성화'
-    allNamespaces: Rancher가 관리하는 시스템 네임스페이스 표시 (편집 또는 삭제가 목적이 아님)
+    allNamespaces: Barastack가 관리하는 시스템 네임스페이스 표시 (편집 또는 삭제가 목적이 아님)
     themeShortcut: 다크/라이트 테마 키보드 단축키 전환 활성화 (Shift + T)
     pluginDeveloper: 확장 프로그램 개발자 기능 활성화
   hideDesc:
@@ -6417,7 +6417,7 @@ prometheusRule:
 
 promptForceRemove:
   modalTitle: 정말로 진행하시겠습니까?
-  removeWarning: "기본 인프라를 삭제하는 데 문제가 발생했습니다. 이 작업을 진행하면 머신 <b>{nameToMatch}</b>이(가) Rancher에서만 삭제됩니다. 참조된 모든 인프라를 수동으로 삭제하는 것이 강력히 권장됩니다."
+  removeWarning: "기본 인프라를 삭제하는 데 문제가 발생했습니다. 이 작업을 진행하면 머신 <b>{nameToMatch}</b>이(가) Barastack에서만 삭제됩니다. 참조된 모든 인프라를 수동으로 삭제하는 것이 강력히 권장됩니다."
   forceDelete: 강제 삭제
   confirmName: "아래에 풀 이름을 입력하여 확인하십시오:"
   podRemoveWarning: "파드를 강제로 삭제하면 파드 프로세스가 종료됐는지 확인하지 않습니다. 이로 인해 <strong>데이터 손상이나 불일치</strong>가 발생할 수 있습니다."
@@ -6429,9 +6429,9 @@ promptScaleMachineDown:
 
 promptSlo:
   title: "로그아웃"
-  text: "Rancher에서만 로그아웃하거나, 모든 {name} 애플리케이션에서 로그아웃합니다."
+  text: "Barastack에서만 로그아웃하거나, 모든 {name} 애플리케이션에서 로그아웃합니다."
   rancher:
-    active: Rancher에서만 로그아웃하세요
+    active: Barastack에서만 로그아웃하세요
   all:
     active: "{name}에서 로그아웃"
     waiting: 로그아웃 중
@@ -6522,7 +6522,7 @@ rbac:
         noApiGroupClusterScope: 핵심 K8s API, 클러스터 범위
         noApiGroupNamespaceScope: 핵심 K8s API, 네임스페이스 범위
         deprecatedLabel: (폐기됨)
-        resourceOptionInfo: 리소스 옵션은 모든 Rancher에서 관리하는 쿠버네티스 클러스터에서 사용 가능한 모든 리소스의 완전한 목록이 아닐 수 있습니다. 고급 사용 사례에서는 리소스 및 API 그룹을 수동으로 입력해야 할 수 있습니다.
+        resourceOptionInfo: 리소스 옵션은 모든 Barastack에서 관리하는 쿠버네티스 클러스터에서 사용 가능한 모든 리소스의 완전한 목록이 아닐 수 있습니다. 고급 사용 사례에서는 리소스 및 API 그룹을 수동으로 입력해야 할 수 있습니다.
         tableHeaders:
           verbs: 동사
           resources: 리소스
@@ -7807,7 +7807,7 @@ validation:
   setting:
     serverUrl:
       https: 서버 URL은 https여야 합니다.
-      localhost: '서버 URL이 Rancher 서버 내부(예: localhost)인 경우 다운스트림 클러스터가 Rancher와 통신하지 못할 수 있습니다.'
+      localhost: '서버 URL이 Barastack 서버 내부(예: localhost)인 경우 다운스트림 클러스터가 Barastack와 통신하지 못할 수 있습니다.'
       trailingForwardSlash: 서버 URL에는 맨 뒤에 슬래시가 있어서는 안 됩니다.
       url: 서버 URL은 URL이어야 합니다.
   stringLength:
@@ -8471,7 +8471,7 @@ typeDescription:
   #       If you link to anything external, it MUST have
   #       target="_blank" rel="noopener noreferrer nofollow"
   jwt.authentication: 클러스터에서 이 기능을 활성화하면 다운스트림 서비스 계정에 대한 JWT 인증 지원이 추가됩니다.  
-  branding: "브랜딩을 사용하면 관리자가  Rancher 제품 이름, 로고 및 색상 체계를 커스텀 하여 UI를 전체적으로 다시 브랜딩 할 수 있습니다."
+  branding: "브랜딩을 사용하면 관리자가  Barastack 제품 이름, 로고 및 색상 체계를 커스텀 하여 UI를 전체적으로 다시 브랜딩 할 수 있습니다."
   chart: "모든 차트에는 Linux 및 Windows 노드를 사용하는 클러스터에 설치할 수 있는 하나 이상의 버전이 있습니다(그렇지 않은 경우 명시되지 않음)."
   cis.cattle.io.clusterscanbenchmark: 벤치마크 버전은 kube-bench를 사용하여 실행할 벤치마크의 이름과 해당 벤치마크에 대한 유효한 구성 매개변수입니다.
   cis.cattle.io.clusterscanprofile: 프로필은 CIS 스캔의 구성입니다. 이는 사용할 벤치마크 버전 및 해당 벤치마크에서 건너뛸 특정 테스트를 지정합니다.
@@ -8493,7 +8493,7 @@ typeDescription:
   catalog.cattle.io.clusterrepo: "차트 저장소는 헬름 저장소 또는 {vendor} git 기반 응용 프로그램 카탈로그입니다. 클러스터의 사용 가능한 차트 목록을 제공합니다."
   catalog.cattle.io.clusterrepo.local: " 차트 저장소는 헬름 저장소 또는 {vendor} git 기반 응용 프로그램 카탈로그입니다. 클러스터 템플릿은 헬름 차트를 통해 배포됩니다."
   catalog.cattle.io.operation: 작업은 클러스터에 적용된 최근 헬름 작업 목록입니다.
-  catalog.cattle.io.app: 설치된 응용 프로그램은 Rancher 차트 또는 헬름 CLI를 통해 설치된 헬름 3 차트입니다.
+  catalog.cattle.io.app: 설치된 응용 프로그램은 Barastack 차트 또는 헬름 CLI를 통해 설치된 헬름 3 차트입니다.
   logging.banzaicloud.io.clusterflow: 클러스터에서 생성된 로그는 선택한 클러스터 Output에 수집되고 기록됩니다.
   logging.banzaicloud.io.clusteroutput: 클러스터 Output은 로그를 전송할 수 있는 로깅 제공자를 정의하며 로깅 오퍼레이터가 있는 네임스페이스에 배포될 때만 효과적입니다.
   logging.banzaicloud.io.flow: flow는 수집 및 필터링할 로그 및 로그를 보낼 Output을 정의합니다. flow는 네임스페이스별 리소스이므로 로그는 flow가 배포된 네임스페이스에서만 수집됩니다.
@@ -9325,7 +9325,7 @@ advancedSettings:
     'engine-supported-range': "지원되는 도커 엔진 버전의 Semver 범위입니다. 이 범위를 만족하지 않는 버전은 UI에서 지원되지 않는 것으로 표시됩니다."
     'ingress-ip-domain': "자동으로 생성된 인그레스 호스트 이름에 사용할 와일드카드 DNS 도메인입니다. <ingress-name>.<namespace-name>.<ingress controller의 IP 주소>가 도메인에 추가됩니다."
     'server-url': "기본 {appName} 설치 URL. HTTPS 여야 합니다. 클러스터의 모든 노드가 여기에 액세스할 수 있어야 합니다."
-    'system-default-registry': "모든 Rancher 시스템 컨테이너 이미지에 사용될 개인 레지스트리. 지정된 값이 없으면 컨테이너 런타임의 기본 레지스트리가 사용됩니다. 도커 및 containerd의 경우 기본값은 `docker.io`입니다."
+    'system-default-registry': "모든 Barastack 시스템 컨테이너 이미지에 사용될 개인 레지스트리. 지정된 값이 없으면 컨테이너 런타임의 기본 레지스트리가 사용됩니다. 도커 및 containerd의 경우 기본값은 `docker.io`입니다."
     'ui-index': "클러스터 매니저 UI의 HTML 인덱스 위치."
     'ui-dashboard-index': "{appName} UI의 HTML 인덱스 위치."
     'ui-offline-preferred': "UI 자산이 서버 컨테이너에서 로컬로 제공되거나 ui-index 및 ui-dashboard-index 설정에서 정의된 원격 URL에서 제공되는지를 제어합니다. `Dynamic` 옵션은 {appName}의 프로덕션 빌드에서 로컬 자산을 사용합니다."
@@ -9345,8 +9345,8 @@ advancedSettings:
     'ui-default-landing': "로그인 후 사용자가 착륙하는 기본 페이지."
     'brand': "'/assets/brand'에서 정의된 대체 테마의 폴더 이름"
     'hide-local-cluster': 로컬 클러스터 숨기기
-    'agent-tls-mode': "Rancher 인증서 확인. `strict` 모드에서는 에이전트(시스템, 클러스터, 플릿 등)가 `cacerts` 설정에서 CABundle이 서명한 인증서를 사용하는 Rancher 설치만 신뢰합니다. 모드가 `system-store`인 경우, 에이전트는 운영 체제의 신뢰 저장소에 있는 CABundle이 서명한 모든 인증서를 신뢰합니다."
-    'k3s-based-upgrader-uninstall-concurrency': Rancher가 가져온 K3s 또는 RKE2 클러스터에서 기존 `rancher-k3s-upgrader` 또는 `rancher-rke2-upgrader` 앱을 동시에 제거할 수 있는 최대 클러스터 수를 정의합니다.
+    'agent-tls-mode': "Barastack 인증서 확인. `strict` 모드에서는 에이전트(시스템, 클러스터, 플릿 등)가 `cacerts` 설정에서 CABundle이 서명한 인증서를 사용하는 Barastack 설치만 신뢰합니다. 모드가 `system-store`인 경우, 에이전트는 운영 체제의 신뢰 저장소에 있는 CABundle이 서명한 모든 인증서를 신뢰합니다."
+    'k3s-based-upgrader-uninstall-concurrency': Barastack가 가져온 K3s 또는 RKE2 클러스터에서 기존 `rancher-k3s-upgrader` 또는 `rancher-rke2-upgrader` 앱을 동시에 제거할 수 있는 최대 클러스터 수를 정의합니다.
     'imported-cluster-version-management': 가져온 RKE2/K3s 클러스터와 로컬 클러스터(RKE2/K3s 클러스터인 경우)에 대한 버전 관리를 활성화합니다. 클러스터별 버전 관리 설정은 클러스터 수준에서 이 전역 설정을 재정의합니다. 클러스터 수준 버전 관리가 'system-default'로 설정된 기존 클러스터의 경우, 이 플래그를 변경하면 다음 조정 시(기본적으로 5분마다 또는 클러스터가 편집되는 즉시, 둘 중 먼저 발생하는 시점) 클러스터 에이전트가 다시 배포됩니다.
     'harv-vlan': VLAN 네트워크의 기본 네트워크 인터페이스 이름입니다.
     'harv-backup-target': 가상 머신 백업을 저장하기 위한 사용자 정의 백업 대상입니다.
@@ -9376,7 +9376,7 @@ advancedSettings:
     'harv-release-download-url': 이 설정을 사용하면 <code>업그레이드 릴리스 다운로드</code> URL 주소를 구성할 수 있습니다. InfinityStack는 구성된 URL에서 호스팅되는 (<code>$URL</code>/<code>$VERSION</code>/version.yaml) 파일에서 ISO URL과 체크섬 값을 가져옵니다.
     'harv-default-vm-termination-grace-period-seconds': 가상 머신 중지에 대한 가상 머신 종료 유예 기간을 구성합니다.
     'harv-ntp-servers': NTP 서버를 구성하세요. 여러 IPv4 주소 또는 호스트 주소를 구성할 수 있습니다.
-    'harv-auto-rotate-rke2-certs': 인증서 순환 메커니즘은 Rancher를 기반으로 합니다. InfinityStack는 인증서 생성을 자동으로 업데이트하여 순환을 트리거합니다.
+    'harv-auto-rotate-rke2-certs': 인증서 순환 메커니즘은 Barastack를 기반으로 합니다. InfinityStack는 인증서 생성을 자동으로 업데이트하여 순환을 트리거합니다.
     'harv-kubeconfig-default-token-ttl-minutes': 'InfinityStack 관리 kubeconfig 파일에 적용되는 TTL(분)입니다. 기본값은 0이며, 만료되지 않음을 의미합니다.'
     'harv-longhorn-v2-data-engine-enabled': 'Longhorn V2 데이터 엔진을 활성화합니다. 기본값은 false입니다. <ul><li>이 설정을 변경하면 모든 노드에서 RKE2가 다시 시작됩니다. 실행 중인 VM 워크로드에는 영향을 미치지 않습니다.</li><li>이 설정을 활성화할 때 "hugepages 용량 부족 - 2Mi" 오류가 표시되면 오류가 사라질 때까지 잠시 기다리세요. 오류가 지속되면 영향을 받는 노드를 재부팅하세요.</li></ul>'
     'harv-additional-guest-memory-overhead-ratio': 'TKubevirt가 VM 오버헤드 메모리를 조정하는 비율입니다. 값은 0, 빈 값 또는 1.0에서 10.0 사이의 부동 소수점 수일 수 있으며, 기본값은 1.5입니다.'
@@ -9535,7 +9535,7 @@ branding:
   logos:
     home: 제품 메인 페이지
     label: 로고
-    tip: "상단 내비게이션 헤더의 Rancher 로고를 대체할 로고를 업로드하십시오. 이미지 높이는 최대 200픽셀이며 최대 폭은 20픽셀입니다. 최대 파일 크기는 20KB입니다. 허용된 형식: JPEG, PNG, SVG."
+    tip: "상단 내비게이션 헤더의 Barastack 로고를 대체할 로고를 업로드하십시오. 이미지 높이는 최대 200픽셀이며 최대 폭은 20픽셀입니다. 최대 파일 크기는 20KB입니다. 허용된 형식: JPEG, PNG, SVG."
     lightPreview: 라이트 테마 미리보기
     darkPreview: 다크 테마 미리보기
     uploadLight: 라이트 로고 업로드
@@ -9543,7 +9543,7 @@ branding:
     useCustom: 사용자 지정 로고 사용
   banner:
     label: 배너
-    tip: '대시보드 페이지의 기본 Rancher 배너를 대체할 이미지를 업로드하세요. 가로 세로 비율이 6:1인 SVG 이미지를 사용하는 것이 좋습니다. 기본 이미지 크기는 4197x633입니다. 최대 파일 크기는 200KB입니다. JPEG, PNG, SVG 형식을 지원합니다.'
+    tip: '대시보드 페이지의 기본 Barastack 배너를 대체할 이미지를 업로드하세요. 가로 세로 비율이 6:1인 SVG 이미지를 사용하는 것이 좋습니다. 기본 이미지 크기는 4197x633입니다. 최대 파일 크기는 200KB입니다. JPEG, PNG, SVG 형식을 지원합니다.'
     lightPreview: 라이트 테마 미리보기
     darkPreview: 다크 테마 미리보기
     uploadLight: 라이트 배너 업로드
@@ -9551,7 +9551,7 @@ branding:
     useCustom: 맞춤 배너 사용
   loginBackground:
     label: 로그인 배경
-    tip: '로그인 페이지의 기본 Rancher 배경을 대체할 이미지를 업로드하세요. 가로 세로 비율이 7:8인 SVG 이미지를 사용하는 것이 좋습니다. 기본 이미지 크기는 683x768입니다. 최대 파일 크기는 200KB입니다. JPEG, PNG, SVG 형식을 지원합니다.'
+    tip: '로그인 페이지의 기본 Barastack 배경을 대체할 이미지를 업로드하세요. 가로 세로 비율이 7:8인 SVG 이미지를 사용하는 것이 좋습니다. 기본 이미지 크기는 683x768입니다. 최대 파일 크기는 200KB입니다. JPEG, PNG, SVG 형식을 지원합니다.'
     lightPreview: 라이트 테마 미리보기
     darkPreview: 다크 테마 미리보기
     uploadLight: 라이트 배경 업로드
@@ -9559,12 +9559,12 @@ branding:
     useCustom: 사용자 정의 배경 사용
   favicon:
     label: 파비콘
-    tip: "브라우저 탭의 Rancher 파비콘을 대체할 아이콘을 업로드하십시오. 최대 파일 크기는 20KB입니다."
+    tip: "브라우저 탭의 Barastack 파비콘을 대체할 아이콘을 업로드하십시오. 최대 파일 크기는 20KB입니다."
     preview: 파비콘 미리보기
     upload: 파비콘 업로드
     useCustom: 사용자 지정 파비콘 사용
   options:
-    default: 기본 Rancher 테마
+    default: 기본 Barastack 테마
     suse: SUSE 테마
     custom: 사용자 정의 테마
   uiPL:
@@ -9659,9 +9659,9 @@ customLinks:
 
 support:
   community:
-    title: SUSE Rancher는 일류의 지원을 제공합니다
+    title: SUSE Barastack는 일류의 지원을 제공합니다
     linksTitle: 커뮤니티 지원
-    learnMore: SUSE Rancher 지원에 대해 자세히 알아보기
+    learnMore: SUSE Barastack 지원에 대해 자세히 알아보기
     pricing: 가격 문의
   subscription:
     haveSupport: 이미 지원을 받고 있나요?
@@ -9688,10 +9688,10 @@ support:
       text: 우리는 정의된 SLA를 제공하며 24시간 지원 옵션을 제공합니다.
     two:
       title: 문제 해결
-      text: SUSE Rancher 제품을 자신감 있게 실행하고 개발자가 신속하게 문제를 해결할 수 있도록 합니다.
+      text: SUSE Barastack 제품을 자신감 있게 실행하고 개발자가 신속하게 문제를 해결할 수 있도록 합니다.
     three:
       title: 문제 해결
-      text: 문제의 원인을 찾는 데 중점을 두며 Rancher Labs 제품, 쿠버네티스, 도커 또는 기본 인프라와 관련된 문제를 해결합니다.
+      text: 문제의 원인을 찾는 데 중점을 두며 Barastack Labs 제품, 쿠버네티스, 도커 또는 기본 인프라와 관련된 문제를 해결합니다.
     four:
       title: 자유롭게 혁신
       text: 다양한 쿠버네티스 제공 업체, 운영 체제 및 오픈 소스 소프트웨어와 인증된 호환성을 활용하십시오.
