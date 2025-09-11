@@ -12,11 +12,15 @@ export const HARVESTER_CHART = {
   repoName: 'harvester',
 };
 
+
+
 export const HARVESTER_COMMUNITY_REPO = {
   metadata:  { name: 'harvester' },
   gitRepo:   'https://github.com/oshyuni93/harvester-ui-extension',
   gitBranch: 'gh-pages',
 };
+
+
 
 export const HARVESTER_RANCHER_REPO = {
   metadata:  { name: 'rancher' },
