@@ -4250,7 +4250,7 @@ glance:
   pods: 파드
   provider: 제공자
   version: 쿠버네티스 버전
-  architecture: 아키텍처처  
+  architecture: 아키텍처
   monitoringDashboard: 모니터링 대시보드
   installMonitoring: 모니터링 설치
   clusterInfo: 클러스터 정보
@@ -4261,7 +4261,7 @@ clusterBadge:
   clusterComment: "클러스터 주석 - {text}"
   customizeAppearance: 외관 사용용자정의
   addLabel: 클러스터 배지 추가
-  setClusterAppearance: 클러스터 외관관
+  setClusterAppearance: 클러스터 외관
   customize: 사용용자정의
   editLabel: 클러스터 배지 편집
   modal:
