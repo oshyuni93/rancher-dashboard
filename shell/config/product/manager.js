@@ -11,7 +11,6 @@ import {
 import { MULTI_CLUSTER, RKE1_UI } from '@shell/store/features';
 import { DSL } from '@shell/store/type-map';
 import { BLANK_CLUSTER } from '@shell/store/store-types.js';
-import managerSvg from '@shell/assets/images/pl/icon.svg';
 
 export const NAME = 'manager';
 
@@ -31,7 +30,6 @@ export function init(store) {
     ifFeature:           MULTI_CLUSTER,
     inStore:             'management',
     icon:                'cluster-management',
-    svg:                 managerSvg,
     removable:           false,
     showClusterSwitcher: false,
     weight:              -1, // Place at the top
