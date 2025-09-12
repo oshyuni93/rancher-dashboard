@@ -11,7 +11,7 @@ import {
 import { MULTI_CLUSTER, RKE1_UI } from '@shell/store/features';
 import { DSL } from '@shell/store/type-map';
 import { BLANK_CLUSTER } from '@shell/store/store-types.js';
-import managerSvg from '@shell/assets/images/pl/harvester.svg';
+import managerSvg from '@shell/assets/images/pl/icon.svg';
 
 export const NAME = 'manager';
 
