@@ -5,6 +5,7 @@ import { allHash } from '@shell/utils/promise';
 import dynamicPluginLoader from '@shell/pkg/dynamic-plugin-loader';
 import { BLANK_CLUSTER } from '@shell/store/store-types.js';
 import { HARVESTER_NAME } from '@shell/config/features';
+import managerSvg from '@shell/assets/images/pl/icon.svg';
 
 export const PRODUCT_NAME = 'harvester-manager';
 
@@ -93,6 +94,7 @@ export function init($plugin, store) {
     ifFeature:           [MULTI_CLUSTER, HARVESTER],
     inStore:             'management',
     icon:                'harvester',
+    svg:                 managerSvg,
     removable:           false,
     showClusterSwitcher: false,
     weight:              100,
