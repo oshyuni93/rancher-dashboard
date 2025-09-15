@@ -6928,10 +6928,10 @@ cypress-axe@1.5.0:
   resolved "https://registry.yarnpkg.com/cypress-axe/-/cypress-axe-1.5.0.tgz#95082734583da77b51ce9b7784e14a442016c7a1"
   integrity sha512-Hy/owCjfj+25KMsecvDgo4fC/781ccL+e8p+UUYoadGVM2ogZF9XIKbiM6KI8Y3cEaSreymdD6ZzccbI2bY0lQ==
 
-cypress-delete-downloads-folder@0.0.4:
-  version "0.0.4"
-  resolved "https://registry.npmjs.org/cypress-delete-downloads-folder/-/cypress-delete-downloads-folder-0.0.4.tgz#00693d4d7a36b552e7a11148e49d2c4c34ed3ec3"
-  integrity sha512-0zix5YIROeMHCrCGQVmMP+jUL3KtKliAs1msSnHCPwkX8rNL4DioI8UHvbBVVghWA3vxWN6GCtV1qW+5DHi9Bg==
+cypress-delete-downloads-folder@0.0.6:
+  version "0.0.6"
+  resolved "https://registry.yarnpkg.com/cypress-delete-downloads-folder/-/cypress-delete-downloads-folder-0.0.6.tgz#3a0a4795b1889c5f65020a3ec2681b27ad90f289"
+  integrity sha512-oKMhBM/O74a3XWCrMdFrv3iWMK/UAOdYX8PU/ZUGLaRjmC0p/XWFrMRJZFAYo7owpip3jvmf+bkm82cV0RJhAw==
 
 cypress-mochawesome-reporter@3.8.2:
   version "3.8.2"
@@ -8157,7 +8157,6 @@ eslint-plugin-jest@24.4.0:
 
 "eslint-plugin-local-rules@link:./eslint-plugin-local-rules":
   version "0.0.0"
-  uid ""
 
 "eslint-plugin-local-rules@link:eslint-plugin-local-rules":
   version "0.0.0"
