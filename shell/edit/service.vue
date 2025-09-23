@@ -99,7 +99,6 @@ export default {
     return {
       matchingPods,
       allPods:                     [],
-      defaultServiceTypes:         DEFAULT_SERVICE_TYPES,
       saving:                      false,
       sessionAffinityActionLabels: Object.values(SESSION_AFFINITY_ACTION_LABELS)
         .map((v) => this.$store.getters['i18n/t'](v))
@@ -115,6 +114,15 @@ export default {
 
   computed: {
     ...mapGetters(['currentCluster']),
+    
+    defaultServiceTypes() {
+      return DEFAULT_SERVICE_TYPES.map(type => ({
+        ...type,
+        label: this.t(type.label),
+        description: this.t(type.description),
+        bannerAbbrv: this.t(type.bannerAbbrv)
+      }));
+    },
 
     tabErrors() {
       const tabErrors = {};
