@@ -87,7 +87,7 @@
     "diff2html": "3.4.24",
     "dompurify": "2.5.4",
     "element-matches": "0.1.2",
-    "event-target-shim": "5.0.1",
+    "event-target-shim": "6.0.2",
     "express": "4.17.1",
     "file-saver": "2.0.2",
     "floating-vue": "5.2.2",
