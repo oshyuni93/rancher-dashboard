@@ -1,0 +1,74 @@
+#!/usr/bin/env bash
+
+DIR=$(cd $(dirname $0)/..; pwd)
+
+# See `script/build-e2e`
+DASHBOARD_DIST=${DIR}/dist
+EMBER_DIST=${DIR}/dist_ember
+
+# Image version
+RANCHER_IMG_VERSION=v2.11-head
+
+# Docker volume args when mounting the locally-built UI into the container
+VOLUME_ARGS="-v ${DASHBOARD_DIST}:/usr/share/rancher/ui-dashboard/dashboard -v ${EMBER_DIST}:/usr/share/rancher/ui"
+
+# check if script invoke contains any argument. If so, adjust RANCHER_IMG_VERSION
+if [ $# -eq 1 ]; then
+  RANCHER_IMG_VERSION=$1
+  # When an image is specified, we use that image, including its front-end, so we don't want the volume args to mount the locally-built UI
+  VOLUME_ARGS=""
+fi
+
+echo "Using Rancher image version: ${RANCHER_IMG_VERSION}"
+
+docker run -d --restart=unless-stopped -p 80:80 -p 443:443 ${VOLUME_ARGS} \
+  -e CATTLE_UI_OFFLINE_PREFERRED=true \
+  -e CATTLE_BOOTSTRAP_PASSWORD=password \
+  -e CATTLE_PASSWORD_MIN_LENGTH=3 \
+  --name cypress \
+  --privileged \
+  rancher/rancher:${RANCHER_IMG_VERSION}
+
+docker ps
+
+echo "Waiting for dashboard UI to be reachable (initial 20s wait) ..."
+
+sleep 20
+
+echo "Waiting for dashboard UI to be reachable ..."
+
+okay=0
+
+while [ $okay -lt 20 ]; do
+  STATUS=$(curl --silent --head -k https://127.0.0.1/dashboard/ | awk '/^HTTP/{print $2}')
+
+  echo "Status: $STATUS (Try: $okay)"
+
+  okay=$((okay+1))
+
+  if [ "$STATUS" == "200" ]; then
+    okay=100
+  else
+    sleep 5
+  fi
+done
+
+if [ "$STATUS" != "200" ]; then
+  echo "Dashboard did not become available in a reasonable time"
+  exit 1
+fi
+
+echo "Dashboard UI is ready"
+
+echo "Waiting for webhook to be running..."
+okay=0
+while [ $okay -lt 20 ] ; do
+  if docker exec cypress kubectl -n cattle-system get po -l app=rancher-webhook | grep -q '1/1.*Running' ; then
+    break
+  else
+    echo "Webhook not ready, checking again in 10s..."
+    okay=$((okay+1))
+    sleep 10
+  fi
+done
+echo "Rancher is ready"

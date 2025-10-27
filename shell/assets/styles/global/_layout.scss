@@ -1,0 +1,165 @@
+// This file encapsulates all the layout styles for some native HTML elements.
+.main-layout {
+  grid-area: main;
+  overflow: auto;
+
+  .outlet {
+    display: flex;
+    flex-direction: column;
+    padding: $space-m;
+    min-height: 100%;
+  }
+}
+
+HEADER {
+  display: grid;
+  grid-template-areas:
+    'type-banner type-banner'
+    'title actions'
+    'state-banner state-banner';
+  grid-template-columns: auto auto;
+  align-content: center;
+  min-height: 48px;
+
+  .type-banner {
+    grid-area: type-banner;
+  }
+
+  .state-banner {
+    grid-area: state-banner;
+  }
+
+  .title {
+    grid-area: title;
+    align-self: center;
+  }
+
+  .actions-container {
+    grid-area: actions;
+    margin-left: 8px;
+    align-self: center;
+    text-align: right;
+
+    &.align-start {
+      align-self: start;
+    }
+  }
+
+  .role-multi-action {
+    padding: 0 $input-padding-sm;
+  }
+}
+
+.footer-layout {
+  background-color: var(--nav-bg);
+  height: var(--footer-height);
+}
+
+
+// !BEGIN This was all a part of default.vue but it wasn't scoped which meant it applied to all styles. Without layouts this style was being lazy loaded instead of on initial load. This was styling other layouts especially plain.vue.
+.dashboard-root {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.dashboard-content {
+  display: grid;
+  position: relative;
+  flex: 1 1 auto;
+  overflow-y: auto;
+  min-height: 0px;
+
+  &.dashboard-padding-left {
+    padding-left: $app-bar-collapsed-width;
+
+    .overlay-content-mode {
+      left: calc(var(--nav-width) + $app-bar-collapsed-width);
+    }
+  }
+
+  &.pin-right {
+    grid-template-areas:
+      "header  header  header"
+      "nav      main     wm";
+    grid-template-rows: var(--header-height) auto;
+    grid-template-columns: var(--nav-width) auto var(--wm-width, 0px);
+  }
+
+  &.pin-bottom {
+    grid-template-areas:
+      "header  header"
+      "nav       main"
+      "wm         wm";
+    grid-template-rows: var(--header-height) auto var(--wm-height, 0px);
+    grid-template-columns: var(--nav-width) auto;
+  }
+
+  &.pin-left {
+    grid-template-areas:
+      "header  header  header"
+      "wm       nav     main";
+    grid-template-rows: var(--header-height) auto;
+    grid-template-columns: var(--wm-width, 0px) var(--nav-width) auto;
+  }
+
+  >HEADER {
+    grid-area: header;
+  }
+
+  .default-side-nav {
+    grid-area: nav;
+  }
+}
+
+.wm {
+  grid-area: wm;
+  overflow-y: hidden;
+  z-index: z-index('windowsManager');
+  position: relative;
+}
+
+.localeSelector {
+  :deep(.v-popper__inner) {
+    padding: 50px 0;
+  }
+
+  :deep(.v-popper__arrow-container) {
+    display: none;
+  }
+
+  :deep(.v-popper:focus) {
+    outline: 0;
+  }
+
+  &[data-popper-placement^="top"] {
+    .v-popper__arrow-container {
+      .v-popper__arrow-inner {
+        top: 0;
+        border-color: var(--tooltip-bg);
+      }
+    }
+  }
+
+  li {
+    padding: 8px 20px;
+
+    &:hover {
+      background-color: var(--primary-hover-bg);
+      color: var(--primary-hover-text);
+      text-decoration: none;
+    }
+  }
+}
+
+.drag-start {
+  z-index: 1000;
+  opacity: 0.5;
+  transition: opacity .3s ease;
+}
+
+.drag-end {
+  opacity: 1;
+}
+
+// !END
