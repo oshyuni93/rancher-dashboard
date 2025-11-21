@@ -11,5 +11,11 @@ RUN yarn run build
 
 FROM rancher/rancher:v2.11.3
 WORKDIR /var/lib/rancher
-RUN rm -rf /usr/share/rancher/ui-dashboard/dashboard*
+RUN rm -f /usr/share/rancher/ui-dashboard/dashboard/favicon.ico
+RUN rm -f /usr/share/rancher/ui-dashboard/dashboard/favicon.png
+RUN rm -rf /usr/share/rancher/ui-dashboard/dashboard/fonts
+RUN rm -rf /usr/share/rancher/ui-dashboard/dashboard/img
+RUN rm -f /usr/share/rancher/ui-dashboard/dashboard/index.html
+RUN rm -rf /usr/share/rancher/ui-dashboard/dashboard/js
+RUN rm -f /usr/share/rancher/ui-dashboard/dashboard/loading-indicator.html
 COPY --from=builder /src/dist /usr/share/rancher/ui-dashboard/dashboard
