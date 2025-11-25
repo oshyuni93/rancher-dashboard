@@ -2630,13 +2630,14 @@ catalog:
         label: 메타데이터
         subtext: 앱 메타데이터 설정
         description:
-          이 과정은 {vendor}에서 앱을 관리하는 데 사용되는 몇 가지 기본 정보를 설정하는 데 도움이 됩니다. {action, select,
-          install { create }
-          upgrade { upgrade }
-          update { update }}할 {existing, select,
-          true { app }
-          false { chart }
-          }입니다. {namespace} 필드에 새로운 네임스페이스의 이름을 입력하고 선택하여 앱을 설치합니다.
+          이 프로세스는 {action, select,
+          install {create}
+          upgrade {upgrade}
+          update {update}
+          } {existing, select,
+          true {app}
+          false {chart}
+          }에 도움이 됩니다. 먼저 {vendor}에서 앱을 관리하는 데 사용하는 기본 정보를 설정하세요.
         nsCreationDescription: "새로운 네임스페이스에 앱을 설치하려면 이름을 네임스페이스 필드에 입력하고 선택하세요."
         createNamespace: "네임스페이스 <code>{namespace}</code>가 생성됩니다."
       clusterTplVersion:
