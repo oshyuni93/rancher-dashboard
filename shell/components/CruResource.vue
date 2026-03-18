@@ -1003,7 +1003,7 @@ form.create-resource-container .cru {
     position: sticky;
     bottom: 0;
     background-color: var(--header-bg);
-    height: $footer-height;
+    height: var(--footer-height);
     box-sizing: border-box;
 
     // Overrides outlet padding

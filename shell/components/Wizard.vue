@@ -687,7 +687,7 @@ $spacer: 10px;
 // We have to account for the absolute position of the .controls-row
 .footer-error {
   margin-top: -40px;
-  margin-bottom: calc($footer-height + 10px);
+  margin-bottom: calc(var(--footer-height) + 10px);
 }
 
   .controls-row {

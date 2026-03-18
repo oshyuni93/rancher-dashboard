@@ -43,7 +43,7 @@ TEXTAREA,
 
   &.focused {
     LABEL {
-      color: var(--on-secondary);
+      color: var(--outline);
     }
   }
 
@@ -82,7 +82,7 @@ TEXTAREA {
 }
 
 FORM {
-  LABEL, .key-value-label {
+  LABEL {
     color: var(--input-label);
     display: inline-block;
     margin: $spacing 0 $spacing 0;

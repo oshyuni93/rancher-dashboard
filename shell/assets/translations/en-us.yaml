@@ -7,7 +7,7 @@ generic:
   userMenu: user menu
   actionMenu: action menu
   namespaceFilter: namespace filter menu
-  imageAlt: Generic Rancher image alt
+  imageAlt: Generic Barastack image alt
   banners:
     altCloseBanner: Close banner icon
     bannerIcon: Banner icon
@@ -175,6 +175,7 @@ graph:
 locale:
   menu: Locale selector menu
   en-us: English
+  ko-kr: 한국어
   zh-hans: 简体中文
   none: (None)
 
@@ -198,7 +199,7 @@ nav:
     productAboutPage: Product about page link
   alt:
     mainMenuIcon: Main menu icon
-    mainMenuRancherLogo: Main menu Rancher logo
+    mainMenuRancherLogo: Main menu Barastack logo
     userAvatar: User avatar image
   expandCollapseAppBar: Expand/Collapse the Application Bar
   harvesterDashboard: Harvester Dashboard
@@ -250,7 +251,7 @@ nav:
     Fleet: Fleet
     K3s: K3s
     Networking: Networking
-    Rancher: Rancher
+    Rancher: Barastack
     RBAC: RBAC
     Scheduling: Scheduling
     Storage: Storage
@@ -314,7 +315,7 @@ nav:
 product:
   apps: Apps
   auth: Users & Authentication
-  backup: Rancher Backups
+  backup: Barastack Backups
   compliance: Compliance
   ecm: Cluster Manager
   explorer: Cluster Explorer
@@ -329,7 +330,7 @@ product:
   monitoring: Monitoring
   neuvector: NeuVector
   harvesterManager: Virtualization Management
-  rancher: Rancher
+  rancher: Barastack
   legacy: Legacy
   uiplugins: Extensions
   elemental: OS Management
@@ -386,7 +387,7 @@ about:
     cli: CLI
     helm: Helm
     machine: Machine
-    rancher: Rancher
+    rancher: Barastack
     releaseNotes: 'View release notes'
   os:
     mac: macOS
@@ -482,7 +483,7 @@ authConfig:
   slo:
     sloTitle: Log Out behavior
     sloOptions:
-      onlyRancher: Log out of Rancher and not {name}
+      onlyRancher: Log out of Barastack and not {name}
       logoutAll: Log out of Rancher and {name} (includes all other applications registered with {name})
       choose: Allow the user to choose one of the above in an additional log out step
   accessMode:
@@ -661,7 +662,7 @@ authConfig:
       tip: Upgrades non-encrypted connections by wrapping with TLS during the connection process. Can not be used in conjunction with TLS.
     searchUsingServiceAccount:
       label: Enable Service Account Search
-      tip: When enabled, Rancher will use the service account instead of the user account to search for users and groups.
+      tip: When enabled, Barastack will use the service account instead of the user account to search for users and groups.
     tls: TLS
     userEnabledAttribute: User Enabled Attribute
     userMemberAttribute: User Member Attribute
@@ -733,7 +734,7 @@ authConfig:
       externalHelp: See the OData filter expression documentation for more information.
       externalHelpLink: https://learn.microsoft.com/en-us/dynamics365/business-central/dev-itpro/webservices/use-filter-expressions-in-odata-uris#filter-expressions
     reply:
-      info: 'Azure AD requires a whitelisted URL for your Rancher server before beginning this setup. Please ensure that the following URL is set in the Reply URL section of your Azure Portal. Please note that it may take up to 5 minutes for the whitelisted URL to propagate.'
+      info: 'Azure AD requires a whitelisted URL for your Barastack server before beginning this setup. Please ensure that the following URL is set in the Reply URL section of your Azure Portal. Please note that it may take up to 5 minutes for the whitelisted URL to propagate.'
       label: Reply URL
       ariaLabel: Copy Reply URL to clipboard
     updateEndpoint:
@@ -743,7 +744,7 @@ authConfig:
         linkText: 'Update it here.'
       modal:
         title: Are you sure? This update is irreversible.
-        body: '<p><b>You may need to make some additional changes</b>. Please ensure the Azure AD app has the Directory.Read.All <b>Application</b> permission added to Microsoft Graph.<br> If any endpoints were customized while configuring Azure AD authentication in Rancher, they will not be automatically updated. </p>'
+        body: '<p><b>You may need to make some additional changes</b>. Please ensure the Azure AD app has the Directory.Read.All <b>Application</b> permission added to Microsoft Graph.<br> If any endpoints were customized while configuring Azure AD authentication in Barastack, they will not be automatically updated. </p>'
   oidc:
     endSessionEndpoint: 
       title: End Session Endpoint
@@ -751,7 +752,7 @@ authConfig:
     genericoidc: Configure an OIDC account
     keycloakoidc: Configure a Keycloak OIDC account
     cognito: Configure an Amazon Cognito account
-    rancherUrl: Rancher URL
+    rancherUrl: Barastack URL
     clientId: Client ID
     clientSecret: Client Secret
     customEndpoint:
@@ -1010,11 +1011,11 @@ backupRestoreOperator:
   backup:
     label: Resource Set
     description: The Resource Set determines which resources the backup-restore-operator collects in a backup
-    enableEncryptionWarning: 'Enabling encryption is highly recommended when using <b><i>Full Rancher backup resource set</i></b>, otherwise sensitive information will be backed up as plain-text. <a target="_blank" rel="noopener noreferrer nofollow" href="https://ranchermanager.docs.rancher.com/reference-guides/backup-restore-configuration/backup-configuration#resourcesets">Read more</a>.'
+    enableEncryptionWarning: 'Enabling encryption is highly recommended when using <b><i>Full Barastack backup resource set</i></b>, otherwise sensitive information will be backed up as plain-text. <a target="_blank" rel="noopener noreferrer nofollow" href="https://ranchermanager.docs.rancher.com/reference-guides/backup-restore-configuration/backup-configuration#resourcesets">Read more</a>.'
     missingResourceSetWarning: The <b><i>{resourceSet}</i></b> resource set doesn't exist, it's possible it has been deleted. Please select a different option.
     resourceSetOptions:
-      'rancher-resource-set-basic': 'Basic Rancher backup resource set'
-      'rancher-resource-set-full': 'Full Rancher backup resource set'
+      'rancher-resource-set-basic': 'Basic Barastack backup resource set'
+      'rancher-resource-set-full': 'Full Barastack backup resource set'
       custom: Custom
       customResourceSetLabel: Custom Resource Set
   backupFilename: Backup Filename
@@ -1022,7 +1023,7 @@ backupRestoreOperator:
     label: Delete Timeout
     tip: Seconds to wait for a resource delete to succeed before removing finalizers to force deletion.
   deployment:
-    rancherNamespace: Rancher ResourceSet Namespace
+    rancherNamespace: Barastack ResourceSet Namespace
     size: Size
     storage:
       label: Default Storage Location
@@ -1040,19 +1041,19 @@ backupRestoreOperator:
       warning: 'This {type} does not have its reclaim policy set to "Retain".  Your backups may be lost if the volume is changed or becomes unbound.'
   encryption: Encryption
   encryptionConfigName:
-    backuptip: 'Any secret in the <code>{ns}</code> namespace that has an <code>encryption-provider-config.yaml</code> key. <br/>The contents of this file are necessary to perform a restore from this backup, and are not stored by Rancher Backup.'
+    backuptip: 'Any secret in the <code>{ns}</code> namespace that has an <code>encryption-provider-config.yaml</code> key. <br/>The contents of this file are necessary to perform a restore from this backup, and are not stored by Barastack Backup.'
     label: Encryption Configuration Secret
     options:
       none: Store the contents of the backup unencrypted
       secret: 'Encrypt backups using an <a target="_blank" rel="noopener noreferrer nofollow" href="https://kubernetes.io/docs/tasks/administer-cluster/encrypt-data/#understanding-the-encryption-at-rest-configuration">Encryption Config Secret</a> (Recommended)'
     restoretip: 'If the backup was performed with encryption enabled, a secret containing the same encryption-provider-config should be used during restore.'
-    warning: 'The contents of this file are necessary to perform a restore from this backup, and are not stored by Rancher Backup.'
+    warning: 'The contents of this file are necessary to perform a restore from this backup, and are not stored by Barastack Backup.'
   lastBackup: Last Backup
   nextBackup: Next Backup
   noResourceSet: You must define a ResourceSet in this namespace to create a backup CR.
   prune:
     label: Prune
-    tip: Delete the resources managed by Rancher that are not present in the backup. (Recommended)
+    tip: Delete the resources managed by Barastack that are not present in the backup. (Recommended)
   resourceSetName: Resource Set
   restoreFrom:
     default: The default storage target
@@ -1111,7 +1112,7 @@ catalog:
       label: Container Registry
       tooltip: Container images are pulled from the Cluster Container Registry or, failing that, the System Container Registry Setting. To change this default behavior enter or update the registry here
       custom:
-        checkBoxLabel: Container Registry for Rancher System Container Images
+        checkBoxLabel: Container Registry for Barastack System Container Images
         inputLabel: Container Registry
         placeholder: Registry domain and ports, ex. registry.io:5000
     header:
@@ -1250,7 +1251,7 @@ catalog:
         Warning, {manager} manages deployment and upgrade of the {name} app. Upgrading this app is not supported.<br>
         {version, select,
           null { }
-          other { Under most circumstances, no user intervention should be needed to ensure that the {version} version is compatible with the version of Rancher that you are running.}
+          other { Under most circumstances, no user intervention should be needed to ensure that the {version} version is compatible with the version of Barastack that you are running.}
         }
     error:
       requiresFound: '<a href="{url}">{name}</a> must be installed before you can install this chart.'
@@ -1369,7 +1370,7 @@ catalog:
       rancher-charts: '{vendor}'
       rancher-partner-charts: Partners
       rancher-rke2-charts: RKE2
-      rancher-ui-plugins: Rancher Extensions
+      rancher-ui-plugins: Barastack Extensions
 
     target:
       git: Git repository containing Helm chart or cluster template definitions
@@ -1586,7 +1587,7 @@ cluster:
       windowsDetail: Run this command in PowerShell on each of the existing Windows machines you want to register.
       windowsWorkersOnly: <b>Windows nodes can only be workers.</b>
       windowsNotReady: The cluster must be up and running with Linux etcd, control plane, and worker nodes before the registration command for adding Windows workers will display.<br /> <br /><b>Windows nodes can only be workers.</b>
-      windowsWarning: Workload pods, including some deployed by Rancher charts, will be scheduled on both Linux and Windows nodes by default. Edit NodeSelector in the chart to direct them to be placed onto a compatible node.
+      windowsWarning: Workload pods, including some deployed by Barastack charts, will be scheduled on both Linux and Windows nodes by default. Edit NodeSelector in the chart to direct them to be placed onto a compatible node.
       windowsDeprecatedForRKE1: Windows support is being deprecated for RKE1. We suggest migrating to RKE2.
       insecure: "Insecure: Select this to skip TLS verification if your server has a self-signed certificate."
   credential:
@@ -1791,7 +1792,7 @@ cluster:
         error: 'Error generating Harvester kubeconfig secret: {err}'
   haveOneOwner: There must be at least one member with the Owner role.
   import:
-    warningBanner: 'You should not import a cluster which has already been connected to another instance of Rancher as it will lead to data corruption.'
+    warningBanner: 'You should not import a cluster which has already been connected to another instance of Barastack as it will lead to data corruption.'
     commandInstructions: 'Run the <code>kubectl</code> command below on an existing Kubernetes cluster running a supported Kubernetes version to import it into {vendor}:'
     commandInstructionsInsecure: 'If you get a &quot;certificate signed by unknown authority&quot; error, your {vendor} installation has a self-signed or untrusted SSL certificate.  Run the command below instead to bypass the certificate verification:'
     clusterRoleBindingInstructions: 'If you get permission errors creating some of the resources, your user may not have the <code>cluster-admin</code> role.  Use this command to apply it:'
@@ -1876,7 +1877,7 @@ cluster:
       managedDisksSize:
         label: Managed Disk Size
       nsg:
-        help: When using a Rancher managed or providing an existing NSG, all nodes using this template will use the supplied NSG. If no NSG is provided, a new NSG will be created for each node.
+        help: When using a Barastack managed or providing an existing NSG, all nodes using this template will use the supplied NSG. If no NSG is provided, a new NSG will be created for each node.
         label: Network Security Group
       openPort:
         add: Add Port
@@ -2167,11 +2168,11 @@ cluster:
         tooltip: This is the username used when SSH'ing into the node, and not a username associated with the GCP account.
       internalFirewall:
         label: Allow communication between cluster nodes
-        tooltip: Allows Rancher to open ports required for internal communication between nodes.
+        tooltip: Allows Barastack to open ports required for internal communication between nodes.
         banner: Tags can be used to impose additional firewall rules.
       externalFirewall:
         label: Expose external ports
-        tooltip: Allows Rancher to open ports required for external access.
+        tooltip: Allows Barastack to open ports required for external access.
         banner: By default, the Kubernetes API server listens on port 6443. Exposing this port on control plane machine pools is required for the Authorized Cluster Endpoint feature to work as expected.
       error:
         diskSizeWithoutMax: Disk size has to be greater than {diskSizeMin} based on this image and disk type.
@@ -2197,17 +2198,17 @@ cluster:
       podAffinityAnti: Pod Affinity/Anti-Affinity
       nodeAffinity: Node Affinity
       schedulingCustomization:
-        label: Prevent Rancher cluster agent pod eviction
+        label: Prevent Barastack cluster agent pod eviction
         description: This ensures that the cluster agent pod is not evicted due to node pressure, resource constraints or scheduler policies.
         banner: This feature has been enabled with settings that are different from the global default settings.
         innerCheckbox: Apply global settings for Priority Class and Pod Disruption Budget
     banners:
       advanced: These are advanced configuration options. Generally, they should be left as-is.
-      tolerations: Additional Pod Tolerations will be added to the default Tolerations applied by Rancher.
+      tolerations: Additional Pod Tolerations will be added to the default Tolerations applied by Barastack.
       limits: Pod Requests and Limits do not have a default configuration.
       windowsCompatibility: "We do not recommend removing the Node Affinity rule that prevents the <b>agent</b> from running on Windows nodes as this is not a supported configuration."
     affinity:
-      default: Use default affinity rules defined by Rancher
+      default: Use default affinity rules defined by Barastack
       custom: Use custom affinity rules
   advanced:
     argInfo:
@@ -2244,8 +2245,8 @@ cluster:
     cloudProviderMigrateAzure: 'On Kubernetes 1.30 or greater, the <b>Azure</b> Cloud Provider has been removed. To upgrade Kubernetes, the cluster should be migrated to External provider first.<br> See <a href="https://ranchermanager.docs.rancher.com/how-to-guides/new-user-guides/kubernetes-clusters-in-rancher-setup/set-up-cloud-providers/azure" target="_blank" rel="noopener noreferrer nofollow">the documentation</a> for more information.'
     machinePoolError: |-
       {count, plural,
-        =1 { {pool_name}: The provided value for {fields} was not found in the list of expected values. This can happen with clusters provisioned outside of Rancher or when options for the provider have changed. }
-        other { {pool_name}: The provided values for {fields} were not found in the list of expected values. This can happen with clusters provisioned outside of Rancher or when options for the provider have changed. }
+        =1 { {pool_name}: The provided value for {fields} was not found in the list of expected values. This can happen with clusters provisioned outside of Barastack or when options for the provider have changed. }
+        other { {pool_name}: The provided values for {fields} were not found in the list of expected values. This can happen with clusters provisioned outside of Barastack or when options for the provider have changed. }
       }
     rke1DeprecationMessage: 'Rancher Kubernetes Engine (RKE / RKE1) has reached end of life and these clusters are no longer supported. We recommend replatforming RKE1 clusters to RKE2 to ensure continued support and security updates. Learn more about the transition <a href="https://www.suse.com/support/kb/doc/?id=000021518" target="_blank" rel="noopener noreferrer nofollow">here</a>.'
   rke1Unsupported: RKE1 Clusters are no longer supported
@@ -2345,10 +2346,10 @@ cluster:
       searchPlaceholder: Start typing to search
       noResults: No results found
   privateRegistry:
-    header: Registry for Rancher System Container Images
-    label: Enable cluster scoped container registry for Rancher system container images
-    description: "If enabled, Rancher will pull container images from this registry during cluster provisioning. By default, Rancher will also use this registry when installing Rancher's official Helm chart apps. If the cluster scoped registry is disabled, system images are pulled from the System Default Registry in the global settings."
-    importedDescription: "By default, Rancher will also use this registry when installing Rancher's official Helm chart apps. If the cluster scoped registry is disabled, system images are pulled from the System Default Registry in the global settings."
+    header: Registry for Barastack System Container Images
+    label: Enable cluster scoped container registry for Barastack system container images
+    description: "If enabled, Barastack will pull container images from this registry during cluster provisioning. By default, Barastack will also use this registry when installing Barastack's official Helm chart apps. If the cluster scoped registry is disabled, system images are pulled from the System Default Registry in the global settings."
+    importedDescription: "By default, Barastack will also use this registry when installing Barastack's official Helm chart apps. If the cluster scoped registry is disabled, system images are pulled from the System Default Registry in the global settings."
     docsLinkRke2: "For help configuring private registry mirrors, see the RKE2 <a href=\"https://docs.rke2.io/install/private_registry\" target=\"_blank\">documentation.</a>"
     docsLinkK3s: "For help configuring private registry mirrors, see the K3s <a href=\"https://docs.k3s.io/installation/private-registry\" target=\"_blank\">documentation.</a>"
     privateRegistryUrlError: A registry must be a valid url. Scheme is optional.

@@ -544,7 +544,7 @@ export default {
           </div>
         </template>
         <div
-          v-if="showLocaleSelector && hasMultipleLocales && !isHarvester"
+          v-if="showLocaleSelector && hasMultipleLocales"
           class="locale-selector"
         >
           <LocaleSelector

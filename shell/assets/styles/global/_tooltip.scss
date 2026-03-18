@@ -12,12 +12,6 @@
     color: var(--tooltip-text);
     border-radius: var(--border-radius);
     padding: 8px;
-
-    // Ensure code blocks inside tooltips don't look awful
-    pre {
-      padding: 2px;
-      vertical-align: middle;
-    }
   }
 
   .v-popper__arrow-container {
@@ -119,6 +113,10 @@
     padding: 10px;
     border-radius: var(--border-radius-lg);
     border: none;
+
+    a {
+      color: var(--popover-text);
+    }
   }
 
   .v-popper__arrow-container {
@@ -165,4 +163,3 @@
 .icon-info.v-popper--has-tooltip {
   font-size: 14px;
 }
-

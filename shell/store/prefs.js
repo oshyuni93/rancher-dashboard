@@ -10,7 +10,7 @@ const definitions = {};
  */
 let prefsBeforeLogin = {};
 
-export const create = function(name, def, opt = {}) {
+export const create = function (name, def, opt = {}) {
   const parseJSON = opt.parseJSON === true;
   const asCookie = opt.asCookie === true;
   const asUserPreference = opt.asUserPreference !== false;
@@ -24,14 +24,14 @@ export const create = function(name, def, opt = {}) {
     asCookie,
     asUserPreference,
     inheritFrom, // if value is not defined on server, we can default it to another pref
-    mangleRead:  opt.mangleRead, // Alter the value read from the API (to match old Rancher expectations)
+    mangleRead: opt.mangleRead, // Alter the value read from the API (to match old Rancher expectations)
     mangleWrite: opt.mangleWrite, // Alter the value written back to the API (ditto)
   };
 
   return name;
 };
 
-export const mapPref = function(name) {
+export const mapPref = function (name) {
   return {
     get() {
       return this.$store.getters['prefs/get'](name);
@@ -58,14 +58,14 @@ export const PINNED_CLUSTERS = create('pinned-clusters', [], { parseJSON });
 export const GROUP_RESOURCES = create('group-by', 'namespace');
 export const DIFF = create('diff', 'unified', { options: ['unified', 'split'] });
 export const THEME = create('theme', 'auto', {
-  options:     ['light', 'auto', 'dark'],
+  options: ['light', 'auto', 'dark'],
   asCookie,
   parseJSON,
-  mangleRead:  (x) => x.replace(/^ui-/, ''),
-  mangleWrite: (x) => `ui-${ x }`,
+  mangleRead: (x) => x.replace(/^ui-/, ''),
+  mangleWrite: (x) => `ui-${x}`,
 });
 export const PREFERS_SCHEME = create('pcs', '', { asCookie, asUserPreference: false });
-export const LOCALE = create('locale', 'en-us', { asCookie });
+export const LOCALE = create('locale', 'ko-kr', { asCookie });
 export const KEYMAP = create('keymap', 'sublime', { options: ['sublime', 'emacs', 'vim'] });
 export const ROWS_PER_PAGE = create('per-page', 100, { options: [10, 25, 50, 100], parseJSON });
 export const LOGS_WRAP = create('logs-wrap', true, { parseJSON });
@@ -103,8 +103,8 @@ export const THEME_SHORTCUT = create('theme-shortcut', false, { parseJSON, inher
 export const LAST_VISITED = create('last-visited', 'home', { parseJSON });
 export const SEEN_WHATS_NEW = create('seen-whatsnew', '', { parseJSON });
 export const READ_WHATS_NEW = create('read-whatsnew', '', { parseJSON });
-export const AFTER_LOGIN_ROUTE = create('after-login-route', 'home', { parseJSON } );
-export const HIDE_HOME_PAGE_CARDS = create('home-page-cards', {}, { parseJSON } );
+export const AFTER_LOGIN_ROUTE = create('after-login-route', 'home', { parseJSON });
+export const HIDE_HOME_PAGE_CARDS = create('home-page-cards', {}, { parseJSON });
 export const PLUGIN_DEVELOPER = create('plugin-developer', false, { parseJSON, inheritFrom: DEV }); // Is the user a plugin developer?
 
 export const _RKE1 = 'rke1';
@@ -126,18 +126,18 @@ export const READ_ANNOUNCEMENTS = create('read-announcements', '', { parseJSON }
 
 const cookiePrefix = 'R_';
 const cookieOptions = {
-  maxAge:   365 * 86400,
-  path:     '/',
+  maxAge: 365 * 86400,
+  path: '/',
   sameSite: true,
-  secure:   true,
+  secure: true,
 };
 
-export const state = function() {
+export const state = function () {
   return {
     cookiesLoaded: false,
-    data:          {},
+    data: {},
     definitions,
-    authRedirect:  null
+    authRedirect: null
   };
 };
 
@@ -146,7 +146,7 @@ export const getters = {
     const definition = state.definitions[key];
 
     if (!definition) {
-      throw new Error(`Unknown preference: ${ key }`);
+      throw new Error(`Unknown preference: ${key}`);
     }
 
     const user = state.data[key];
@@ -164,7 +164,7 @@ export const getters = {
     const definition = state.definitions[key];
 
     if (!definition) {
-      throw new Error(`Unknown preference: ${ key }`);
+      throw new Error(`Unknown preference: ${key}`);
     }
 
     return clone(definition.def);
@@ -174,11 +174,11 @@ export const getters = {
     const definition = state.definitions[key];
 
     if (!definition) {
-      throw new Error(`Unknown preference: ${ key }`);
+      throw new Error(`Unknown preference: ${key}`);
     }
 
     if (!definition.options) {
-      throw new Error(`Preference does not have options: ${ key }`);
+      throw new Error(`Preference does not have options: ${key}`);
     }
 
     return definition.options.slice();
@@ -197,12 +197,12 @@ export const getters = {
     // console.log('Get Theme', theme, pcs);
 
     // Ember UI uses this prefix
-    if ( theme.startsWith('ui-') ) {
+    if (theme.startsWith('ui-')) {
       theme = theme.substr(3);
     }
 
-    if ( theme === 'auto' ) {
-      if ( pcs === 'light' || pcs === 'dark' ) {
+    if (theme === 'auto') {
+      if (pcs === 'light' || pcs === 'dark') {
         return pcs;
       }
 
@@ -220,29 +220,29 @@ export const getters = {
     }
 
     switch (true) {
-    case (afterLoginRoutePref === 'home'):
-      return { name: 'home' };
-    case (afterLoginRoutePref === 'last-visited'): {
-      if (state.authRedirect) {
-        return state.authRedirect;
+      case (afterLoginRoutePref === 'home'):
+        return { name: 'home' };
+      case (afterLoginRoutePref === 'last-visited'): {
+        if (state.authRedirect) {
+          return state.authRedirect;
+        }
+        const lastVisitedPref = getters['get'](LAST_VISITED);
+
+        if (lastVisitedPref) {
+          return lastVisitedPref;
+        }
+        const clusterPref = getters['get'](CLUSTER);
+
+        return { name: 'c-cluster-explorer', params: { product: 'explorer', cluster: clusterPref } };
       }
-      const lastVisitedPref = getters['get'](LAST_VISITED);
+      case (!!afterLoginRoutePref.match(/.+-dashboard$/)):
+        {
+          const clusterId = afterLoginRoutePref.split('-dashboard')[0];
 
-      if (lastVisitedPref) {
-        return lastVisitedPref;
-      }
-      const clusterPref = getters['get'](CLUSTER);
-
-      return { name: 'c-cluster-explorer', params: { product: 'explorer', cluster: clusterPref } };
-    }
-    case (!!afterLoginRoutePref.match(/.+-dashboard$/)):
-    {
-      const clusterId = afterLoginRoutePref.split('-dashboard')[0];
-
-      return { name: 'c-cluster-explorer', params: { product: 'explorer', cluster: clusterId } };
-    }
-    default:
-      return { name: afterLoginRoutePref };
+          return { name: 'c-cluster-explorer', params: { product: 'explorer', cluster: clusterId } };
+        }
+      default:
+        return { name: afterLoginRoutePref };
     }
   },
 
@@ -266,7 +266,7 @@ export const mutations = {
 
   reset(state) {
     for (const key in state.definitions) {
-      if ( state.definitions[key]?.asCookie ) {
+      if (state.definitions[key]?.asCookie) {
         continue;
       }
       delete state.data[key];
@@ -290,26 +290,26 @@ export const actions = {
     const definition = state.definitions[key];
     let server;
 
-    if ( opt.val ) {
+    if (opt.val) {
       throw new Error('Use value, not val');
     }
 
     commit('load', { key, value });
 
-    if ( definition.asCookie ) {
+    if (definition.asCookie) {
       const options = {
         ...cookieOptions,
         parseJSON: definition.parseJSON === true
       };
 
-      const computedKey = `${ cookiePrefix }${ key }`.toUpperCase();
+      const computedKey = `${cookiePrefix}${key}`.toUpperCase();
 
       commit('cookies/set', {
         key: computedKey, value, options
       }, { root: true });
     }
 
-    if ( definition.asUserPreference ) {
+    if (definition.asUserPreference) {
       const checkLogin = rootGetters['auth/loggedIn'];
 
       // Check for login status
@@ -322,12 +322,12 @@ export const actions = {
       try {
         server = await dispatch('loadServer', key); // There's no watch on prefs, so get before set...
 
-        if ( server?.data ) {
-          if ( definition.mangleWrite ) {
+        if (server?.data) {
+          if (definition.mangleWrite) {
             value = definition.mangleWrite(value);
           }
 
-          if ( definition.parseJSON ) {
+          if (definition.parseJSON) {
             server.data[key] = JSON.stringify(value);
           } else {
             server.data[key] = value;
@@ -349,19 +349,19 @@ export const actions = {
   },
 
   loadCookies({ state, commit, rootGetters }) {
-    if ( state.cookiesLoaded ) {
+    if (state.cookiesLoaded) {
       return;
     }
 
     for (const key in state.definitions) {
       const definition = state.definitions[key];
 
-      if ( !definition.asCookie ) {
+      if (!definition.asCookie) {
         continue;
       }
 
       const options = { parseJSON: definition.parseJSON === true };
-      const computedKey = `${ cookiePrefix }${ key }`.toUpperCase();
+      const computedKey = `${cookiePrefix}${key}`.toUpperCase();
       const value = rootGetters['cookies/get']({ key: computedKey, options });
 
       if (value !== undefined) {
@@ -385,28 +385,28 @@ export const actions = {
     }, nextHalfHour);
     // console.log('Update theme in', nextHalfHour, 'ms');
 
-    if ( watchDark.matches ) {
+    if (watchDark.matches) {
       changed('dark');
-    } else if ( watchLight.matches ) {
+    } else if (watchLight.matches) {
       changed('light');
     } else {
       changed(fromClock());
     }
 
     watchDark.addListener((e) => {
-      if ( e.matches ) {
+      if (e.matches) {
         changed('dark');
       }
     });
 
     watchLight.addListener((e) => {
-      if ( e.matches ) {
+      if (e.matches) {
         changed('light');
       }
     });
 
     watchNone.addListener((e) => {
-      if ( e.matches ) {
+      if (e.matches) {
         changed(fromClock());
       }
     });
@@ -419,7 +419,7 @@ export const actions = {
     function fromClock() {
       const hour = new Date().getHours();
 
-      if ( hour < 7 || hour >= 18 ) {
+      if (hour < 7 || hour >= 18) {
         return 'dark';
       }
 
@@ -427,7 +427,7 @@ export const actions = {
     }
   },
 
-  async loadServer( {
+  async loadServer({
     state, dispatch, commit, rootState, rootGetters
   }, ignoreKey) {
     let server = { data: {} };
@@ -435,12 +435,12 @@ export const actions = {
     try {
       const all = await dispatch('management/findAll', {
         type: STEVE.PREFERENCE,
-        opt:  {
-          url:                  'userpreferences',
-          force:                true,
-          watch:                false,
+        opt: {
+          url: 'userpreferences',
+          force: true,
+          watch: false,
           redirectUnauthorized: false,
-          stream:               false,
+          stream: false,
         }
       }, { root: true });
 
@@ -451,7 +451,7 @@ export const actions = {
       return;
     }
 
-    if ( !server?.data ) {
+    if (!server?.data) {
       return;
     }
 
@@ -475,11 +475,11 @@ export const actions = {
         value = clone(server.data[definition.inheritFrom]);
       }
 
-      if ( value === undefined || key === ignoreKey) {
+      if (value === undefined || key === ignoreKey) {
         continue;
       }
 
-      if ( definition.parseJSON ) {
+      if (definition.parseJSON) {
         try {
           value = JSON.parse(value);
         } catch (err) {
@@ -488,7 +488,7 @@ export const actions = {
         }
       }
 
-      if ( definition.mangleRead ) {
+      if (definition.mangleRead) {
         value = definition.mangleRead(value);
       }
 
@@ -535,7 +535,7 @@ export const actions = {
             // TODO option apply color at runtime
           }
         }
-      } catch {}
+      } catch { }
     }
   }
 };

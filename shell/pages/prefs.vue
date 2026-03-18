@@ -187,6 +187,7 @@ export default {
     </h1>
 
     <!-- Language -->
+    <!--
     <div
       v-if="hasMultipleLocales && !isHarvester"
       class="mt-10 mb-10"
@@ -200,6 +201,17 @@ export default {
           <LocaleSelector
             data-testid="prefs__languageSelector"
             aria-labelledby="prefs-language"
+          />
+        </div>
+      </div>
+    </div>
+    -->
+    <div class="mt-10 mb-10">
+      <h4 v-t="'prefs.language'" />
+      <div class="row">
+        <div class="col span-4">
+          <LocaleSelector
+            data-testid="prefs__languageSelector"
           />
         </div>
       </div>

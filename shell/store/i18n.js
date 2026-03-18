@@ -1,31 +1,31 @@
 import merge from 'lodash/merge';
 import IntlMessageFormat from 'intl-messageformat';
 import { get } from '@shell/utils/object';
-import en from '@shell/assets/translations/en-us.yaml';
+import ko from '@shell/assets/translations/ko-kr.yaml';
 import { getProduct, getVendor, DOCS_BASE } from '@shell/config/private-label';
 import { loadTranslation } from '@shell/utils/dynamic-importer';
 
 const NONE = 'none';
-const DEFAULT_LOCALE = 'en-us';
+const DEFAULT_LOCALE = 'ko-kr';
 
 // Formatters can't be serialized into state
 const intlCache = {};
 
 let lastLoaded = 0;
 
-export const state = function() {
+export const state = function () {
   // const translationContext = require.context('@shell/assets/translations', true, /.*/);
   // const available = translationContext.keys().map(path => path.replace(/^.*\/([^\/]+)\.[^.]+$/, '$1'));
   // Using require.context() forces them to all be in the same webpack chunk name... just hardcode the list for now so zh-hans
   // gets generated as it's own chunk instead of being loaded all the time.
-  const available = [DEFAULT_LOCALE, 'zh-hans'];
+  const available = [DEFAULT_LOCALE, 'en-us', 'zh-hans'];
 
   const out = {
-    default:      DEFAULT_LOCALE,
-    selected:     null,
-    previous:     null,
+    default: DEFAULT_LOCALE,
+    selected: null,
+    previous: null,
     available,
-    translations: { [DEFAULT_LOCALE]: en },
+    translations: { [DEFAULT_LOCALE]: ko },
   };
 
   return out;
@@ -33,10 +33,10 @@ export const state = function() {
 
 export const getters = {
   selectedLocaleLabel(state) {
-    const key = `locale.${ state.selected }`;
+    const key = `locale.${state.selected}`;
 
-    if ( state.selected === NONE ) {
-      return `%${ key }%`;
+    if (state.selected === NONE) {
+      return `%${key}%`;
     } else {
       return get(state.translations[state.default], key);
     }
@@ -45,11 +45,11 @@ export const getters = {
   availableLocales(state, getters) {
     const out = {};
 
-    for ( const locale of state.available ) {
-      const key = `locale.${ locale }`;
+    for (const locale of state.available) {
+      const key = `locale.${locale}`;
 
-      if ( state.selected === NONE ) {
-        out[locale] = `%${ key }%`;
+      if (state.selected === NONE) {
+        out[locale] = `%${key}%`;
       } else {
         out[locale] = get(state.translations[state.default], key);
       }
@@ -64,31 +64,31 @@ export const getters = {
 
   t: (state) => (key, args, language) => {
     if (state.selected === NONE && !language) {
-      return `%${ key }%`;
+      return `%${key}%`;
     }
 
     const locale = language || state.selected;
-    const cacheKey = `${ locale }/${ key }`;
+    const cacheKey = `${locale}/${key}`;
     let formatter = intlCache[cacheKey];
 
-    if ( !formatter ) {
+    if (!formatter) {
       let msg = get(state.translations[locale], key);
 
-      if ( !msg ) {
+      if (!msg) {
         msg = get(state.translations[state.default], key);
       }
 
-      if ( msg === undefined ) {
+      if (msg === undefined) {
         return undefined;
       }
 
-      if ( typeof msg === 'object' ) {
+      if (typeof msg === 'object') {
         console.error('Translation for', cacheKey, 'is an object'); // eslint-disable-line no-console
 
         return undefined;
       }
 
-      if ( msg?.includes('{')) {
+      if (msg?.includes('{')) {
         formatter = new IntlMessageFormat(msg, locale);
       } else {
         formatter = msg;
@@ -97,13 +97,13 @@ export const getters = {
       intlCache[cacheKey] = formatter;
     }
 
-    if ( typeof formatter === 'string' ) {
+    if (typeof formatter === 'string') {
       return formatter;
-    } else if ( formatter && formatter.format ) {
+    } else if (formatter && formatter.format) {
       // Inject things like appName so they're always available in any translation
       const moreArgs = {
-        vendor:   getVendor(),
-        appName:  getProduct(),
+        vendor: getVendor(),
+        appName: getProduct(),
         docsBase: DOCS_BASE,
         ...args
       };
@@ -116,19 +116,19 @@ export const getters = {
 
   exists: (state) => (key, language) => {
     const locale = language || state.selected;
-    const cacheKey = `${ locale }/${ key }`;
+    const cacheKey = `${locale}/${key}`;
 
-    if ( intlCache[cacheKey] ) {
+    if (intlCache[cacheKey]) {
       return true;
     }
 
     let msg = get(state.translations[state.default], key);
 
-    if ( !msg && locale && locale !== NONE ) {
+    if (!msg && locale && locale !== NONE) {
       msg = get(state.translations[locale], key);
     }
 
-    if ( msg !== undefined ) {
+    if (msg !== undefined) {
       return true;
     }
 
@@ -153,14 +153,14 @@ export const getters = {
 
   withFallback: (state, getters) => (key, args, fallback, fallbackIsKey = false) => {
     // Support withFallback(key,fallback) when no args
-    if ( !fallback && typeof args === 'string' ) {
+    if (!fallback && typeof args === 'string') {
       fallback = args;
       args = {};
     }
 
-    if ( getters.exists(key) ) {
+    if (getters.exists(key)) {
       return getters.t(key, args);
-    } else if ( fallbackIsKey ) {
+    } else if (fallbackIsKey) {
       return getters.t(fallback, args);
     } else {
       return fallback;
@@ -228,7 +228,7 @@ export const actions = {
     // We might be using a locale that is loaded by a plugin that is no longer loaded
     const exists = !!state.available.find((loc) => loc === selected);
 
-    if ( !selected || !exists) {
+    if (!selected || !exists) {
       selected = state.default;
     }
 
@@ -266,7 +266,7 @@ export const actions = {
       dispatch('switchTo', DEFAULT_LOCALE);
     }
 
-    commit('removeLocale', locale );
+    commit('removeLocale', locale);
   },
 
   async switchTo({
@@ -278,7 +278,7 @@ export const actions = {
   }, locale) {
     const currentLocale = getters['current']();
 
-    if ( locale === NONE ) {
+    if (locale === NONE) {
       commit('setSelected', locale);
 
       // Don't remember into cookie
@@ -291,7 +291,7 @@ export const actions = {
 
     lastLoaded = lastLoad;
 
-    if ( !state.translations[locale] || reload) {
+    if (!state.translations[locale] || reload) {
       try {
         await dispatch('load', locale);
       } catch (e) {
@@ -340,14 +340,14 @@ export const actions = {
     // Only update the preference if the locale changed
     if (currentLocale !== locale) {
       dispatch('prefs/set', {
-        key:   'locale',
+        key: 'locale',
         value: state.selected
       }, { root: true });
     }
   },
 
   toggleNone({ state, dispatch }) {
-    if ( state.selected === NONE ) {
+    if (state.selected === NONE) {
       return dispatch('switchTo', state.previous || state.default);
     } else {
       return dispatch('switchTo', NONE);

@@ -53,23 +53,23 @@ import { defaultContainer } from '@shell/models/workload';
 import { allHash } from '@shell/utils/promise';
 
 const TAB_WEIGHT_MAP = {
-  general:              99,
-  healthCheck:          98,
-  labels:               97,
-  networking:           96,
-  nodeScheduling:       95,
-  podScheduling:        94,
-  resources:            93,
-  upgrading:            92,
-  securityContext:      91,
-  storage:              90,
+  general: 99,
+  healthCheck: 98,
+  labels: 97,
+  networking: 96,
+  nodeScheduling: 95,
+  podScheduling: 94,
+  resources: 93,
+  upgrading: 92,
+  securityContext: 91,
+  storage: 90,
   volumeClaimTemplates: 89,
 };
 
 const GPU_KEY = 'nvidia.com/gpu';
 const ID_KEY = Symbol('container-id');
 
-const serialMaker = function() {
+const serialMaker = function () {
   let prefix = '';
   let seq = 0;
 
@@ -91,7 +91,7 @@ const serialMaker = function() {
 }();
 
 export default {
-  name:       'CruWorkload',
+  name: 'CruWorkload',
   components: {
     ContainerResourceLimit,
     Command,
@@ -125,12 +125,12 @@ export default {
 
   props: {
     value: {
-      type:     Object,
+      type: Object,
       required: true,
     },
 
     mode: {
-      type:    String,
+      type: String,
       default: 'create',
     },
 
@@ -181,7 +181,7 @@ export default {
       if (this.value.type === POD) {
         const podContainers = [{
           imagePullPolicy: 'Always',
-          name:            `container-0`,
+          name: `container-0`,
         }];
 
         const metadata = { ...this.value.metadata };
@@ -194,7 +194,7 @@ export default {
 
     // EDIT view for POD
     // Transform it from POD world to workload
-    if ((this.mode === _EDIT || this.mode === _VIEW || this.realMode === _CLONE ) && this.value.type === 'pod') {
+    if ((this.mode === _EDIT || this.mode === _VIEW || this.realMode === _CLONE) && this.value.type === 'pod') {
       const podSpec = { ...this.value.spec };
       const metadata = { ...this.value.metadata };
 
@@ -207,7 +207,7 @@ export default {
     let containers = podTemplateSpec.containers || [];
     let container;
 
-    if (this.mode === _VIEW && this.value.type === 'pod' ) {
+    if (this.mode === _VIEW && this.value.type === 'pod') {
       podTemplateSpec = spec;
     }
 
@@ -231,8 +231,8 @@ export default {
       if (this.$route.query.init) {
         podTemplateSpec.initContainers.push({
           imagePullPolicy: 'Always',
-          name:            `container-${ allContainers.length }`,
-          _init:           true,
+          name: `container-${allContainers.length}`,
+          _init: true,
         });
 
         containers = podTemplateSpec.initContainers;
@@ -240,8 +240,8 @@ export default {
       if (createSidecar || this.value.type === 'pod') {
         container = {
           imagePullPolicy: 'Always',
-          name:            `container-${ allContainers.length }`,
-          _init:           false,
+          name: `container-${allContainers.length}`,
+          _init: false,
         };
 
         containers.push(container);
@@ -255,35 +255,35 @@ export default {
     }
 
     return {
-      secondaryResourceData:      this.secondaryResourceDataConfig(),
-      namespacedConfigMaps:       [],
-      allNodes:                   null,
-      workerNodes:                null,
-      allNodeObjects:             [],
-      namespacedSecrets:          [],
+      secondaryResourceData: this.secondaryResourceDataConfig(),
+      namespacedConfigMaps: [],
+      allNodes: null,
+      workerNodes: null,
+      allNodeObjects: [],
+      namespacedSecrets: [],
       imagePullNamespacedSecrets: [],
-      allServices:                [],
-      headlessServices:           [],
-      name:                       this.value?.metadata?.name || null,
-      pvcs:                       [],
-      namespacedServiceNames:     [],
-      showTabs:                   false,
-      pullPolicyOptions:          ['Always', 'IfNotPresent', 'Never'],
+      allServices: [],
+      headlessServices: [],
+      name: this.value?.metadata?.name || null,
+      pvcs: [],
+      namespacedServiceNames: [],
+      showTabs: false,
+      pullPolicyOptions: ['Always', 'IfNotPresent', 'Never'],
       spec,
       type,
-      servicesOwned:              [],
-      servicesToRemove:           [],
-      portsForServices:           [],
+      servicesOwned: [],
+      servicesToRemove: [],
+      portsForServices: [],
       container,
-      containerChange:            0,
-      tabChange:                  0,
-      podFsGroup:                 podTemplateSpec.securityContext?.fsGroup,
-      savePvcHookName:            'savePvcHook',
-      tabWeightMap:               TAB_WEIGHT_MAP,
-      fvFormRuleSets:             [],
-      fvReportedValidationPaths:  ['spec'],
-      isNamespaceNew:             false,
-      idKey:                      ID_KEY
+      containerChange: 0,
+      tabChange: 0,
+      podFsGroup: podTemplateSpec.securityContext?.fsGroup,
+      savePvcHookName: 'savePvcHook',
+      tabWeightMap: TAB_WEIGHT_MAP,
+      fvFormRuleSets: [],
+      fvReportedValidationPaths: ['spec'],
+      isNamespaceNew: false,
+      idKey: ID_KEY
     };
   },
 
@@ -459,12 +459,12 @@ export default {
 
         const out = {
           requests: {
-            cpu:    requestsCpu,
+            cpu: requestsCpu,
             memory: requestsMemory,
           },
           limits: {
-            cpu:       limitsCpu,
-            memory:    limitsMemory,
+            cpu: limitsCpu,
+            memory: limitsMemory,
             [GPU_KEY]: limitsGpu,
           },
         };
@@ -523,9 +523,9 @@ export default {
       for (const prop in workloadTypes) {
         const type = workloadTypes[prop];
         const subtype = {
-          id:          type,
-          description: `workload.typeDescriptions.'${ type }'`, // i18n-uses workload.typeDescriptions.*
-          label:       this.nameDisplayFor(type),
+          id: type,
+          description: this.t(`workload.typeDescriptions.'${type}'`), // i18n-uses workload.typeDescriptions.*
+          label: this.nameDisplayFor(type),
           bannerAbbrv: this.initialDisplayFor(type),
         };
 
@@ -625,15 +625,15 @@ export default {
     secondaryResourceDataConfig() {
       return {
         namespace: this.value?.metadata?.namespace || null,
-        data:      {
-          [CONFIG_MAP]:      { applyTo: [{ var: 'namespacedConfigMaps' }] },
-          [PVC]:             { applyTo: [{ var: 'pvcs' }] },
+        data: {
+          [CONFIG_MAP]: { applyTo: [{ var: 'namespacedConfigMaps' }] },
+          [PVC]: { applyTo: [{ var: 'pvcs' }] },
           [SERVICE_ACCOUNT]: { applyTo: [{ var: 'namespacedServiceNames' }] },
-          [SECRET]:          {
+          [SECRET]: {
             applyTo: [
               { var: 'namespacedSecrets' },
               {
-                var:         'imagePullNamespacedSecrets',
+                var: 'imagePullNamespacedSecrets',
                 parsingFunc: (data) => {
                   return data.filter((secret) => (secret._type === SECRET_TYPES.DOCKER || secret._type === SECRET_TYPES.DOCKER_JSON));
                 }
@@ -644,13 +644,13 @@ export default {
             applyTo: [
               { var: 'allNodeObjects' },
               {
-                var:         'allNodes',
+                var: 'allNodes',
                 parsingFunc: (data) => {
                   return data.map((node) => node.id);
                 }
               },
               {
-                var:         'workerNodes',
+                var: 'workerNodes',
                 parsingFunc: (data) => {
                   const keys = [
                     `node-role.kubernetes.io/control-plane`,
@@ -672,7 +672,7 @@ export default {
             applyTo: [
               { var: 'allServices' },
               {
-                var:         'headlessServices',
+                var: 'headlessServices',
                 parsingFunc: (data) => {
                   return data.filter((service) => service.spec.clusterIP === 'None');
                 }
@@ -799,7 +799,7 @@ export default {
             if (Object.keys(containerResources).length === 0) {
               delete template.spec.containers[0].resources;
             }
-          } catch {}
+          } catch { }
         }
       }
 
@@ -967,12 +967,12 @@ export default {
         return names;
       }, []);
 
-      while (allNames.includes(`container-${ nameNumber }`)) {
+      while (allNames.includes(`container-${nameNumber}`)) {
         nameNumber++;
       }
       const container = {
         ...structuredClone(defaultContainer),
-        name:   `container-${ nameNumber }`,
+        name: `container-${nameNumber}`,
         active: true
       };
 
@@ -1035,7 +1035,7 @@ export default {
       }
     },
     nvidiaIsValid(nvidiaGpuLimit) {
-      if ( !Number.isInteger(parseInt(nvidiaGpuLimit)) ) {
+      if (!Number.isInteger(parseInt(nvidiaGpuLimit))) {
         return false;
       }
       if (nvidiaGpuLimit === undefined) {

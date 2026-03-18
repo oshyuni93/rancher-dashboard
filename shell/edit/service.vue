@@ -98,7 +98,7 @@ export default {
 
     return {
       matchingPods,
-      defaultServiceTypes:         DEFAULT_SERVICE_TYPES,
+      allPods:                     [],
       saving:                      false,
       sessionAffinityActionLabels: Object.values(SESSION_AFFINITY_ACTION_LABELS)
         .map((v) => this.$store.getters['i18n/t'](v))

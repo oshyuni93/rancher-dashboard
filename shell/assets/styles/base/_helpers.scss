@@ -37,16 +37,6 @@ $spacing-property-map: (
   padding: 20px 0 0 0;
 }
 
-.dashed-spacer {
-  margin: 24px 0;
-  border-bottom: none;
-  background-image: repeating-linear-gradient(to right, var(--border) 0, var(--border) 4px, transparent 4px, transparent 8px);
-  background-position: bottom;
-  background-repeat: repeat-x;
-  background-size: 8px 1px;
-  padding-bottom: 1px;
-}
-
 .pull-right {
   float: right !important;
 }
@@ -139,10 +129,6 @@ $spacing-property-map: (
 
 .text-label {
   color: var(--input-label);
-}
-
-.text-no-break {
-  white-space: nowrap;
 }
 
 .hide {

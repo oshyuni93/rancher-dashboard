@@ -1858,7 +1858,7 @@ export default {
       }
 
       .namespace-create-banner {
-        margin-bottom: calc($footer-height + 10px);
+        margin-bottom: calc(var(--footer-height) + 10px);
       }
     }
     &__values {
