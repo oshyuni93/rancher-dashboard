@@ -1,0 +1,85 @@
+#!/usr/bin/env bash
+
+DIR=$(cd $(dirname $0)/..; pwd)
+
+# See `script/build-e2e`
+DASHBOARD_DIST=${DIR}/dist
+EMBER_DIST=${DIR}/dist_ember
+
+# Image version
+RANCHER_IMG_VERSION=v2.13-head
+
+# Docker volume args when mounting the locally-built UI into the container
+VOLUME_ARGS="-v ${DASHBOARD_DIST}:/usr/share/rancher/ui-dashboard/dashboard -v ${EMBER_DIST}:/usr/share/rancher/ui"
+
+# check if script invoke contains any argument. If so, adjust RANCHER_IMG_VERSION
+if [ $# -eq 1 ]; then
+  RANCHER_IMG_VERSION=$1
+  # When an image is specified, we use that image, including its front-end, so we don't want the volume args to mount the locally-built UI
+  VOLUME_ARGS=""
+fi
+
+echo "Using Rancher image version: ${RANCHER_IMG_VERSION}"
+
+# Configure the Rancher server URL from start, similarly to how chart installations work
+# The special host.docker.internal domain only works for Docker Desktop, not plain Docker Engine on linux, so using the special IP 172.17.0.1 to access the gateway of the default bridge network
+SERVER_URL="https://172.17.0.1"
+
+# we are now enabling the "oidc-provider" feature flag on install because we will need it for e2e testing (not enabled by default in non-prime versions)
+# "oidc-provider" feature flag needs a system restart so it's not feasible to enable it as part of the test
+
+docker run -d --restart=unless-stopped -p 80:80 -p 443:443 ${VOLUME_ARGS} \
+  -e CATTLE_UI_OFFLINE_PREFERRED=true \
+  -e CATTLE_BOOTSTRAP_PASSWORD=password \
+  -e CATTLE_PASSWORD_MIN_LENGTH=3 \
+  -e CATTLE_SERVER_URL="${SERVER_URL}" \
+  -e CATTLE_DEBUG=true \
+  -e CATTLE_TRACE=true \
+  --name cypress \
+  --privileged \
+  rancher/rancher:${RANCHER_IMG_VERSION} \
+  --features=oidc-provider=true
+
+docker ps
+
+echo "Waiting for dashboard UI to be reachable (initial 20s wait) ..."
+
+sleep 20
+
+echo "Waiting for dashboard UI to be reachable ..."
+
+okay=0
+
+while [ $okay -lt 30 ]; do
+  STATUS=$(curl --silent --head -k https://127.0.0.1/dashboard/ | awk '/^HTTP/{print $2}')
+
+  echo "Status: $STATUS (Try: $okay)"
+
+  okay=$((okay+1))
+
+  if [ "$STATUS" == "200" ]; then
+    okay=100
+  else
+    sleep 5
+  fi
+done
+
+if [ "$STATUS" != "200" ]; then
+  echo "Dashboard did not become available in a reasonable time"
+  exit 1
+fi
+
+echo "Dashboard UI is ready"
+
+echo "Waiting for webhook to be running..."
+okay=0
+while [ $okay -lt 30 ] ; do
+  if docker exec cypress kubectl -n cattle-system get po -l app=rancher-webhook | grep -q '1/1.*Running' ; then
+    break
+  else
+    echo "Webhook not ready, checking again in 10s..."
+    okay=$((okay+1))
+    sleep 10
+  fi
+done
+echo "Rancher is ready"
