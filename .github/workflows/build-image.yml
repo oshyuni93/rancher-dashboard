@@ -4,9 +4,9 @@ name: Dispatch Dashboard image
 
 on:
   push:
-    branches: [main]
+    branches: [release-2.11]
   pull_request:
-    branches: [main]
+    branches: [release-2.11]
     
 env:
   #REGISTRY: harbor.spaasta.com
