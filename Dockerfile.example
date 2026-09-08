@@ -12,7 +12,7 @@ ENV ROUTER_BASE="/dashboard/" \
     RESOURCE_BASE="/dashboard/"
 RUN yarn run build
 
-FROM rancher/rancher:v2.14.4
+FROM rancher/rancher:v2.14.2
 WORKDIR /var/lib/rancher
 RUN rm -rf /usr/share/rancher/ui-dashboard/dashboard*
 COPY --from=builder /src/dist /usr/share/rancher/ui-dashboard/dashboard
