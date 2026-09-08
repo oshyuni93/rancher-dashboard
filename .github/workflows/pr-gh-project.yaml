@@ -1,0 +1,26 @@
+name: gh-project-integration
+on:
+  pull_request:
+    types: [ opened, reopened, edited, closed ]
+
+jobs:
+  rancher_gh_project:
+    if: ${{ github.repository_owner == 'rancher' }}
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6
+    - name: Use Node.js
+      uses: actions/setup-node@53b83947a5a98c8d113130e565377fae1a50d02f # v6
+      with:
+        node-version-file: '.nvmrc'
+    - name: Write GitHub Event
+      run: |
+        cat $GITHUB_EVENT_PATH  > event.json
+    - name: Upload event data so it can be used in the processor workflow
+      uses: actions/upload-artifact@b7c566a772e6b6bfb58ed0dc250532a479d7789f # v6
+      with:
+        name: pr-gh-project-event
+        path: event.json
+        if-no-files-found: error
+        retention-days: 1
+        compression-level: 9

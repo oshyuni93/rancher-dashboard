@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+ID="$(echo ${TEST_RUN_ID:-`date +%s` } | tr '[:upper:]' '[:lower:]' | tr ' ' '-')"
+echo "$ID"
+
+SPEC_ARG=""
+
+# check if script invoke contains any argument. If so, add spec to run
+if [ $# -eq 1 ]; then
+  echo "Running e2e tests with spec: $1"
+  SPEC_ARG="--spec ${1}"
+fi
+
+CYPRESS_COMMAND="cypress run ${SPEC_ARG}"
+
+# Construct the full command
+E2E_COMMAND="${CYPRESS_COMMAND} --browser chrome"
+
+# Execute the command
+eval $E2E_COMMAND

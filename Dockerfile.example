@@ -1,0 +1,18 @@
+FROM node:24-alpine AS builder
+
+# git 및 필수 빌드 도구 설치
+#RUN apk add --no-cache git bash
+
+WORKDIR /src
+
+COPY . .
+RUN yarn --pure-lockfile install
+
+ENV ROUTER_BASE="/dashboard/" \
+    RESOURCE_BASE="/dashboard/"
+RUN yarn run build
+
+FROM rancher/rancher:v2.14.4
+WORKDIR /var/lib/rancher
+RUN rm -rf /usr/share/rancher/ui-dashboard/dashboard*
+COPY --from=builder /src/dist /usr/share/rancher/ui-dashboard/dashboard
