@@ -1,4 +1,4 @@
-FROM node:20 AS builder
+FROM node:24-alpine AS builder
 
 # git 및 필수 빌드 도구 설치
 #RUN apk add --no-cache git bash
