@@ -1,0 +1,44 @@
+{
+  "target": "ES2018",
+  "module": "ES2020",
+  "moduleResolution": "Node",
+  "lib": [
+    "ES2020",
+    "ES2020.AsyncIterable",
+    "DOM"
+  ],
+  "allowJs": true,
+  "sourceMap": true,
+  "strict": true,
+  "noEmit": false,
+  "compilerOptions": {
+    "esModuleInterop": true,
+    "baseUrl": "..",
+    "types": [
+      "cypress",
+      "@cypress/grep",
+      "cypress-axe"
+    ],
+    "paths": {
+      "~/*": [
+        "*"
+      ],
+      "@/*": [
+        "*"
+      ],
+      "@shell/*": [
+        "shell/*"
+      ],
+      "@pkg/*": [
+        "shell/pkg/*"
+      ],
+      "@components/*": [
+        "pkg/rancher-components/src/components/*"
+      ]
+    },
+  },
+  "include": [
+    "./**/*.ts",
+    "../types/*.ts"
+  ]
+}
