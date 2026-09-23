@@ -4420,7 +4420,7 @@ neuvector:
 login:
   login: 로그인
   howdy: 안녕하세요!
-  welcome: "Infinitystack에 오신 것을 환영합니다."
+  welcome: "{vendor}에 오신 것을 환영합니다."
   landscapeAlt: 랜드스케이프 이미지
   loggedOut: 로그아웃되었습니다.
   loggedOutSessionIdle: 세션이 만료되어 Barastack에서 로그아웃되었습니다. 계속하려면 다시 로그인하세요.
