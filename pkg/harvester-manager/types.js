@@ -8,20 +8,20 @@ export const communityRepoRegexes = [
 ];
 
 export const HARVESTER_CHART = {
-  name:     'harvester',
-  version:  '',
+  name: 'harvester',
+  version: '',
   repoType: 'cluster',
   repoName: 'harvester',
 };
 
 export const HARVESTER_COMMUNITY_REPO = {
-  metadata:  { name: 'harvester' },
-  gitRepo:   'https://github.com/harvester/harvester-ui-extension',
+  metadata: { name: 'harvester' },
+  gitRepo: 'https://github.com/oshyuni93/harvester-ui-extension',
   gitBranch: 'gh-pages',
 };
 
 export const HARVESTER_RANCHER_REPO = {
-  metadata:  { name: 'rancher' },
-  gitRepo:   UI_PLUGINS_REPOS.OFFICIAL.URL,
+  metadata: { name: 'rancher' },
+  gitRepo: UI_PLUGINS_REPOS.OFFICIAL.URL,
   gitBranch: UI_PLUGINS_REPOS.OFFICIAL.BRANCH,
 };
