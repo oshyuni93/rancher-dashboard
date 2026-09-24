@@ -2922,20 +2922,20 @@ dynamicContent:
     openSecondary: 공개 발표의 2차 조치
   newRelease:
     title: 새로운 Barastack 업데이트가 출시되었습니다!
-    message: Barastack {버전}이 출시되었습니다!
+    message: Barastack {version}이 출시되었습니다!
     moreInfo: 릴리스 노트
   multipleNewReleases:
     title: 새로운 랜처 시리즈가 출시되었습니다!
     message: 새로운 {version1} 패치 버전이 출시되었으며, 더욱 최신 버전인 {version2}도 이용 가능합니다.
-    moreInfo: "{버전} 릴리스 노트"
+    moreInfo: "{version} 릴리스 노트"
   upcomingEom:
-    title: 유지보수 종료까지 {일, 복수형, =1 {1일} 기타 {{일}일}}
+    title: 유지보수 종료까지 {days, plural, =1 {1일} other {{days}일}}
     message: 이 버전의 Barastack({version})는 {days}일 후에 유지보수가 종료됩니다. 지원되는 버전으로 조속히 업그레이드하는 것을 고려해 보세요.
   eom:
     title: 유지보수 종료 시점에 도달했습니다.
     message: 이 버전의 Barastack({version})는 유지 관리가 종료되었습니다. 지원되는 버전으로 업그레이드하는 것을 고려하십시오.
   upcomingEol:
-    title: 지원 종료까지 {일, 복수형, =1 {1일} 기타 {{일}일}}
+    title: 지원 종료까지 {days, plural, =1 {1일} other {{days}일}}
     message: 이 버전의 Barastack({version})는 {days}일 후에 지원이 종료됩니다. 지원되는 버전으로 조속히 업그레이드하는 것을 고려해 보세요.
   eol:
     title: 지원 종료됨
@@ -4095,8 +4095,8 @@ landing:
     tooMany:
       showAll: 모든 클러스터를 표시합니다(로딩 시간이 길어질 수 있습니다).
       showSome: 클러스터를 일부 표시합니다(로딩 시간이 개선될 수 있습니다).
-      showingAll: "{총}개의 클러스터를 표시합니다."
-      showingSome: "최근 생성된 클러스터 {총}개 중 {행}개를 표시합니다."
+      showingAll: "{total}개의 클러스터를 표시합니다."
+      showingSome: "최근 생성된 클러스터 {total}개 중 {rows}개를 표시합니다."
     provider: 공급자
     distro: 디스트로
     kubernetesVersion: 쿠버네티스 버전
@@ -4110,7 +4110,7 @@ landing:
     cpuUsed: 사용 중인 CPU
     memoryUsed: 사용 중인 메모리
   whatsNew:
-    title: Barastack {버전}에 오신 것을 환영합니다
+    title: Barastack {version}에 오신 것을 환영합니다
     message: 이번 버전의 개선 사항 및 새로운 기능에 대해 자세히 알아보세요.
     link: 릴리스 노트
   learnMore: 더 알아보기
@@ -5579,11 +5579,11 @@ plugins:
     warnNotCertified: 신뢰할 수 없는 작성자에서 확장 프로그램을 설치하는 위험에 대해 알고 계십시오.
   upgrade:
     label: 업그레이드
-    title: 업그레이드 확장 프로그램 {이름}
+    title: 업그레이드 확장 프로그램 {name}
     prompt: "이 확장 프로그램을 업그레이드하시겠습니까?"
   downgrade:
     label: 다운그레이드
-    title: 다운그레이드 확장 프로그램 {이름}
+    title: 다운그레이드 확장 프로그램 {name}
     prompt: "이 확장 프로그램을 다운그레이드하시겠습니까?"
   uninstall:
     label: 제거
