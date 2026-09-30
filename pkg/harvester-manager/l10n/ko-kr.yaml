@@ -63,3 +63,18 @@ harvesterManager:
   cpuModel:
     label: CPU 모델
     optionLabel: "{modelName} (준비된 노드: {count})"
+  gpu:
+    sectionTitle: GPU 설정 (PCI 패스스루)
+    sectionHelp: "이 머신 풀에 물리적 NVIDIA GPU(A100, H100, A200, H200 등) PCI 패스스루를 구성합니다. Infinitystack에서 Enable Passthrough가 활성화된 장치만 연결할 수 있습니다."
+    enableGpu: "GPU 활성화 (PCI 패스스루)"
+    enablePassthrough: "PCI 패스스루 (활성화됨)"
+    quantityWarning: "선택한 PCI 장치는 하나의 VM에만 할당할 수 있습니다. 현재 풀 수량은 {count}개입니다. PCI 패스스루의 경우 GPU당 수량을 1로 설정하세요."
+    noPassthroughDevicesTitle: "패스스루 활성화된 GPU 없음:"
+    noPassthroughDevicesHelp: "물리 GPU를 VM에 연결하려면 먼저 해당 장치에서 PCI Passthrough를 활성화해야 합니다. Infinitystack UI의 [고급(Advanced) > PCI 장치]로 이동하여 원하는 GPU의 'Enable Passthrough'를 실행해 주세요."
+    noAvailableDevicesTitle: "사용 가능한 패스스루 GPU 없음:"
+    noAvailableDevicesHelp: "모든 NVIDIA GPU가 이미 다른 VM에 할당되어 있거나 PCI 패스스루가 활성화되어 있지 않습니다. Infinitystack UI의 [고급 > PCI 장치]에서 미할당된 GPU의 'Enable Passthrough'를 활성화해 주세요."
+    errors:
+      deviceRequired: "GPU 패스스루를 위해 PCI 장치를 선택해야 합니다."
+      notNvidia: "선택한 PCI 장치가 NVIDIA GPU가 아닙니다."
+      singleVmOnly: "선택한 PCI 장치는 하나의 VM에만 할당할 수 있습니다."
+      passthroughNotEnabled: "선택한 PCI 장치는 Infinitystack에서 패스스루(Enable Passthrough)가 활성화되어 있지 않습니다. Infinitystack UI에서 먼저 패스스루를 활성화해 주세요."

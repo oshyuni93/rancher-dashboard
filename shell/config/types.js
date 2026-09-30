@@ -374,9 +374,12 @@ export const HCI = {
   DASHBOARD:        'harvesterhci.io.dashboard',
   IMAGE:            'harvesterhci.io.virtualmachineimage',
   VGPU_DEVICE:      'devices.harvesterhci.io.vgpudevice',
+  PCI_DEVICE:       'devices.harvesterhci.io.pcidevice',
+  PCI_CLAIM:        'devices.harvesterhci.io.pcideviceclaim',
   SETTING:          'harvesterhci.io.setting',
   RESOURCE_QUOTA:   'harvesterhci.io.resourcequota',
   HARVESTER_CONFIG: 'rke-machine-config.cattle.io.harvesterconfig',
+  VM:               'kubevirt.io.virtualmachine',
 };
 
 export const VIRTUAL_HARVESTER_PROVIDER = 'harvester';

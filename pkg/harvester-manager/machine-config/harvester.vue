@@ -11,6 +11,7 @@ import Loading from '@shell/components/Loading';
 import CreateEditView from '@shell/mixins/create-edit-view';
 import LabeledSelect from '@shell/components/form/LabeledSelect';
 import ArrayListSelect from '@shell/components/form/ArrayListSelect';
+import HarvesterGPUConfig from '../components/HarvesterGPUConfig';
 import { LabeledInput } from '@components/Form/LabeledInput';
 import UnitInput from '@shell/components/form/UnitInput';
 import YamlEditor from '@shell/components/YamlEditor';
@@ -89,7 +90,19 @@ export default {
   name: 'ConfigComponentHarvester',
 
   components: {
-    ArrayListSelect, Checkbox, draggable, Loading, LabeledSelect, LabeledInput, UnitInput, Banner, YamlEditor, NodeAffinity, PodAffinity, InfoBox
+    HarvesterGPUConfig,
+    ArrayListSelect,
+    Checkbox,
+    draggable,
+    Loading,
+    LabeledSelect,
+    LabeledInput,
+    UnitInput,
+    Banner,
+    YamlEditor,
+    NodeAffinity,
+    PodAffinity,
+    InfoBox
   },
 
   mixins: [CreateEditView],
@@ -345,6 +358,26 @@ export default {
       }
     }
 
+    let gpuConfig = {
+      enabled:        false,
+      vendor:         'nvidia',
+      model:          'A100',
+      pciPassthrough: true,
+      pciDevice:      null,
+      nodeLabels:     {
+        accelerator:       'nvidia-a100',
+        'gpu.vendor':      'nvidia',
+        'gpu.model':       'a100',
+        'gpu.passthrough': 'true'
+      },
+    };
+
+    if (this.value.gpuInfo) {
+      try {
+        gpuConfig = typeof this.value.gpuInfo === 'string' ? JSON.parse(this.value.gpuInfo) : this.value.gpuInfo;
+      } catch (e) {}
+    }
+
     if (this.value.vgpuInfo) {
       const vGPURequests = JSON.parse(this.value.vgpuInfo)?.vGPURequests;
 
@@ -383,6 +416,7 @@ export default {
       vGpuDevices:        {},
       vGpusInit:          vGpus,
       vGpus,
+      gpuConfig,
       cpuModelConfigMap:  null,
     };
   },
@@ -703,6 +737,12 @@ export default {
 
       this.validatorVGpus(errors);
 
+      if (this.$refs.gpuConfigComponent?.validate) {
+        const gpuErrors = this.$refs.gpuConfigComponent.validate();
+
+        errors.push(...gpuErrors);
+      }
+
       podAffinityValidator(this.vmAffinity.affinity, this.$store.getters, errors);
 
       return { errors };
@@ -772,6 +812,45 @@ export default {
         this.value.diskSize = String(disks[0].size);
 
         this.value.networkName = interfaces[0].networkName;
+      }
+    },
+
+    updateGpuConfig(neu) {
+      this.gpuConfig = neu;
+      this.value.gpuInfo = neu.enabled ? JSON.stringify(neu) : '';
+    },
+
+    updateGpuNodeScheduling(nodeName) {
+      if (!nodeName) {
+        return;
+      }
+      const nodeAffinity = {
+        requiredDuringSchedulingIgnoredDuringExecution: {
+          nodeSelectorTerms: [
+            {
+              matchExpressions: [
+                {
+                  key:      'kubernetes.io/hostname',
+                  operator: 'In',
+                  values:   [nodeName]
+                }
+              ]
+            }
+          ]
+        }
+      };
+
+      this.updateNodeScheduling(nodeAffinity);
+    },
+
+    updateGpuLabels(labels) {
+      const pool = this.machinePools?.[this.poolIndex]?.pool;
+
+      if (pool) {
+        if (!pool.labels) {
+          pool.labels = {};
+        }
+        Object.assign(pool.labels, labels);
       }
     },
 
@@ -1353,6 +1432,29 @@ export default {
           />
         </div>
       </div>
+
+      <hr
+        class="divider mt-20"
+        role="none"
+      >
+      <!-- Harvester A100 GPU PCI Passthrough Configuration -->
+      <HarvesterGPUConfig
+        ref="gpuConfigComponent"
+        :value="gpuConfig"
+        :mode="mode"
+        :disabled="disabled"
+        :credential="credential"
+        :machine-pool="machinePools[poolIndex]"
+        :pool-index="poolIndex"
+        :machine-pools="machinePools"
+        @update:value="updateGpuConfig"
+        @update:nodeScheduling="updateGpuNodeScheduling"
+        @update:labels="updateGpuLabels"
+      />
+      <hr
+        class="divider mt-20 mb-20"
+        role="none"
+      >
 
       <h2 class="mt-20">
         {{ t('cluster.credential.harvester.volume.title') }}
