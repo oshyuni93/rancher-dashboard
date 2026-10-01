@@ -280,6 +280,14 @@ export default {
       return null;
     },
 
+    poolName() {
+      return this.machinePool?.pool?.name || (typeof this.poolIndex === 'number' ? `Machine Pool #${ this.poolIndex + 1 }` : 'Machine Pool');
+    },
+
+    isWorkerPool() {
+      return this.machinePool?.pool?.workerRole !== false;
+    },
+
     quantityWarning() {
       if (this.value.enabled && this.quantity > 1) {
         return this.t(
@@ -303,6 +311,16 @@ export default {
       immediate: true,
     },
 
+    'machinePool.pool.workerRole'(neu) {
+      if (neu === false) {
+        if (this.value?.enabled) {
+          this.onToggleEnable(false);
+        } else {
+          this.$emit('update:labels', {});
+        }
+      }
+    },
+
     'value.enabled'(neu) {
       if (neu) {
         if (!this.selectedDeviceName && this.deviceOptions.length > 0) {
@@ -315,6 +333,15 @@ export default {
         this.$emit('update:nodeScheduling', null);
       }
     },
+  },
+
+  mounted() {
+    if (this.isWorkerPool && this.value?.enabled) {
+      this.applyNodeLabels(this.currentModel);
+      if (this.selectedDeviceDetails?.nodeName) {
+        this.applyNodeScheduling(this.selectedDeviceDetails.nodeName);
+      }
+    }
   },
 
   methods: {
@@ -448,8 +475,12 @@ export default {
         updated.nodeLabels = getGpuNodeLabels(updated.model);
         this.applyNodeLabels(updated.model);
       } else {
+        updated.enabled = false;
         updated.pciPassthrough = false;
+        updated.pciDevice = null;
+        this.selectedDeviceName = '';
         this.$emit('update:nodeScheduling', null);
+        this.$emit('update:labels', {});
       }
 
       this.$emit('update:value', updated);
@@ -526,29 +557,34 @@ export default {
 
     validate() {
       const errors = [];
+      const poolName = this.poolName;
+
+      if (!this.isWorkerPool) {
+        return errors;
+      }
 
       if (!this.value.enabled) {
         return errors;
       }
 
       if (!this.selectedDeviceDetails?.address) {
-        errors.push(this.t('harvesterManager.gpu.errors.deviceRequired', null, 'A PCI device must be selected for GPU passthrough.'));
+        errors.push(`[${ poolName }] ${ this.t('harvesterManager.gpu.errors.deviceRequired', null, 'A PCI device must be selected for GPU passthrough.') }`);
       }
 
       if (this.selectedDeviceDetails?.vendorId && this.selectedDeviceDetails.vendorId !== '10de') {
-        errors.push(this.t('harvesterManager.gpu.errors.notNvidia', null, 'Selected PCI device is not an NVIDIA GPU.'));
+        errors.push(`[${ poolName }] ${ this.t('harvesterManager.gpu.errors.notNvidia', null, 'Selected PCI device is not an NVIDIA GPU.') }`);
       }
 
       if (this.selectedDeviceDetails && this.selectedDeviceDetails.passthroughEnabled === false) {
-        errors.push(this.t('harvesterManager.gpu.errors.passthroughNotEnabled', null, 'The selected PCI device does not have PCI Passthrough enabled in Infinitystack. Please enable passthrough in Infinitystack UI first.'));
+        errors.push(`[${ poolName }] ${ this.t('harvesterManager.gpu.errors.passthroughNotEnabled', null, 'The selected PCI device does not have PCI Passthrough enabled in Infinitystack. Please enable passthrough in Infinitystack UI first.') }`);
       }
 
       if (this.selectedDeviceDetails && this.selectedDeviceDetails.inUse) {
-        errors.push(this.t('harvesterManager.gpu.errors.alreadyInUse', { vm: this.selectedDeviceDetails.usedBy }, `The selected PCI device is already in use by ${ this.selectedDeviceDetails.usedBy }. Please select an unallocated device.`));
+        errors.push(`[${ poolName }] ${ this.t('harvesterManager.gpu.errors.alreadyInUse', { vm: this.selectedDeviceDetails.usedBy }, `The selected PCI device is already in use by ${ this.selectedDeviceDetails.usedBy }. Please select an unallocated device.`) }`);
       }
 
       if (this.quantity > 1) {
-        errors.push(this.t('harvesterManager.gpu.errors.singleVmOnly', { count: this.quantity }, `The selected PCI device can only be assigned to one VM. Quantity is currently ${ this.quantity }.`));
+        errors.push(`[${ poolName }] ${ this.t('harvesterManager.gpu.errors.singleVmOnly', { count: this.quantity }, `The selected PCI device can only be assigned to one VM. Quantity is currently ${ this.quantity }.`) }`);
       }
 
       return errors;
@@ -570,20 +606,34 @@ export default {
       </div>
     </div>
 
+    <!-- Notice when pool is Control Plane / etcd only -->
+    <div
+      v-if="!isWorkerPool"
+      class="row mb-15"
+    >
+      <div class="col span-12">
+        <Banner
+          color="info"
+        >
+          <span>{{ t('harvesterManager.gpu.workerRoleNotice', null, 'GPU PCI Passthrough is only applicable to Worker nodes. This machine pool is configured as a Control Plane/etcd node.') }}</span>
+        </Banner>
+      </div>
+    </div>
+
     <!-- Enable GPU Toggle -->
     <div class="row mb-20">
       <div class="col span-6">
         <Checkbox
-          :value="value.enabled"
+          :value="isWorkerPool ? value.enabled : false"
           :mode="mode"
-          :disabled="disabled"
+          :disabled="disabled || !isWorkerPool"
           :label="t('harvesterManager.gpu.enableGpu', null, 'Enable GPU (PCI Passthrough)')"
           data-testid="harvester-enable-gpu"
           @update:value="onToggleEnable"
         />
       </div>
       <div
-        v-if="value.enabled"
+        v-if="isWorkerPool && value.enabled"
         class="col span-6"
       >
         <Checkbox
@@ -610,7 +660,7 @@ export default {
 
     <!-- Detailed Configuration when Enabled -->
     <div
-      v-if="value.enabled"
+      v-if="isWorkerPool && value.enabled"
       class="gpu-details-box"
     >
       <!-- Warning if No Available (Unallocated + Passthrough Ready) Device is found -->

@@ -45,7 +45,7 @@ export default class NodeDriver extends Driver {
         label:    this.t('action.edit'),
         icon:     'icon icon-edit',
         bulkable: false,
-        enabled:  !!this.links.update && !this.builtin,
+        enabled:  !!this.links.update,
       },
       {
         action:     'promptRemove',

@@ -11,7 +11,7 @@ import Loading from '@shell/components/Loading';
 import CreateEditView from '@shell/mixins/create-edit-view';
 import LabeledSelect from '@shell/components/form/LabeledSelect';
 import ArrayListSelect from '@shell/components/form/ArrayListSelect';
-import HarvesterGPUConfig from '../components/HarvesterGPUConfig';
+import HarvesterGPUConfig, { getGpuNodeLabels } from '../components/HarvesterGPUConfig';
 import { LabeledInput } from '@components/Form/LabeledInput';
 import UnitInput from '@shell/components/form/UnitInput';
 import YamlEditor from '@shell/components/YamlEditor';
@@ -126,6 +126,11 @@ export default {
     poolIndex: {
       type:     Number,
       required: true
+    },
+
+    poolId: {
+      type:    String,
+      default: ''
     },
 
     machinePools: {
@@ -423,6 +428,28 @@ export default {
 
   computed: {
     ...mapGetters({ t: 'i18n/t' }),
+
+    currentMachinePool() {
+      const byConfig = (this.machinePools || []).find((p) => p.config === this.value);
+
+      if (byConfig) {
+        return byConfig;
+      }
+
+      if (this.poolId) {
+        const byId = (this.machinePools || []).find((p) => p.id === this.poolId);
+
+        if (byId) {
+          return byId;
+        }
+      }
+
+      return this.machinePools?.[this.poolIndex] || {};
+    },
+
+    currentPool() {
+      return this.currentMachinePool?.pool;
+    },
 
     disabledEdit() {
       return this.disabled || !!(this.isEdit && this.value.id);
@@ -743,6 +770,25 @@ export default {
         errors.push(...gpuErrors);
       }
 
+      const pool = this.currentPool;
+
+      if (pool) {
+        if (!pool.labels) {
+          pool.labels = {};
+        }
+
+        if (pool.workerRole === false || !this.gpuConfig?.enabled) {
+          delete pool.labels.accelerator;
+          delete pool.labels['gpu.vendor'];
+          delete pool.labels['gpu.model'];
+          delete pool.labels['gpu.passthrough'];
+        } else if (this.gpuConfig?.enabled && pool.workerRole !== false) {
+          const expectedLabels = getGpuNodeLabels(this.gpuConfig.model || 'A100');
+
+          Object.assign(pool.labels, expectedLabels);
+        }
+      }
+
       podAffinityValidator(this.vmAffinity.affinity, this.$store.getters, errors);
 
       return { errors };
@@ -844,13 +890,21 @@ export default {
     },
 
     updateGpuLabels(labels) {
-      const pool = this.machinePools?.[this.poolIndex]?.pool;
+      const pool = this.currentPool;
 
       if (pool) {
         if (!pool.labels) {
           pool.labels = {};
         }
-        Object.assign(pool.labels, labels);
+
+        delete pool.labels.accelerator;
+        delete pool.labels['gpu.vendor'];
+        delete pool.labels['gpu.model'];
+        delete pool.labels['gpu.passthrough'];
+
+        if (labels && pool.workerRole !== false) {
+          Object.assign(pool.labels, labels);
+        }
       }
     },
 
@@ -1444,7 +1498,7 @@ export default {
         :mode="mode"
         :disabled="disabled"
         :credential="credential"
-        :machine-pool="machinePools[poolIndex]"
+        :machine-pool="currentMachinePool"
         :pool-index="poolIndex"
         :machine-pools="machinePools"
         @update:value="updateGpuConfig"

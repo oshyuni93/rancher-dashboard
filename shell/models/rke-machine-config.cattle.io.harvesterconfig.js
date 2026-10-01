@@ -13,6 +13,7 @@ export default class HciMachineConfig extends SteveModel {
       delete copyConfig.links;
       delete copyConfig.metadata;
       delete copyConfig.apiVersion;
+      delete copyConfig.gpuInfo;
       merge(this, copyConfig);
     }
   }

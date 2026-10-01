@@ -73,7 +73,9 @@ harvesterManager:
     noPassthroughDevicesHelp: "To attach a physical GPU to a VM, you must first enable PCI Passthrough on the device. In Infinitystack UI, navigate to Advanced > PCI Devices and click 'Enable Passthrough' on the desired GPU."
     noAvailableDevicesTitle: "No Available Passthrough-Enabled GPU:"
     noAvailableDevicesHelp: "All NVIDIA GPUs are currently either assigned to other VMs or do not have PCI Passthrough enabled. In Infinitystack UI, navigate to Advanced > PCI Devices and ensure an unallocated GPU has 'Enable Passthrough' activated."
+    workerRoleNotice: "GPU PCI Passthrough is only applicable to Worker nodes. This machine pool is configured as a Control Plane/etcd node."
     errors:
+      workerOnly: "GPU passthrough is only supported on Worker pools. Please disable GPU on this pool or assign the Worker role."
       deviceRequired: "A PCI device must be selected for GPU passthrough."
       notNvidia: "Selected PCI device is not an NVIDIA GPU."
       singleVmOnly: "The selected PCI device can only be assigned to one VM."

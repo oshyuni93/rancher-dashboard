@@ -73,7 +73,9 @@ harvesterManager:
     noPassthroughDevicesHelp: "물리 GPU를 VM에 연결하려면 먼저 해당 장치에서 PCI Passthrough를 활성화해야 합니다. Infinitystack UI의 [고급(Advanced) > PCI 장치]로 이동하여 원하는 GPU의 'Enable Passthrough'를 실행해 주세요."
     noAvailableDevicesTitle: "사용 가능한 패스스루 GPU 없음:"
     noAvailableDevicesHelp: "모든 NVIDIA GPU가 이미 다른 VM에 할당되어 있거나 PCI 패스스루가 활성화되어 있지 않습니다. Infinitystack UI의 [고급 > PCI 장치]에서 미할당된 GPU의 'Enable Passthrough'를 활성화해 주세요."
+    workerRoleNotice: "GPU PCI 패스스루는 워커(Worker) 노드에만 적용됩니다. 현재 머신 풀은 컨트롤 플레인/etcd 전용으로 설정되어 있습니다."
     errors:
+      workerOnly: "GPU 패스스루는 워커 노드(Worker role)에서만 구성할 수 있습니다. 마스터 풀에서 GPU를 비활성화하거나 워커 역할을 지정해 주세요."
       deviceRequired: "GPU 패스스루를 위해 PCI 장치를 선택해야 합니다."
       notNvidia: "선택한 PCI 장치가 NVIDIA GPU가 아닙니다."
       singleVmOnly: "선택한 PCI 장치는 하나의 VM에만 할당할 수 있습니다."
