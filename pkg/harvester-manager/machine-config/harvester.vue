@@ -381,6 +381,8 @@ export default {
       try {
         gpuConfig = typeof this.value.gpuInfo === 'string' ? JSON.parse(this.value.gpuInfo) : this.value.gpuInfo;
       } catch (e) {}
+    } else {
+      this.value.gpuInfo = '';
     }
 
     if (this.value.vgpuInfo) {
@@ -768,6 +770,12 @@ export default {
         const gpuErrors = this.$refs.gpuConfigComponent.validate();
 
         errors.push(...gpuErrors);
+      }
+
+      if (this.gpuConfig?.enabled) {
+        this.value.gpuInfo = JSON.stringify(this.gpuConfig);
+      } else {
+        this.value.gpuInfo = '';
       }
 
       const pool = this.currentPool;
